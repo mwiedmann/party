@@ -13,6 +13,7 @@ emu:
 	$(EMU)
 
 gdata:
+	rm -f build/VIS*.BIN
 	node tools/gamedata.js
 
 zip:
