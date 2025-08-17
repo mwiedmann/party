@@ -4,6 +4,7 @@
 #include <cx16.h>
 #include <cbm.h>
 #include <6502.h>
+#include <conio.h>
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -35,6 +36,77 @@ char gameState[256]; // [0] is 1, so default criteria will fail
 
 Visual currentVisual;
 
+void clearImageArea() {
+    unsigned short x,y;
+
+    // Point to layer0 mapbase
+    VERA.address = VERA.layer1.mapbase<<9;
+    VERA.address_hi = 1;
+    // Set the Increment Mode, turn on bit 4
+    VERA.address_hi |= 0b10000;
+
+    for (y=0; y<60; y++) {
+        for (x=0; x<128; x++) {
+            if (y<30) {
+                VERA.data0 = x>=40 ? 32 : 0;
+                VERA.data0 = x>=40 ? 6<<4 : 0;
+            } else {
+                VERA.data0 = 32;
+                VERA.data0 = 6<<4|1;
+            }
+        }
+    }
+}
+
+void init() {
+    unsigned short i;
+    // Bitmap mode
+    // Color Depth 3 - 8 bpp
+    VERA.display.video = 0b00110001;
+
+    VERA.layer0.config = 0b00000111;
+    //VERA.layer0.config = VERA.layer1.config;
+
+    // Get bytes 16-11 of the new TileBase address
+    // Set bit 0 to 0 (for 320 mode), its already 0 in this address
+    VERA.layer0.tilebase = 0;
+    //VERA.layer0.mapbase = VERA.layer1.mapbase;
+
+    //printf("\nMapbase: %u %u\n", p, p+1);
+    // VERA.layer1.mapbase = 76800L>>9;
+    // VERA.layer1.tilebase = 0x1F000L>>9;
+
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam("party.pal");
+	cbm_k_load(3, 0x1FA00L);
+
+    // Add text colors
+    // TODO: Need right way to keep these colors
+    VERA.address = 0xFA02L;
+    VERA.address_hi = 1;
+    // Set the Increment Mode, turn on bit 4
+    VERA.address_hi |= 0b10000;
+
+    for(i=0; i<1; i++) {
+        VERA.data0 = 255; // Color index
+        VERA.data0 = 255;
+    }
+
+    VERA.address = 0xFA0CL;
+    VERA.address_hi = 1;
+    // Set the Increment Mode, turn on bit 4
+    VERA.address_hi |= 0b10000;
+
+    for(i=0; i<1; i++) {
+        VERA.data0 = 0b00001101; // Color index
+        VERA.data0 = 0;
+    }
+
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam("party.bin");
+	cbm_k_load(2, 0);
+}
+
 void loadVisual(unsigned char id) {
     char buf[16];
 
@@ -49,18 +121,37 @@ char * getString(unsigned short offset) {
   return &currentVisual.stringData[offset];
 }
 
+void testLayers() {
+    
+    printf("Video: %u\n", VERA.display.video); // 0010 0001
+    printf("L1 Config: %u\n", VERA.layer1.config); // 0110 0000
+
+    getchar();
+}
+
 void main() {
     unsigned char visualId = 1; // Start in the foyer
     unsigned char i, c, foundActiveCriteria, criteriaFailed;
     unsigned char choice;
+    char *resultString = 0;
 
     gameState[0] = 1; // Default criteria will always skip/fail
 
+    init();
+    
     loadVisual(visualId);
 
     while (1) {
+        clearImageArea();
+        gotoxy(0, 31);
+    
+        if (resultString) {
+            printf("%s\n\n", resultString);
+            resultString = 0; // Reset after showing
+        }
+
         // Print the room name
-        printf("\n%s\n", getString(currentVisual.nameStringOffset));
+        printf("%s\n", getString(currentVisual.nameStringOffset));
 
         // Print the room description
         printf("%s\n\n", getString(currentVisual.textStringOffset));
@@ -94,11 +185,12 @@ void main() {
         }
         
         printf("\nChoose an option: ");
-        choice = getchar() - '0'; // Convert char to index
+        cursor(1);
+        choice = cgetc() - '0'; // Convert char to index
         printf("\n");
 
-        if (currentVisual.choices[choice].criteria[0].gameStateId == 0) {
-            printf("Invalid choice. Try again.\n");
+        if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0) {
+            // printf("Invalid choice. Try again.\n");
             continue;
         }
 
@@ -111,7 +203,7 @@ void main() {
         
         // Show result message if any
         if (currentVisual.choices[choice].resultStringOffset != 0) {
-            printf("\n%s\n\n", getString(currentVisual.choices[choice].resultStringOffset));
+            resultString = getString(currentVisual.choices[choice].resultStringOffset);
         }
 
         // Transition to the next visual if there is a valid choice

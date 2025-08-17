@@ -16,6 +16,10 @@ gdata:
 	rm -f build/VIS*.BIN
 	node tools/gamedata.js
 
+img:
+	node tools/gimp-img-convert.js gfx/party.data build/PARTY.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/party.data.pal build/PARTY.PAL
+
 zip:
 	cd build && \
 	rm -f dng.zip && \
