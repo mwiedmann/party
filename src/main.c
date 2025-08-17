@@ -28,6 +28,7 @@ typedef struct Choice {
 typedef struct Visual {
   unsigned short nameStringOffset;
   unsigned short textStringOffset;
+  unsigned short imageStringOffset;
   Choice choices[10];
   char stringData[2048];
 } Visual;
@@ -59,7 +60,6 @@ void clearImageArea() {
 }
 
 void init() {
-    unsigned short i;
     // Bitmap mode
     // Color Depth 3 - 8 bpp
     VERA.display.video = 0b00110001;
@@ -75,36 +75,6 @@ void init() {
     //printf("\nMapbase: %u %u\n", p, p+1);
     // VERA.layer1.mapbase = 76800L>>9;
     // VERA.layer1.tilebase = 0x1F000L>>9;
-
-    cbm_k_setlfs(0, 8, 2);
-	cbm_k_setnam("party.pal");
-	cbm_k_load(3, 0x1FA00L);
-
-    // Add text colors
-    // TODO: Need right way to keep these colors
-    VERA.address = 0xFA02L;
-    VERA.address_hi = 1;
-    // Set the Increment Mode, turn on bit 4
-    VERA.address_hi |= 0b10000;
-
-    for(i=0; i<1; i++) {
-        VERA.data0 = 255; // Color index
-        VERA.data0 = 255;
-    }
-
-    VERA.address = 0xFA0CL;
-    VERA.address_hi = 1;
-    // Set the Increment Mode, turn on bit 4
-    VERA.address_hi |= 0b10000;
-
-    for(i=0; i<1; i++) {
-        VERA.data0 = 0b00001101; // Color index
-        VERA.data0 = 0;
-    }
-
-    cbm_k_setlfs(0, 8, 2);
-	cbm_k_setnam("party.bin");
-	cbm_k_load(2, 0);
 }
 
 void loadVisual(unsigned char id) {
@@ -115,6 +85,20 @@ void loadVisual(unsigned char id) {
     cbm_k_setlfs(0, 8, 2);
 	cbm_k_setnam(buf);
 	cbm_k_load(0, ((unsigned short)&currentVisual));
+}
+
+void loadImage(char* imageName) {
+    char buf[16];
+
+    sprintf(buf, "%s.pal", imageName);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(3, 0x1FA00L);
+
+    sprintf(buf, "%s.bin", imageName);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(2, 0);
 }
 
 char * getString(unsigned short offset) {
@@ -142,6 +126,10 @@ void main() {
     loadVisual(visualId);
 
     while (1) {
+        if (currentVisual.imageStringOffset != 0) {
+            loadImage(getString(currentVisual.imageStringOffset));
+        }
+        
         clearImageArea();
         gotoxy(0, 31);
     

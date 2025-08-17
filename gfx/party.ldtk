@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 18,
+	"nextUid": 20,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -444,6 +444,43 @@
 			"allowedRefsEntityUid": null,
 			"allowedRefTags": [],
 			"tilesetUid": null
+		},
+		{
+			"identifier": "image",
+			"doc": null,
+			"__type": "String",
+			"uid": 19,
+			"type": "F_String",
+			"isArray": false,
+			"canBeNull": true,
+			"arrayMinLength": null,
+			"arrayMaxLength": null,
+			"editorDisplayMode": "Hidden",
+			"editorDisplayScale": 1,
+			"editorDisplayPos": "Above",
+			"editorLinkStyle": "StraightArrow",
+			"editorDisplayColor": null,
+			"editorAlwaysShow": false,
+			"editorShowInWorld": true,
+			"editorCutLongValues": true,
+			"editorTextSuffix": null,
+			"editorTextPrefix": null,
+			"useForSmartColor": false,
+			"exportToToc": false,
+			"searchable": false,
+			"min": null,
+			"max": null,
+			"regex": null,
+			"acceptFileTypes": null,
+			"defaultOverride": null,
+			"textLanguageMode": null,
+			"symmetricalRef": false,
+			"autoChainRef": true,
+			"allowOutOfLevelRef": true,
+			"allowedRefs": "OnlySame",
+			"allowedRefsEntityUid": null,
+			"allowedRefTags": [],
+			"tilesetUid": null
 		}
 	] },
 	"levels": [
@@ -474,6 +511,10 @@
 				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the foyer.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["You are standing in the foyer."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "foyer", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["foyer"]
 				}] }
 			],
 			"layerInstances": [
@@ -623,6 +664,10 @@
 				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the Dining Room", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["You are standing in the Dining Room"]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "lr", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["lr"]
 				}] }
 			],
 			"layerInstances": [
@@ -799,7 +844,8 @@
 				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the kitchen. The chef is cooking something..", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["You are standing in the kitchen. The chef is cooking something.."]
-				}] }
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -948,7 +994,8 @@
 				{ "__identifier": "text", "__type": "String", "__value": "The chef is awaiting your order.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["The chef is awaiting your order."]
-				}] }
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{

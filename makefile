@@ -17,8 +17,10 @@ gdata:
 	node tools/gamedata.js
 
 img:
-	node tools/gimp-img-convert.js gfx/party.data build/PARTY.BIN 320 240 0 1 1
-	node tools/gimp-pal-convert.js gfx/party.data.pal build/PARTY.PAL
+	node tools/gimp-img-convert.js gfx/foyer.data build/FOYER.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/foyer.data.pal build/FOYER.PAL
+	node tools/gimp-img-convert.js gfx/living-room.data build/LR.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/living-room.data.pal build/LR.PAL
 
 zip:
 	cd build && \
