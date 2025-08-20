@@ -6,6 +6,10 @@
 #include <6502.h>
 #include <conio.h>
 
+#define CURRENT_ROOM_ID 255 // Last byte of gameState to store current room ID
+#define ROOM 0
+#define PERSON 1
+
 typedef struct Criteria {
   unsigned char gameStateId;
   unsigned char value;
@@ -19,23 +23,38 @@ typedef struct StateChange {
 typedef struct Choice {
   unsigned char canSelect;
   unsigned short textStringOffset;
-  unsigned char transitionVisualId; // Visual to transition to
+  unsigned short transitionVisualId; // Visual to transition to
   unsigned short resultStringOffset; // Shows after you pick this choice
+  unsigned short roomId; // Room to move to if this is a choice on a Person
   Criteria criteria[2];
   StateChange stateChanges[2];
 } Choice;
 
 typedef struct Visual {
+  unsigned char visualType; // 0 = Room, 1 = Person, 2 = Other
   unsigned short nameStringOffset;
   unsigned short textStringOffset;
   unsigned short imageStringOffset;
   Choice choices[10];
-  char stringData[2048];
+  char stringData[512];
 } Visual;
+
+typedef struct TimeEntry {
+    unsigned char hour;
+    unsigned char minute;
+    unsigned short roomId;
+} TimeEntry;
+
+typedef struct Person {
+    unsigned char id;
+    TimeEntry timeEntries[10]; // Up to 10 time entries
+} Person;
 
 char gameState[256]; // [0] is 1, so default criteria will fail
 
 Visual currentVisual;
+Visual persons[5];
+Person timeTable[50];
 
 void clearImageArea() {
     unsigned short x,y;
@@ -77,7 +96,7 @@ void init() {
     // VERA.layer1.tilebase = 0x1F000L>>9;
 }
 
-void loadVisual(unsigned char id) {
+void loadVisual(unsigned short id) {
     char buf[16];
 
     sprintf(buf, "vis%u.bin", id);
@@ -114,10 +133,10 @@ void testLayers() {
 }
 
 void main() {
-    unsigned char visualId = 1; // Start in the foyer
+    unsigned short visualId = 1, currentImage = 0; // Start in the foyer
     unsigned char i, c, foundActiveCriteria, criteriaFailed;
     unsigned char choice;
-    char *resultString = 0;
+    char resultString[1024];
 
     gameState[0] = 1; // Default criteria will always skip/fail
 
@@ -126,16 +145,21 @@ void main() {
     loadVisual(visualId);
 
     while (1) {
-        if (currentVisual.imageStringOffset != 0) {
+        if (currentVisual.visualType == ROOM) { // Room
+            gameState[CURRENT_ROOM_ID] = visualId; // Store current room ID
+        }
+
+        if (currentVisual.imageStringOffset != 0 && currentImage != currentVisual.imageStringOffset) {
+            currentImage = currentVisual.imageStringOffset;
             loadImage(getString(currentVisual.imageStringOffset));
         }
         
         clearImageArea();
         gotoxy(0, 31);
     
-        if (resultString) {
+        if (resultString[0]) {
             printf("%s\n\n", resultString);
-            resultString = 0; // Reset after showing
+            resultString[0] = 0; // Reset after showing
         }
 
         // Print the room name
@@ -191,7 +215,8 @@ void main() {
         
         // Show result message if any
         if (currentVisual.choices[choice].resultStringOffset != 0) {
-            resultString = getString(currentVisual.choices[choice].resultStringOffset);
+            // copy the resultStringOff string into resultString
+            strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset));
         }
 
         // Transition to the next visual if there is a valid choice

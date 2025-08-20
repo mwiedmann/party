@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 20,
+	"nextUid": 22,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -370,7 +370,11 @@
 			"pivotY": 0,
 			"fieldDefs": []
 		}
-	], "tilesets": [], "enums": [], "externalEnums": [], "levelFields": [
+	], "tilesets": [], "enums": [{ "identifier": "VisualType", "uid": 20, "values": [
+		{ "id": "Room", "tileRect": null, "color": 12470831 },
+		{ "id": "Person", "tileRect": null, "color": 6539085 },
+		{ "id": "Other", "tileRect": null, "color": 4740085 }
+	], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }], "externalEnums": [], "levelFields": [
 		{
 			"identifier": "name",
 			"doc": null,
@@ -481,6 +485,46 @@
 			"allowedRefsEntityUid": null,
 			"allowedRefTags": [],
 			"tilesetUid": null
+		},
+		{
+			"identifier": "visualType",
+			"doc": null,
+			"__type": "LocalEnum.VisualType",
+			"uid": 21,
+			"type": "F_Enum(20)",
+			"isArray": false,
+			"canBeNull": false,
+			"arrayMinLength": null,
+			"arrayMaxLength": null,
+			"editorDisplayMode": "ValueOnly",
+			"editorDisplayScale": 3,
+			"editorDisplayPos": "Above",
+			"editorLinkStyle": "StraightArrow",
+			"editorDisplayColor": null,
+			"editorAlwaysShow": true,
+			"editorShowInWorld": true,
+			"editorCutLongValues": true,
+			"editorTextSuffix": null,
+			"editorTextPrefix": null,
+			"useForSmartColor": false,
+			"exportToToc": false,
+			"searchable": false,
+			"min": null,
+			"max": null,
+			"regex": null,
+			"acceptFileTypes": null,
+			"defaultOverride": {
+				"id": "V_String",
+				"params": ["Room"]
+			},
+			"textLanguageMode": null,
+			"symmetricalRef": false,
+			"autoChainRef": true,
+			"allowOutOfLevelRef": true,
+			"allowedRefs": "OnlySame",
+			"allowedRefsEntityUid": null,
+			"allowedRefTags": [],
+			"tilesetUid": null
 		}
 	] },
 	"levels": [
@@ -515,7 +559,8 @@
 				{ "__identifier": "image", "__type": "String", "__value": "foyer", "__tile": null, "defUid": 19, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["foyer"]
-				}] }
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -668,7 +713,8 @@
 				{ "__identifier": "image", "__type": "String", "__value": "lr", "__tile": null, "defUid": 19, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["lr"]
-				}] }
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -845,7 +891,8 @@
 					"id": "V_String",
 					"params": ["You are standing in the kitchen. The chef is cooking something.."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -995,7 +1042,11 @@
 					"id": "V_String",
 					"params": ["The chef is awaiting your order."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] }
 			],
 			"layerInstances": [
 				{
