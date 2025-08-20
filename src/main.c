@@ -69,7 +69,7 @@ PersonInfo persons[5];
 Person timeTable[TIME_TABLE_LENGTH];
 
 unsigned char hour = 8;
-unsigned char minute = 0;
+unsigned char minutes = 0;
 
 void clearImageArea() {
     unsigned short x,y;
@@ -155,12 +155,13 @@ char * getString(unsigned short offset, Visual *visual) {
   return &visual->stringData[offset];
 }
 
-void testLayers() {
-    
-    printf("Video: %u\n", VERA.display.video); // 0010 0001
-    printf("L1 Config: %u\n", VERA.layer1.config); // 0110 0000
+void advanceTime(unsigned char minutesToAdd) {
+    minutes+= minutesToAdd;
 
-    getchar();
+    if (minutes >= 60) {
+        hour++;
+        minutes-=60;
+    }
 }
 
 void main() {
@@ -188,6 +189,11 @@ void main() {
         }
         
         clearImageArea();
+
+        // Show the status
+        gotoxy(40, 1);
+        printf("Time: %u:%02u", hour, minutes);
+
         gotoxy(0, 31);
     
         if (resultString[0]) {
@@ -249,6 +255,12 @@ void main() {
                     personIndex++;
                 }
             }
+
+            // Always add a choice to wait for a minute if in a room
+            printf("\nW: Wait for a minute\n");
+        } else {
+            // Always add a choice to leave this person or thing
+            printf("\nX: Return to the room\n");
         }
 
         printf("\nChoose an option: ");
@@ -256,9 +268,27 @@ void main() {
         choice = cgetc(); // Convert char to index
         printf("\n");
 
+        // See if waiting a minute
+        if (currentVisual.visualType == ROOM_TYPE && choice == 'w') {
+            advanceTime(1);
+            continue;
+        }
+
+        // See if exiting this interaction
+        if (currentVisual.visualType != ROOM_TYPE && choice == 'x') {
+            visualId = gameState[CURRENT_ROOM_ID];
+            loadVisual(visualId);
+            continue;
+        }
+
         // See if selecting a person
         if (choice >= 'a' && choice <= 'e') {
             choice -= 'a';
+
+            // Invalid choice...too high
+            if (choice >= personIndex) {
+                continue;
+            }
 
             // Transition to person
             currentPerson = persons[choice];
@@ -286,9 +316,14 @@ void main() {
                 strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset, &currentVisual));
             }
 
-            // If this is a Person, see if they are moving
+            // If the current visual is a Person, see if they are moving
             if (currentVisual.visualType == PERSON_TYPE && currentVisual.choices[choice].personRoomId) {
                 timeTable[currentPerson.timeTableIndex].currentRoomId = currentVisual.choices[choice].personRoomId;
+            }
+
+            // See if any time has passed
+            if (currentVisual.choices[choice].minutes) {
+                advanceTime(currentVisual.choices[choice].minutes);
             }
 
             // Transition to the next visual if there is a valid choice
