@@ -7,9 +7,10 @@
 #include <conio.h>
 
 #define CURRENT_ROOM_ID 255 // Last byte of gameState to store current room ID
-#define ROOM 0
-#define PERSON 1
+#define ROOM_TYPE 0
+#define PERSON_TYPE 1
 #define TRANSITION_CURRENT_ROOM 32767
+#define PERSONS_PER_ROOM 5
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -26,7 +27,9 @@ typedef struct Choice {
   unsigned short textStringOffset;
   unsigned short transitionVisualId; // Visual to transition to
   unsigned short resultStringOffset; // Shows after you pick this choice
-  unsigned short roomId; // Room to move to if this is a choice on a Person
+  unsigned short personRoomId; // Room to move Person to if this is a choice on a Person
+  unsigned char minutes; // How many minutes this choice takes
+  unsigned short criteriaRoomId; // Room Person must be in for this choice to be active
   Criteria criteria[2];
   StateChange stateChanges[2];
 } Choice;
@@ -52,13 +55,21 @@ typedef struct Person {
     TimeEntry timeEntries[1]; // Up to ? time entries
 } Person;
 
+typedef struct PersonInfo {
+    Visual person;
+    unsigned char timeTableIndex;
+} PersonInfo;
+
 char gameState[256]; // [0] is 1, so default criteria will fail
 
 Visual currentVisual;
-Visual persons[5];
+PersonInfo persons[5];
 
 #define TIME_TABLE_LENGTH 50
 Person timeTable[TIME_TABLE_LENGTH];
+
+unsigned char hour = 8;
+unsigned char minute = 0;
 
 void clearImageArea() {
     unsigned short x,y;
@@ -153,10 +164,11 @@ void testLayers() {
 }
 
 void main() {
-    unsigned short visualId = 1, currentImage = 0, personIndex; // Start in the foyer
-    unsigned char i, c, foundActiveCriteria, criteriaFailed;
+    unsigned short visualId = 1, currentImage = 0; // Start in the foyer
+    unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex;
     unsigned char choice;
     char resultString[1024];
+    PersonInfo currentPerson;
 
     gameState[0] = 1; // Default criteria will always skip/fail
 
@@ -166,7 +178,7 @@ void main() {
     loadVisual(visualId);
 
     while (1) {
-        if (currentVisual.visualType == ROOM) { // Room
+        if (currentVisual.visualType == ROOM_TYPE) { // Room
             gameState[CURRENT_ROOM_ID] = visualId; // Store current room ID
         }
 
@@ -204,6 +216,11 @@ void main() {
                 }
             }
 
+            // Check if the current choice is only available in a certain room
+            if (currentVisual.choices[i].criteriaRoomId && currentVisual.choices[i].criteriaRoomId != gameState[CURRENT_ROOM_ID]) {
+                criteriaFailed = 1;
+            }
+
             if (!foundActiveCriteria || criteriaFailed) {
                 continue; // No active criteria or criteria failed, skip this choice
             }
@@ -217,14 +234,17 @@ void main() {
             printf("%s\n", getString(currentVisual.choices[i].textStringOffset, &currentVisual));
         }
         
-        if (currentVisual.visualType == ROOM) {
+        if (currentVisual.visualType == ROOM_TYPE) {
+            // Clear the persons list
+            memset(persons, 0, sizeof(persons));
+
             personIndex=0;
             for (i=0; i<TIME_TABLE_LENGTH; i++) {
                 if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
                     loadPerson(timeTable[i].id, personIndex);
-                
+                    persons[personIndex].timeTableIndex = i;
                     // Print an option to talk to this person
-                    printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[i].nameStringOffset, &persons[personIndex]));
+                    printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
 
                     personIndex++;
                 }
@@ -241,7 +261,8 @@ void main() {
             choice -= 'a';
 
             // Transition to person
-            visualId = timeTable[choice].id;
+            currentPerson = persons[choice];
+            visualId = timeTable[persons[choice].timeTableIndex].id;
             loadVisual(visualId);     
         } else {
             // Making a non-person selection
@@ -263,6 +284,11 @@ void main() {
             if (currentVisual.choices[choice].resultStringOffset != 0) {
                 // copy the resultStringOff string into resultString
                 strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset, &currentVisual));
+            }
+
+            // If this is a Person, see if they are moving
+            if (currentVisual.visualType == PERSON_TYPE && currentVisual.choices[choice].personRoomId) {
+                timeTable[currentPerson.timeTableIndex].currentRoomId = currentVisual.choices[choice].personRoomId;
             }
 
             // Transition to the next visual if there is a valid choice

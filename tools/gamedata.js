@@ -20,7 +20,9 @@ typedef struct Choice {
   unsigned short textStringOffset;
   unsigned short transitionVisualId; // Visual to transition to
   unsigned short resultStringOffset; // Shows after you pick this choice
-  unsigned short roomId; // Room to move to if this is a choice on a Person
+  unsigned short personRoomId; // Room to move to if this is a choice on a Person
+  unsigned char minutes; // How many minutes this choice takes
+  unsigned short criteriaRoomId; // Room Person must be in for this choice to be active
   Criteria criteria[2];
   StateChange stateChanges[2];
 } Choice;
@@ -41,9 +43,9 @@ typedef struct TimeEntry {
 } TimeEntry;
 
 typedef struct Person {
-    unsigned char id;
+    unsigned short id;
     unsigned short currentRoomId;
-    TimeEntry timeEntries[2]; // Up to 10 time entries
+    TimeEntry timeEntries[1]; // Up to ? time entries
 } Person;
 */
 
@@ -130,15 +132,22 @@ const visuals = ldtk.levels.map((level) => {
       stringData.push(currentString);
     }
     
-    // TODO: Persons choices may have a roomId that the Person will move to
-    const roomId = 0;
+    let personRoomId = c.fieldInstances.find(f => f.__identifier === "personRoom").__value?.levelIid;
+    personRoomId = personRoomId ? levelData[personRoomId].index : 0;
+    
+    let criteriaRoomId = c.fieldInstances.find(f => f.__identifier === "criteriaRoom").__value?.levelIid;
+    criteriaRoomId = criteriaRoomId ? levelData[criteriaRoomId].index : 0;
+
+    let minutes = c.fieldInstances.find(f => f.__identifier === "minutes").__value;
 
     const choice = {
       canSelect: c.fieldInstances.find(f => f.__identifier === "canSelect")?.__value ? 1 : 0,
       textStringOffset,
       transitionVisualId,
       resultStringOffset,
-      roomId,
+      personRoomId,
+      minutes,
+      criteriaRoomId,
       criteria: criteriaText.length>0 ? criteriaText.map((cr) => {
         const parts=cr.split("=")
         return {
@@ -191,7 +200,9 @@ const emptyChoice = () => ({
   textStringOffset: 0,
   transitionVisualId: 0,
   resultStringOffset: 0,
-  roomId: 0,
+  personRoomId: 0,
+  minutes: 0,
+  criteriaRoomId: 0,
   criteria: [emptyCriteria(), emptyCriteria()],
   stateChanges: [emptyStateChange(), emptyStateChange()],
 })
@@ -216,7 +227,9 @@ const fullVisual = (v) => {
     fullV.choices[i].textStringOffset = c.textStringOffset || 0;
     fullV.choices[i].transitionVisualId = c.transitionVisualId || 0;
     fullV.choices[i].resultStringOffset = c.resultStringOffset || 0;
-    fullV.choices[i].roomId = c.roomId || 0;
+    fullV.choices[i].personRoomId = c.personRoomId || 0;
+    fullV.choices[i].minutes = c.minutes || 0;
+    fullV.choices[i].criteriaRoomId = c.criteriaRoomId || 0;
     c.criteria?.forEach((cr, ci) => {
       fullV.choices[i].criteria[ci].id = cr.id || 0;
       fullV.choices[i].criteria[ci].value = cr.value || 0;
@@ -250,13 +263,12 @@ fullVisuals.forEach((vdata,i) => {
 
   const filedata = []
 
-  console.log(v.imageStringOffset)
   // visualType, nameStringOffset, textStringOffset, imageStringOffset
   filedata.push(v.visualType, lowByte(v.nameStringOffset), highByte(v.nameStringOffset), lowByte(v.textStringOffset), highByte(v.textStringOffset),lowByte(v.imageStringOffset), highByte(v.imageStringOffset));
 
   v.choices.forEach(c => {
     // canSelect, textStringOffset, transitionVisualId, resultStringOffset, roomId
-    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset),lowByte(c.roomId), highByte(c.roomId));
+    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset), lowByte(c.personRoomId), highByte(c.personRoomId), c.minutes, lowByte(c.criteriaRoomId), highByte(c.criteriaRoomId));
 
     c.criteria.forEach(cr => {
       // id, value
@@ -294,7 +306,6 @@ fullVisuals.forEach((vdata,i) => {
     const timeEntry= v.timeEntries[0]
   
     personsFileData.push(lowByte(id), highByte(id), lowByte(currrentRoom), highByte(currrentRoom), timeEntry.hour, timeEntry.minute, lowByte(timeEntry.roomId), highByte(timeEntry.roomId))
-    console.log(v)
   }
 
   output = new Uint8Array(personsFileData);
