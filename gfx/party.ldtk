@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 22,
+	"nextUid": 29,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -223,6 +223,43 @@
 					"tilesetUid": null
 				},
 				{
+					"identifier": "transitionBackToRoom",
+					"doc": null,
+					"__type": "Bool",
+					"uid": 23,
+					"type": "F_Bool",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
+					"allowedRefTags": [],
+					"tilesetUid": null
+				},
+				{
 					"identifier": "result",
 					"doc": null,
 					"__type": "String",
@@ -332,6 +369,43 @@
 					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
+				},
+				{
+					"identifier": "roomId",
+					"doc": null,
+					"__type": "Int",
+					"uid": 22,
+					"type": "F_Int",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
+					"allowedRefTags": [],
+					"tilesetUid": null
 				}
 			]
 		},
@@ -369,6 +443,153 @@
 			"pivotX": 0,
 			"pivotY": 0,
 			"fieldDefs": []
+		},
+		{
+			"identifier": "TimeEntry",
+			"uid": 25,
+			"tags": [],
+			"exportToToc": false,
+			"allowOutOfBounds": false,
+			"doc": null,
+			"width": 16,
+			"height": 16,
+			"resizableX": false,
+			"resizableY": false,
+			"minWidth": null,
+			"maxWidth": null,
+			"minHeight": null,
+			"maxHeight": null,
+			"keepAspectRatio": false,
+			"tileOpacity": 1,
+			"fillOpacity": 1,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#EAD4AA",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileRenderMode": "FitInside",
+			"tileRect": null,
+			"uiTileRect": null,
+			"nineSliceBorders": [],
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0,
+			"pivotY": 0,
+			"fieldDefs": [
+				{
+					"identifier": "hour",
+					"doc": null,
+					"__type": "Int",
+					"uid": 26,
+					"type": "F_Int",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
+					"allowedRefTags": [],
+					"tilesetUid": null
+				},
+				{
+					"identifier": "minute",
+					"doc": null,
+					"__type": "Int",
+					"uid": 27,
+					"type": "F_Int",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
+					"allowedRefTags": [],
+					"tilesetUid": null
+				},
+				{
+					"identifier": "room",
+					"doc": null,
+					"__type": "EntityRef",
+					"uid": 28,
+					"type": "F_EntityRef",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "CurvedArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": false,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySpecificEntity",
+					"allowedRefsEntityUid": 8,
+					"allowedRefTags": [],
+					"tilesetUid": null
+				}
+			]
 		}
 	], "tilesets": [], "enums": [{ "identifier": "VisualType", "uid": 20, "values": [
 		{ "id": "Room", "tileRect": null, "color": 12470831 },
@@ -633,9 +854,11 @@
 									"id": "V_String",
 									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
 								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": 32,
 							"__worldY": 16
@@ -670,9 +893,11 @@
 									"id": "V_String",
 									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
 								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": 32,
 							"__worldY": 32
@@ -787,9 +1012,11 @@
 									"id": "V_String",
 									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
 								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": 144,
 							"__worldY": 16
@@ -813,9 +1040,11 @@
 									"params": ["A very hungry looking dog is staring at you."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": 144,
 							"__worldY": 32
@@ -842,6 +1071,7 @@
 									"params": ["Feed the dog your steak."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "The dog ate the steak and wagged his tail.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["The dog ate the steak and wagged his tail."]
@@ -853,7 +1083,8 @@
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["steak=0"], "__tile": null, "defUid": 13, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["steak=0"]
-								}] }
+								}] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": 144,
 							"__worldY": 48
@@ -937,43 +1168,6 @@
 						},
 						{
 							"__identifier": "Choice",
-							"__grid": [2,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "927e20c0-5e50-11f0-8388-37025daf3a4d",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,16],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Talk to the chef", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Talk to the chef"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "be87c770-5e50-11f0-8388-d593b12e861f",
-									"layerIid": "a1d98e11-5e50-11f0-8388-bb31805f05c6",
-									"levelIid": "a1d98e10-5e50-11f0-8388-6fe5a60e091b",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["be87c770-5e50-11f0-8388-d593b12e861f"]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
-							],
-							"__worldX": -64,
-							"__worldY": 16
-						},
-						{
-							"__identifier": "Choice",
 							"__grid": [2,2],
 							"__pivot": [0,0],
 							"__tags": [],
@@ -1002,9 +1196,11 @@
 									"id": "V_String",
 									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
 								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": -64,
 							"__worldY": 32
@@ -1043,9 +1239,9 @@
 					"params": ["The chef is awaiting your order."]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["Other"]
+					"params": ["Person"]
 				}] }
 			],
 			"layerInstances": [
@@ -1074,59 +1270,6 @@
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "Anchor",
-							"__grid": [0,0],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#D77643",
-							"iid": "be87c770-5e50-11f0-8388-d593b12e861f",
-							"width": 16,
-							"height": 16,
-							"defUid": 8,
-							"px": [0,0],
-							"fieldInstances": [],
-							"__worldX": -192,
-							"__worldY": 0
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "c3459da0-5e50-11f0-8388-e5de5418f5f1",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,16],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Leave the chef", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Leave the chef"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
-							],
-							"__worldX": -160,
-							"__worldY": 16
-						},
-						{
 							"__identifier": "Choice",
 							"__grid": [2,2],
 							"__pivot": [0,0],
@@ -1147,14 +1290,10 @@
 									"id": "V_String",
 									"params": ["Order the steak"]
 								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [null] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
 								}] },
 								{ "__identifier": "result", "__type": "String", "__value": "The chef makes you a steak.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
@@ -1167,7 +1306,8 @@
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["steak=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["steak=1"]
-								}] }
+								}] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [{ "id": "V_Int", "params": [0] }] }
 							],
 							"__worldX": -160,
 							"__worldY": 32
@@ -1194,15 +1334,45 @@
 									"params": ["Order some pasta"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "The chef recommends the steak instead.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["The chef recommends the steak instead."]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] }
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "roomId", "__type": "Int", "__value": 0, "__tile": null, "defUid": 22, "realEditorValues": [] }
 							],
 							"__worldX": -160,
 							"__worldY": 48
+						},
+						{
+							"__identifier": "TimeEntry",
+							"__grid": [0,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#EAD4AA",
+							"iid": "a91c4180-5e50-11f0-b7cf-51d6e5d55dc2",
+							"width": 16,
+							"height": 16,
+							"defUid": 25,
+							"px": [0,16],
+							"fieldInstances": [
+								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
+								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
+								{ "__identifier": "room", "__type": "EntityRef", "__value": {
+									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
+									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
+									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 28, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
+								}] }
+							],
+							"__worldX": -192,
+							"__worldY": 16
 						}
 					]
 				}

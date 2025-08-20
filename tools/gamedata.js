@@ -31,7 +31,7 @@ typedef struct Visual {
   unsigned short textStringOffset;
   unsigned short imageStringOffset;
   Choice choices[10];
-  char stringData[2048];
+  char stringData[512];
 } Visual;
 
 typedef struct TimeEntry {
@@ -42,7 +42,8 @@ typedef struct TimeEntry {
 
 typedef struct Person {
     unsigned char id;
-    TimeEntry timeEntries[10]; // Up to 10 time entries
+    unsigned short currentRoomId;
+    TimeEntry timeEntries[2]; // Up to 10 time entries
 } Person;
 */
 
@@ -106,8 +107,11 @@ const visuals = ldtk.levels.map((level) => {
   }
 
   const choices = level.layerInstances[0].entityInstances.filter(l => l.__identifier === "Choice").map((c) => {
+    const transitionBackToRoom = Boolean(c.fieldInstances.find(f => f.__identifier === "transitionBackToRoom")?.__value)
+
     const transition= c.fieldInstances.find(f => f.__identifier === "transition")?.__value?.levelIid
-    const transitionVisualId = transition ? levelData[transition].index : 0;
+    const transitionVisualId = transitionBackToRoom ? 32767 :transition ? levelData[transition].index : 0;
+    
     const criteriaText = c.fieldInstances.find(f => f.__identifier === "criteria").__value
 
     currentString=c.fieldInstances.find(f => f.__identifier === "text")?.__value
@@ -154,13 +158,26 @@ const visuals = ldtk.levels.map((level) => {
     return choice
   });
 
+  const timeEntries = level.layerInstances[0].entityInstances.filter(l => l.__identifier === "TimeEntry").map((c) => {
+    const hour = c.fieldInstances.find(f => f.__identifier === "hour")?.__value
+    const minute = c.fieldInstances.find(f => f.__identifier === "minute")?.__value
+    const roomId = levelData[c.fieldInstances.find(f => f.__identifier === "room")?.__value?.levelIid].index
+
+    return {
+      hour,
+      minute,
+      roomId
+    }
+  })
+
   return {
     data:{
       visualType,
       nameStringOffset,
       textStringOffset,
       imageStringOffset,
-      choices
+      choices,
+      timeEntries
     },
     stringData
   }
@@ -210,6 +227,9 @@ const fullVisual = (v) => {
     });
   });
 
+  // TODO: More here
+  fullV.timeEntries = v.timeEntries
+
   return fullV;
 }
 
@@ -218,6 +238,8 @@ const fullVisuals = [...visuals.map(v => ({
     stringData: v.stringData
   })
 )];
+
+const personsFileData = []
 
 fullVisuals.forEach((vdata,i) => {
   const v= vdata.data
@@ -262,6 +284,19 @@ fullVisuals.forEach((vdata,i) => {
     filedata.push(0); // Null terminator
   });
 
+  const id=i+1
+
   output = new Uint8Array(filedata);
-  fs.writeFileSync(`build/VIS${i+1}.BIN`, output, "binary");
+  fs.writeFileSync(`build/VIS${id}.BIN`, output, "binary");
+
+  if (v.visualType === 1) { // Person
+    const currrentRoom = v.timeEntries.find(t => t.hour===0 && t.minute===0).roomId
+    const timeEntry= v.timeEntries[0]
+  
+    personsFileData.push(lowByte(id), highByte(id), lowByte(currrentRoom), highByte(currrentRoom), timeEntry.hour, timeEntry.minute, lowByte(timeEntry.roomId), highByte(timeEntry.roomId))
+    console.log(v)
+  }
+
+  output = new Uint8Array(personsFileData);
+  fs.writeFileSync(`build/TIMETBL.BIN`, output, "binary");
 });

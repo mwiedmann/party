@@ -9,6 +9,7 @@
 #define CURRENT_ROOM_ID 255 // Last byte of gameState to store current room ID
 #define ROOM 0
 #define PERSON 1
+#define TRANSITION_CURRENT_ROOM 32767
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -46,15 +47,18 @@ typedef struct TimeEntry {
 } TimeEntry;
 
 typedef struct Person {
-    unsigned char id;
-    TimeEntry timeEntries[10]; // Up to 10 time entries
+    unsigned short id;
+    unsigned short currentRoomId;
+    TimeEntry timeEntries[1]; // Up to ? time entries
 } Person;
 
 char gameState[256]; // [0] is 1, so default criteria will fail
 
 Visual currentVisual;
 Visual persons[5];
-Person timeTable[50];
+
+#define TIME_TABLE_LENGTH 50
+Person timeTable[TIME_TABLE_LENGTH];
 
 void clearImageArea() {
     unsigned short x,y;
@@ -106,6 +110,22 @@ void loadVisual(unsigned short id) {
 	cbm_k_load(0, ((unsigned short)&currentVisual));
 }
 
+void loadPerson(unsigned short id, unsigned char index) {
+    char buf[16];
+
+    sprintf(buf, "vis%u.bin", id);
+
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(0, ((unsigned short)&persons[index]));
+}
+
+void loadTimeTable() {
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam("timetbl.bin");
+	cbm_k_load(0, ((unsigned short)&timeTable));
+}
+
 void loadImage(char* imageName) {
     char buf[16];
 
@@ -120,8 +140,8 @@ void loadImage(char* imageName) {
 	cbm_k_load(2, 0);
 }
 
-char * getString(unsigned short offset) {
-  return &currentVisual.stringData[offset];
+char * getString(unsigned short offset, Visual *visual) {
+  return &visual->stringData[offset];
 }
 
 void testLayers() {
@@ -133,7 +153,7 @@ void testLayers() {
 }
 
 void main() {
-    unsigned short visualId = 1, currentImage = 0; // Start in the foyer
+    unsigned short visualId = 1, currentImage = 0, personIndex; // Start in the foyer
     unsigned char i, c, foundActiveCriteria, criteriaFailed;
     unsigned char choice;
     char resultString[1024];
@@ -142,6 +162,7 @@ void main() {
 
     init();
     
+    loadTimeTable();
     loadVisual(visualId);
 
     while (1) {
@@ -151,7 +172,7 @@ void main() {
 
         if (currentVisual.imageStringOffset != 0 && currentImage != currentVisual.imageStringOffset) {
             currentImage = currentVisual.imageStringOffset;
-            loadImage(getString(currentVisual.imageStringOffset));
+            loadImage(getString(currentVisual.imageStringOffset, &currentVisual));
         }
         
         clearImageArea();
@@ -163,10 +184,10 @@ void main() {
         }
 
         // Print the room name
-        printf("%s\n", getString(currentVisual.nameStringOffset));
+        printf("%s\n", getString(currentVisual.nameStringOffset, &currentVisual));
 
         // Print the room description
-        printf("%s\n\n", getString(currentVisual.textStringOffset));
+        printf("%s\n\n", getString(currentVisual.textStringOffset, &currentVisual));
 
         // Show choices
         for (i = 0; i < 10; i++) {
@@ -193,37 +214,68 @@ void main() {
             }
 
             // Print the choice text
-            printf("%s\n", getString(currentVisual.choices[i].textStringOffset));
+            printf("%s\n", getString(currentVisual.choices[i].textStringOffset, &currentVisual));
         }
         
-        printf("\nChoose an option: ");
-        cursor(1);
-        choice = cgetc() - '0'; // Convert char to index
-        printf("\n");
+        if (currentVisual.visualType == ROOM) {
+            personIndex=0;
+            for (i=0; i<TIME_TABLE_LENGTH; i++) {
+                if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
+                    loadPerson(timeTable[i].id, personIndex);
+                
+                    // Print an option to talk to this person
+                    printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[i].nameStringOffset, &persons[personIndex]));
 
-        if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0) {
-            // printf("Invalid choice. Try again.\n");
-            continue;
-        }
-
-        // apply state changes
-        for (i = 0; i < 2; i++) {
-            if (currentVisual.choices[choice].stateChanges[i].id != 0) {
-                gameState[currentVisual.choices[choice].stateChanges[i].id] = currentVisual.choices[choice].stateChanges[i].value;
+                    personIndex++;
+                }
             }
         }
+
+        printf("\nChoose an option: ");
+        cursor(1);
+        choice = cgetc(); // Convert char to index
+        printf("\n");
+
+        // See if selecting a person
+        if (choice >= 'a' && choice <= 'e') {
+            choice -= 'a';
+
+            // Transition to person
+            visualId = timeTable[choice].id;
+            loadVisual(visualId);     
+        } else {
+            // Making a non-person selection
+            choice -= '0';
         
-        // Show result message if any
-        if (currentVisual.choices[choice].resultStringOffset != 0) {
-            // copy the resultStringOff string into resultString
-            strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset));
+            if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0) {
+                // printf("Invalid choice. Try again.\n");
+                continue;
+            }
+
+            // apply state changes
+            for (i = 0; i < 2; i++) {
+                if (currentVisual.choices[choice].stateChanges[i].id != 0) {
+                    gameState[currentVisual.choices[choice].stateChanges[i].id] = currentVisual.choices[choice].stateChanges[i].value;
+                }
+            }
+            
+            // Show result message if any
+            if (currentVisual.choices[choice].resultStringOffset != 0) {
+                // copy the resultStringOff string into resultString
+                strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset, &currentVisual));
+            }
+
+            // Transition to the next visual if there is a valid choice
+            if (currentVisual.choices[choice].transitionVisualId != 0) {
+                visualId = currentVisual.choices[choice].transitionVisualId;
+                if (visualId == TRANSITION_CURRENT_ROOM) {
+                    visualId = gameState[CURRENT_ROOM_ID];
+                }
+                loadVisual(visualId);
+            }
         }
 
-        // Transition to the next visual if there is a valid choice
-        if (currentVisual.choices[choice].transitionVisualId != 0) {
-            visualId = currentVisual.choices[choice].transitionVisualId;
-            loadVisual(visualId);
-        }
+        
 
         //break;
     }
