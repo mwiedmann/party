@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 33,
+	"nextUid": 34,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -1541,7 +1541,7 @@
 			"__neighbours": [{ "levelIid": "77de3640-5e50-11f0-b7cf-9b522d745645", "dir": "s" }]
 		},
 		{
-			"identifier": "Chef2",
+			"identifier": "Hungry_Guy",
 			"iid": "77de3640-5e50-11f0-b7cf-9b522d745645",
 			"uid": 29,
 			"worldX": -192,
@@ -1669,7 +1669,213 @@
 					]
 				}
 			],
-			"__neighbours": [{ "levelIid": "a1d98e10-5e50-11f0-8388-6fe5a60e091b", "dir": "n" }]
+			"__neighbours": [ { "levelIid": "a1d98e10-5e50-11f0-8388-6fe5a60e091b", "dir": "n" }, { "levelIid": "2f462bb0-5e50-11f0-b7cf-a5ab33646b56", "dir": "s" } ]
+		},
+		{
+			"identifier": "Hippy_Chick",
+			"iid": "2f462bb0-5e50-11f0-b7cf-a5ab33646b56",
+			"uid": 33,
+			"worldX": -192,
+			"worldY": 128,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Hippy Chick", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Hippy Chick"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "A girl wearing a tie dye shirt is swaying to the music", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["A girl wearing a tie dye shirt is swaying to the music"]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Person"]
+				}] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "2f462bb1-5e50-11f0-b7cf-bdd950be7e2b",
+					"levelId": 33,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 4359902,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "TimeEntry",
+							"__grid": [0,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#EAD4AA",
+							"iid": "977ffe90-5e50-11f0-b7cf-45ca6042f809",
+							"width": 16,
+							"height": 16,
+							"defUid": 25,
+							"px": [0,16],
+							"fieldInstances": [
+								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
+								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
+								{ "__identifier": "room", "__type": "EntityRef", "__value": {
+									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
+									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
+									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 28, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
+								}] }
+							],
+							"__worldX": -192,
+							"__worldY": 144
+						},
+						{
+							"__identifier": "TimeEntry",
+							"__grid": [0,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#EAD4AA",
+							"iid": "b44ce380-5e50-11f0-b7cf-879b47f38f41",
+							"width": 16,
+							"height": 16,
+							"defUid": 25,
+							"px": [0,32],
+							"fieldInstances": [
+								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
+								{ "__identifier": "minute", "__type": "Int", "__value": 1, "__tile": null, "defUid": 27, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
+								{ "__identifier": "room", "__type": "EntityRef", "__value": {
+									"entityIid": "ab6cbe40-5e50-11f0-9b7d-d17b0d908e93",
+									"layerIid": "c95a9900-5e50-11f0-9b7d-539f7f904b40",
+									"levelIid": "550818d0-5e50-11f0-9b7d-db7287efb6a6",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 28, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
+								}] }
+							],
+							"__worldX": -192,
+							"__worldY": 160
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "c4948590-5e50-11f0-b7cf-b3aac27318eb",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Ask her where the dog is", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Ask her where the dog is"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "result", "__type": "String", "__value": "She says the dog is in the living room. She says she'll meet you there.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["She says the dog is in the living room. She says she'll meet you there."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["askDog=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["askDog=0"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["askDog=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["askDog=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [0] }] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": {
+									"entityIid": "615c0820-5e50-11f0-8250-ad975cecc79c",
+									"layerIid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
+									"levelIid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 31, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
+								}] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": -160,
+							"__worldY": 144
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "548d9c80-5e50-11f0-b7cf-b93895272318",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "She says \"See! I told you the dog was in here!\"", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["She says \"See! I told you the dog was in here!\""]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["askDog=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["askDog=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": -160,
+							"__worldY": 160
+						}
+					]
+				}
+			],
+			"__neighbours": [{ "levelIid": "77de3640-5e50-11f0-b7cf-9b522d745645", "dir": "n" }]
 		}
 	],
 	"worlds": [],

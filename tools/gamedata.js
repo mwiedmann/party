@@ -49,6 +49,8 @@ typedef struct Person {
 } Person;
 */
 
+const timeEntryCount = 5
+
 const visualTypeValues = {
   "Room": 0,
   "Person": 1,
@@ -215,6 +217,12 @@ const emptyVisual = () => ({
   choices: [emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice(), emptyChoice()],
 })
 
+const emptyTimeEntry = () => ({
+  hour: 0,
+  minute: 0,
+  roomId: 0
+})
+
 const fullVisual = (v) => {
   const fullV = emptyVisual()
   fullV.visualType = v.visualType || 0;
@@ -240,7 +248,6 @@ const fullVisual = (v) => {
     });
   });
 
-  // TODO: More here
   fullV.timeEntries = v.timeEntries
 
   return fullV;
@@ -303,9 +310,13 @@ fullVisuals.forEach((vdata,i) => {
 
   if (v.visualType === 1) { // Person
     const currrentRoom = v.timeEntries.find(t => t.hour===0 && t.minute===0).roomId
-    const timeEntry= v.timeEntries[0]
   
-    personsFileData.push(lowByte(id), highByte(id), lowByte(currrentRoom), highByte(currrentRoom), timeEntry.hour, timeEntry.minute, lowByte(timeEntry.roomId), highByte(timeEntry.roomId))
+    personsFileData.push(lowByte(id), highByte(id), lowByte(currrentRoom), highByte(currrentRoom))
+
+    for (let t=0; t<timeEntryCount; t++) {
+      const timeEntry =  t < v.timeEntries.length ? v.timeEntries[t] : emptyTimeEntry()
+      personsFileData.push(timeEntry.hour, timeEntry.minute, lowByte(timeEntry.roomId), highByte(timeEntry.roomId))
+    }
   }
 
   output = new Uint8Array(personsFileData);

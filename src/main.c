@@ -11,6 +11,9 @@
 #define PERSON_TYPE 1
 #define TRANSITION_CURRENT_ROOM 32767
 #define PERSONS_PER_ROOM 5
+#define TIME_TABLE_LENGTH 50
+#define TIME_ENTRIES_LENGTH 5
+#define START_HOUR 8
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -52,7 +55,7 @@ typedef struct TimeEntry {
 typedef struct Person {
     unsigned short id;
     unsigned short currentRoomId;
-    TimeEntry timeEntries[1]; // Up to ? time entries
+    TimeEntry timeEntries[TIME_ENTRIES_LENGTH]; // Up to 5 time entries
 } Person;
 
 typedef struct PersonInfo {
@@ -64,11 +67,9 @@ char gameState[256]; // [0] is 1, so default criteria will fail
 
 Visual currentVisual;
 PersonInfo persons[5];
-
-#define TIME_TABLE_LENGTH 50
 Person timeTable[TIME_TABLE_LENGTH];
 
-unsigned char hour = 8;
+unsigned char hour = 0;
 unsigned char minutes = 0;
 
 void clearImageArea() {
@@ -156,12 +157,34 @@ char * getString(unsigned short offset, Visual *visual) {
 }
 
 void advanceTime(unsigned char minutesToAdd) {
+    unsigned char i,j;
+
     minutes+= minutesToAdd;
 
     if (minutes >= 60) {
         hour++;
         minutes-=60;
     }
+
+    // See if any Persons moved rooms
+    for(i=0; i<TIME_TABLE_LENGTH; i++) {
+        if (timeTable[i].id) {
+            for (j=0; j<TIME_ENTRIES_LENGTH; j++) {
+                if (timeTable[i].timeEntries[j].hour == hour && timeTable[i].timeEntries[j].minute == minutes) {
+                    timeTable[i].currentRoomId = timeTable[i].timeEntries[j].roomId;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void showTime() {
+    unsigned char showHour;
+    
+    showHour = hour+START_HOUR;
+    showHour = showHour>12 ? showHour-12 : showHour;
+    printf("Time: %u:%02u", showHour, minutes);
 }
 
 void main() {
@@ -172,6 +195,8 @@ void main() {
     PersonInfo currentPerson;
 
     gameState[0] = 1; // Default criteria will always skip/fail
+
+    cursor(1);
 
     init();
     
@@ -190,10 +215,10 @@ void main() {
         
         clearImageArea();
 
-        // Show the status
+        // Show the Time
+        // TODO: Show other status in top right
         gotoxy(40, 1);
-        printf("Time: %u:%02u", hour, minutes);
-
+        showTime();
         gotoxy(0, 31);
     
         if (resultString[0]) {
@@ -233,7 +258,7 @@ void main() {
             
             // Print the choice number if it can be selected
             if (currentVisual.choices[i].canSelect) {
-                printf("%d: ", i);
+                printf("%u: ", i);
             }
 
             // Print the choice text
@@ -264,7 +289,6 @@ void main() {
         }
 
         printf("\nChoose an option: ");
-        cursor(1);
         choice = cgetc(); // Convert char to index
         printf("\n");
 
