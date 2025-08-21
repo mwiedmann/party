@@ -232,6 +232,29 @@ void main() {
         // Print the room description
         printf("%s\n\n", getString(currentVisual.textStringOffset, &currentVisual));
 
+        // Show any Persons
+        if (currentVisual.visualType == ROOM_TYPE) {
+            // Clear the persons list
+            memset(persons, 0, sizeof(persons));
+
+            personIndex=0;
+            for (i=0; i<TIME_TABLE_LENGTH; i++) {
+                if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
+                    loadPerson(timeTable[i].id, personIndex);
+                    persons[personIndex].timeTableIndex = i;
+                    // Print an option to talk to this person
+                    // printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
+                    printf("%s\n", getString(persons[personIndex].person.textStringOffset, &persons[personIndex].person));
+                    personIndex++;
+                }
+            }
+
+            // If we have and showed any Persons, add a blank line
+            if (persons[0].timeTableIndex) {
+                printf("\n");
+            }
+        }
+
         // Show choices
         for (i = 0; i < 10; i++) {
             // Check all criteria
@@ -266,14 +289,9 @@ void main() {
         }
         
         if (currentVisual.visualType == ROOM_TYPE) {
-            // Clear the persons list
-            memset(persons, 0, sizeof(persons));
-
             personIndex=0;
             for (i=0; i<TIME_TABLE_LENGTH; i++) {
                 if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
-                    loadPerson(timeTable[i].id, personIndex);
-                    persons[personIndex].timeTableIndex = i;
                     // Print an option to talk to this person
                     printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
 
