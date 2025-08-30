@@ -6,6 +6,8 @@
 #include <6502.h>
 #include <conio.h>
 
+#include "utils.h"
+
 #define CURRENT_ROOM_ID 255 // Last byte of gameState to store current room ID
 #define ROOM_TYPE 0
 #define PERSON_TYPE 1
@@ -43,7 +45,7 @@ typedef struct Visual {
   unsigned short textStringOffset;
   unsigned short imageStringOffset;
   Choice choices[10];
-  char stringData[512];
+  char stringData[2048];
 } Visual;
 
 typedef struct TimeEntry {
@@ -71,6 +73,8 @@ Person timeTable[TIME_TABLE_LENGTH];
 
 unsigned char hour = 0;
 unsigned char minutes = 0;
+unsigned char cursorX;
+unsigned char cursorY;
 
 void clearImageArea() {
     unsigned short x,y;
@@ -85,7 +89,7 @@ void clearImageArea() {
         for (x=0; x<128; x++) {
             if (y<30) {
                 VERA.data0 = x>=40 ? 32 : 0;
-                VERA.data0 = x>=40 ? 6<<4 : 0;
+                VERA.data0 = x>=40 ? 6<<4|1 : 0;
             } else {
                 VERA.data0 = 32;
                 VERA.data0 = 6<<4|1;
@@ -138,7 +142,7 @@ void loadTimeTable() {
 	cbm_k_load(0, ((unsigned short)&timeTable));
 }
 
-void loadImage(char* imageName) {
+void loadImage(char * imageName) {
     char buf[16];
 
     sprintf(buf, "%s.pal", imageName);
@@ -187,19 +191,69 @@ void showTime() {
     printf("Time: %u:%02u", showHour, minutes);
 }
 
+#define SCREEN_WIDTH 80
+
+void printWordWrapped(char *text) {
+    int i, t;
+    char *wordStart;
+    int wordLen;
+    char word[81]; // Max word length
+
+    t=0;
+    while (text[t]) {
+        // Skip spaces and print them
+        while (text[t] == ' ') {
+            if (cursorX == 0) {
+                // Skip these at beginning of line
+            } else if (cursorX >= SCREEN_WIDTH - 1) {
+                cursorX = 0;
+                cursorY++;
+            } else {
+                cursorX++;
+            }
+            t++;
+        }
+
+        // Find word length
+        wordStart = text+t;
+        wordLen = 0;
+        while (text[t] && text[t] != ' ' && text[t] != '\n') {
+            if (wordLen < 80) {
+                word[wordLen++] = text[t];
+            }
+            t++;
+        }
+        word[wordLen] = '\0';
+
+        // If word doesn't fit, move to next line
+        if (cursorX + wordLen > SCREEN_WIDTH) {
+            cursorX = 0;
+            cursorY++;
+        }
+
+        printString(word+i, &cursorX, &cursorY);
+
+        // Handle newline in input
+        if (text[t] == '\n') {
+            cursorX = 0;
+            cursorY++;
+            t++;
+        }
+    }
+}
+
 void main() {
     unsigned short visualId = 1, currentImage = 0; // Start in the foyer
     unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex;
     unsigned char choice;
     char resultString[1024];
+    char buffer[80];
     PersonInfo currentPerson;
 
     gameState[0] = 1; // Default criteria will always skip/fail
 
-    cursor(1);
-
     init();
-    
+
     loadTimeTable();
     loadVisual(visualId);
 
@@ -217,20 +271,28 @@ void main() {
 
         // Show the Time
         // TODO: Show other status in top right
-        gotoxy(40, 1);
-        showTime();
-        gotoxy(0, 31);
+        //gotoxy(40, 1);
+        //showTime();
+        //gotoxy(0, 31);
+        cursorX=0;
+        cursorY=31;
     
-        if (resultString[0]) {
-            printf("%s\n\n", resultString);
+        if (*resultString) {
+            printWordWrapped(resultString); 
+            cursorY+=2;
+            cursorX=0;
             resultString[0] = 0; // Reset after showing
         }
 
         // Print the room name
-        printf("%s\n", getString(currentVisual.nameStringOffset, &currentVisual));
+        printWordWrapped(getString(currentVisual.nameStringOffset, &currentVisual));
+        cursorY++;
+        cursorX=0;
 
         // Print the room description
-        printf("%s\n\n", getString(currentVisual.textStringOffset, &currentVisual));
+        printWordWrapped(getString(currentVisual.textStringOffset, &currentVisual));
+        cursorY+=2;
+        cursorX=0;
 
         // Show any Persons
         if (currentVisual.visualType == ROOM_TYPE) {
@@ -244,14 +306,15 @@ void main() {
                     persons[personIndex].timeTableIndex = i;
                     // Print an option to talk to this person
                     // printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
-                    printf("%s\n", getString(persons[personIndex].person.textStringOffset, &persons[personIndex].person));
+                    printWordWrapped(getString(persons[personIndex].person.textStringOffset, &persons[personIndex].person));
                     personIndex++;
                 }
             }
 
             // If we have and showed any Persons, add a blank line
             if (persons[0].timeTableIndex) {
-                printf("\n");
+                cursorY++;
+                cursorX=0;
             }
         }
 
@@ -281,11 +344,14 @@ void main() {
             
             // Print the choice number if it can be selected
             if (currentVisual.choices[i].canSelect) {
-                printf("%u: ", i);
+                sprintf(buffer, "%u: ", i);
+                printWordWrapped(buffer);
             }
 
             // Print the choice text
-            printf("%s\n", getString(currentVisual.choices[i].textStringOffset, &currentVisual));
+            printWordWrapped(getString(currentVisual.choices[i].textStringOffset, &currentVisual));
+            cursorY++;
+            cursorX=0;
         }
         
         if (currentVisual.visualType == ROOM_TYPE) {
@@ -293,22 +359,22 @@ void main() {
             for (i=0; i<TIME_TABLE_LENGTH; i++) {
                 if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
                     // Print an option to talk to this person
-                    printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
-
+                    sprintf(buffer, "%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
+                    printWordWrapped(buffer);
                     personIndex++;
                 }
             }
 
             // Always add a choice to wait for a minute if in a room
-            printf("\nW: Wait for a minute\n");
+            printWordWrapped("\nW: Wait for a minute\n");
         } else {
             // Always add a choice to leave this person or thing
-            printf("\nX: Return to the room\n");
+            printWordWrapped("\nX: Return to the room\n");
         }
 
-        printf("\nChoose an option: ");
+        printWordWrapped("\nChoose an option: ");
         choice = cgetc(); // Convert char to index
-        printf("\n");
+        printWordWrapped("\n");
 
         // See if waiting a minute
         if (currentVisual.visualType == ROOM_TYPE && choice == 'w') {
@@ -355,7 +421,7 @@ void main() {
             // Show result message if any
             if (currentVisual.choices[choice].resultStringOffset != 0) {
                 // copy the resultStringOff string into resultString
-                strcpy(resultString, getString(currentVisual.choices[choice].resultStringOffset, &currentVisual));
+                strcpy((char *)resultString, (char*)getString(currentVisual.choices[choice].resultStringOffset, &currentVisual));
             }
 
             // If the current visual is a Person, see if they are moving
@@ -377,9 +443,5 @@ void main() {
                 loadVisual(visualId);
             }
         }
-
-        
-
-        //break;
     }
 }

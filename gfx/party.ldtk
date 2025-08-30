@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 34,
+	"nextUid": 39,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -824,11 +824,11 @@
 	] },
 	"levels": [
 		{
-			"identifier": "Foyer",
-			"iid": "550818d0-5e50-11f0-9b7d-db7287efb6a6",
-			"uid": 0,
+			"identifier": "Bus",
+			"iid": "ef5294f0-5e50-11f0-afc8-970abbbc0465",
+			"uid": 34,
 			"worldX": 0,
-			"worldY": 0,
+			"worldY": 96,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -843,18 +843,17 @@
 			"__bgPos": null,
 			"externalRelPath": null,
 			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Foyer", "__tile": null, "defUid": 1, "realEditorValues": [{
+				{ "__identifier": "name", "__type": "String", "__value": "The Bus", "__tile": null, "defUid": 1, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["The Foyer"]
+					"params": ["The Bus"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the foyer.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of 'what is my place in this world?'. A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says 'You ever had a bad interview? I just had a bad one.'", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["You are standing in the foyer."]
+					"params": [
+						"Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of 'what is my place in this world?'. A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says 'You ever had a bad interview? I just had a bad one.'"
+					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "foyer", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["foyer"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
@@ -869,8 +868,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "c95a9900-5e50-11f0-9b7d-539f7f904b40",
-					"levelId": 0,
+					"iid": "ef5294f1-5e50-11f0-afc8-b78c49c041bb",
+					"levelId": 34,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -878,107 +877,96 @@
 					"optionalRules": [],
 					"intGridCsv": [],
 					"autoLayerTiles": [],
-					"seed": 5642223,
+					"seed": 7544280,
 					"overrideTilesetUid": null,
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "Anchor",
-							"__grid": [0,0],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#D77643",
-							"iid": "ab6cbe40-5e50-11f0-9b7d-d17b0d908e93",
-							"width": 16,
-							"height": 16,
-							"defUid": 8,
-							"px": [0,0],
-							"fieldInstances": [],
-							"__worldX": 0,
-							"__worldY": 0
-						},
-						{
 							"__identifier": "Choice",
-							"__grid": [2,1],
+							"__grid": [1,1],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "09567660-5e50-11f0-8250-c36472c32ead",
+							"iid": "bb626b60-5e50-11f0-afc8-05d6a395521d",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
-							"px": [32,16],
+							"px": [16,16],
 							"fieldInstances": [
 								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Go to the Dining Room", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Tell her about your interview.", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Go to the Dining Room"]
+									"params": ["Tell her about your interview."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "615c0820-5e50-11f0-8250-ad975cecc79c",
-									"layerIid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
-									"levelIid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
+									"entityIid": "732af400-5e50-11f0-afc8-09aeb556f40f",
+									"layerIid": "0910e4e0-5e50-11f0-afc8-579ab128bca1",
+									"levelIid": "0910bdd0-5e50-11f0-afc8-5fae3cb1f1df",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
+									"params": ["732af400-5e50-11f0-afc8-09aeb556f40f"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": 32,
-							"__worldY": 16
+							"__worldX": 16,
+							"__worldY": 112
 						},
 						{
 							"__identifier": "Choice",
-							"__grid": [2,2],
+							"__grid": [1,2],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "3135c160-5e50-11f0-8388-d3ea0cb649d8",
+							"iid": "3f8e6be0-5e50-11f0-afc8-095c66101e06",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
-							"px": [32,32],
+							"px": [16,32],
 							"fieldInstances": [
 								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Go to the Kitchen", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Ignore her", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Go to the Kitchen"]
+									"params": ["Ignore her"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
+									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
+									"layerIid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
+									"levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
+									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Maybe I'll see you around', and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Maybe I'll see you around', and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off."
+									]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": 32,
-							"__worldY": 32
+							"__worldX": 16,
+							"__worldY": 128
 						}
 					]
 				}
@@ -986,11 +974,11 @@
 			"__neighbours": []
 		},
 		{
-			"identifier": "Dining_Room",
-			"iid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
-			"uid": 15,
-			"worldX": 112,
-			"worldY": 0,
+			"identifier": "Bus_Girl",
+			"iid": "0910bdd0-5e50-11f0-afc8-5fae3cb1f1df",
+			"uid": 35,
+			"worldX": 96,
+			"worldY": 96,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1005,18 +993,17 @@
 			"__bgPos": null,
 			"externalRelPath": null,
 			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Dining Room", "__tile": null, "defUid": 1, "realEditorValues": [{
+				{ "__identifier": "name", "__type": "String", "__value": "The Bus Girl", "__tile": null, "defUid": 1, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["The Dining Room"]
+					"params": ["The Bus Girl"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the Dining Room", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says 'Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are connected.'. She uses air quotes and rolls her eyes as she says 'connected'. She says her friend got her two invites. She holds out a small card and says 'Interested?`", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["You are standing in the Dining Room"]
+					"params": [
+						"You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says 'Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are connected.'. She uses air quotes and rolls her eyes as she says 'connected'. She says her friend got her two invites. She holds out a small card and says 'Interested?`"
+					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "lr", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["lr"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
@@ -1031,8 +1018,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
-					"levelId": 15,
+					"iid": "0910e4e0-5e50-11f0-afc8-579ab128bca1",
+					"levelId": 35,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -1040,200 +1027,56 @@
 					"optionalRules": [],
 					"intGridCsv": [],
 					"autoLayerTiles": [],
-					"seed": 1954200,
+					"seed": 2507900,
 					"overrideTilesetUid": null,
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "Anchor",
-							"__grid": [0,0],
+							"__identifier": "Choice",
+							"__grid": [1,1],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
-							"__smartColor": "#D77643",
-							"iid": "615c0820-5e50-11f0-8250-ad975cecc79c",
+							"__smartColor": "#BE4A2F",
+							"iid": "64298d90-5e50-11f0-afc8-1d464673c0b0",
 							"width": 16,
 							"height": 16,
-							"defUid": 8,
-							"px": [0,0],
-							"fieldInstances": [],
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Say 'Yes' and take the card", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Say 'Yes' and take the card"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e",
+									"layerIid": "514ac911-5e50-11f0-afc8-579c240d94f6",
+									"levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "She smiles, leans in close and tucks the card into your shirt pocket. 'I hope to see you there.' she says as she gets up exits the bus. She gives you a wave as the bus pulls away.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"She smiles, leans in close and tucks the card into your shirt pocket. 'I hope to see you there.' she says as she gets up exits the bus. She gives you a wave as the bus pulls away."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
 							"__worldX": 112,
-							"__worldY": 0
+							"__worldY": 112
 						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "654f8970-5e50-11f0-8250-bb30d9bb0363",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,16],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Go to the Foyer", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Go to the Foyer"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ab6cbe40-5e50-11f0-9b7d-d17b0d908e93",
-									"layerIid": "c95a9900-5e50-11f0-9b7d-539f7f904b40",
-									"levelIid": "550818d0-5e50-11f0-9b7d-db7287efb6a6",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
-								}] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": 144,
-							"__worldY": 16
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "c85336f0-5e50-11f0-8388-395918d8562b",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,32],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
-								{ "__identifier": "text", "__type": "String", "__value": "A very hungry looking dog is staring at you.", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["A very hungry looking dog is staring at you."]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": 144,
-							"__worldY": 32
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,3],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "0158fe30-5e50-11f0-8388-cd38aa258879",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,48],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Feed the dog your steak.", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Feed the dog your steak."]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The dog ate the steak and wagged his tail.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["The dog ate the steak and wagged his tail."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["steak=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["steak=1"]
-								}] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["steak=0"], "__tile": null, "defUid": 13, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["steak=0"]
-								}] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": 144,
-							"__worldY": 48
-						}
-					]
-				}
-			],
-			"__neighbours": []
-		},
-		{
-			"identifier": "Kitchen",
-			"iid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-			"uid": 16,
-			"worldX": -96,
-			"worldY": 0,
-			"worldDepth": 0,
-			"pxWid": 64,
-			"pxHei": 64,
-			"__bgColor": "#696A79",
-			"bgColor": null,
-			"useAutoIdentifier": false,
-			"bgRelPath": null,
-			"bgPos": null,
-			"bgPivotX": 0.5,
-			"bgPivotY": 0.5,
-			"__smartColor": "#ADADB5",
-			"__bgPos": null,
-			"externalRelPath": null,
-			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Kitchen", "__tile": null, "defUid": 1, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["The Kitchen"]
-				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You are standing in the kitchen. The chef is cooking something..", "__tile": null, "defUid": 2, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["You are standing in the kitchen. The chef is cooking something.."]
-				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
-			],
-			"layerInstances": [
-				{
-					"__identifier": "Entities",
-					"__type": "Entities",
-					"__cWid": 4,
-					"__cHei": 4,
-					"__gridSize": 16,
-					"__opacity": 1,
-					"__pxTotalOffsetX": 0,
-					"__pxTotalOffsetY": 0,
-					"__tilesetDefUid": null,
-					"__tilesetRelPath": null,
-					"iid": "51533c71-5e50-11f0-8388-3fb69682d131",
-					"levelId": 16,
-					"layerDefUid": 14,
-					"pxOffsetX": 0,
-					"pxOffsetY": 0,
-					"visible": true,
-					"optionalRules": [],
-					"intGridCsv": [],
-					"autoLayerTiles": [],
-					"seed": 4767801,
-					"overrideTilesetUid": null,
-					"gridTiles": [],
-					"entityInstances": [
 						{
 							"__identifier": "Anchor",
 							"__grid": [0,0],
@@ -1241,442 +1084,72 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
+							"iid": "732af400-5e50-11f0-afc8-09aeb556f40f",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": -96,
-							"__worldY": 0
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "29b537d0-5e50-11f0-8388-81517f1acfd9",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,32],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Go to the foyer", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Go to the foyer"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ab6cbe40-5e50-11f0-9b7d-d17b0d908e93",
-									"layerIid": "c95a9900-5e50-11f0-9b7d-539f7f904b40",
-									"levelIid": "550818d0-5e50-11f0-9b7d-db7287efb6a6",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
-								}] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": -64,
-							"__worldY": 32
-						}
-					]
-				}
-			],
-			"__neighbours": []
-		},
-		{
-			"identifier": "Chef",
-			"iid": "a1d98e10-5e50-11f0-8388-6fe5a60e091b",
-			"uid": 17,
-			"worldX": -192,
-			"worldY": 0,
-			"worldDepth": 0,
-			"pxWid": 64,
-			"pxHei": 64,
-			"__bgColor": "#696A79",
-			"bgColor": null,
-			"useAutoIdentifier": false,
-			"bgRelPath": null,
-			"bgPos": null,
-			"bgPivotX": 0.5,
-			"bgPivotY": 0.5,
-			"__smartColor": "#ADADB5",
-			"__bgPos": null,
-			"externalRelPath": null,
-			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Chef", "__tile": null, "defUid": 1, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["The Chef"]
-				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "The chef is awaiting your order.", "__tile": null, "defUid": 2, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["The chef is awaiting your order."]
-				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["Person"]
-				}] }
-			],
-			"layerInstances": [
-				{
-					"__identifier": "Entities",
-					"__type": "Entities",
-					"__cWid": 4,
-					"__cHei": 4,
-					"__gridSize": 16,
-					"__opacity": 1,
-					"__pxTotalOffsetX": 0,
-					"__pxTotalOffsetY": 0,
-					"__tilesetDefUid": null,
-					"__tilesetRelPath": null,
-					"iid": "a1d98e11-5e50-11f0-8388-bb31805f05c6",
-					"levelId": 17,
-					"layerDefUid": 14,
-					"pxOffsetX": 0,
-					"pxOffsetY": 0,
-					"visible": true,
-					"optionalRules": [],
-					"intGridCsv": [],
-					"autoLayerTiles": [],
-					"seed": 3557567,
-					"overrideTilesetUid": null,
-					"gridTiles": [],
-					"entityInstances": [
-						{
-							"__identifier": "Choice",
-							"__grid": [2,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "d32ecc00-5e50-11f0-8388-eb68d82d5d6d",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,32],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Order the steak", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Order the steak"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [null] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": "The chef makes you a steak.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["The chef makes you a steak."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["steak=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["steak=0"]
-								}] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["steak=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["steak=1"]
-								}] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 10, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [10] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 32, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] }
-							],
-							"__worldX": -160,
-							"__worldY": 32
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,3],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "f69b6680-5e50-11f0-8388-610e381b518b",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,48],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Order some pasta", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Order some pasta"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The chef recommends the steak instead.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["The chef recommends the steak instead."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 32, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] }
-							],
-							"__worldX": -160,
-							"__worldY": 48
-						},
-						{
-							"__identifier": "TimeEntry",
-							"__grid": [0,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "a91c4180-5e50-11f0-b7cf-51d6e5d55dc2",
-							"width": 16,
-							"height": 16,
-							"defUid": 25,
-							"px": [0,16],
-							"fieldInstances": [
-								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
-								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
-								{ "__identifier": "room", "__type": "EntityRef", "__value": {
-									"entityIid": "615c0820-5e50-11f0-8250-ad975cecc79c",
-									"layerIid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
-									"levelIid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 28, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
-								}] }
-							],
-							"__worldX": -192,
-							"__worldY": 16
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "e48212a0-5e50-11f0-b7cf-a75de4cbf812",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,16],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Tell him you would like some food.", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Tell him you would like some food."]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": "He tells you to meet him in the kitchen.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["He tells you to meet him in the kitchen."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 31, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": {
-									"entityIid": "615c0820-5e50-11f0-8250-ad975cecc79c",
-									"layerIid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
-									"levelIid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 32, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
-								}] }
-							],
-							"__worldX": -160,
-							"__worldY": 16
-						}
-					]
-				}
-			],
-			"__neighbours": [{ "levelIid": "77de3640-5e50-11f0-b7cf-9b522d745645", "dir": "s" }]
-		},
-		{
-			"identifier": "Hungry_Guy",
-			"iid": "77de3640-5e50-11f0-b7cf-9b522d745645",
-			"uid": 29,
-			"worldX": -192,
-			"worldY": 64,
-			"worldDepth": 0,
-			"pxWid": 64,
-			"pxHei": 64,
-			"__bgColor": "#696A79",
-			"bgColor": null,
-			"useAutoIdentifier": false,
-			"bgRelPath": null,
-			"bgPos": null,
-			"bgPivotX": 0.5,
-			"bgPivotY": 0.5,
-			"__smartColor": "#ADADB5",
-			"__bgPos": null,
-			"externalRelPath": null,
-			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "Hungry Guy", "__tile": null, "defUid": 1, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["Hungry Guy"]
-				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "Some guy is chowing down on some food.", "__tile": null, "defUid": 2, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["Some guy is chowing down on some food."]
-				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["Person"]
-				}] }
-			],
-			"layerInstances": [
-				{
-					"__identifier": "Entities",
-					"__type": "Entities",
-					"__cWid": 4,
-					"__cHei": 4,
-					"__gridSize": 16,
-					"__opacity": 1,
-					"__pxTotalOffsetX": 0,
-					"__pxTotalOffsetY": 0,
-					"__tilesetDefUid": null,
-					"__tilesetRelPath": null,
-					"iid": "77de3641-5e50-11f0-b7cf-2f7001451212",
-					"levelId": 29,
-					"layerDefUid": 14,
-					"pxOffsetX": 0,
-					"pxOffsetY": 0,
-					"visible": true,
-					"optionalRules": [],
-					"intGridCsv": [],
-					"autoLayerTiles": [],
-					"seed": 3557567,
-					"overrideTilesetUid": null,
-					"gridTiles": [],
-					"entityInstances": [
-						{
-							"__identifier": "Choice",
-							"__grid": [2,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "77de8460-5e50-11f0-b7cf-db36bb6377bb",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,32],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Ask him how his food is.", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Ask him how his food is."]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [null] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": "The guy just grunts at you and returns to eating.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["The guy just grunts at you and returns to eating."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 1, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": -160,
+							"__worldX": 96,
 							"__worldY": 96
 						},
 						{
-							"__identifier": "TimeEntry",
-							"__grid": [0,1],
+							"__identifier": "Choice",
+							"__grid": [1,2],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "77deab71-5e50-11f0-b7cf-a37a828e2463",
+							"__smartColor": "#BE4A2F",
+							"iid": "8c14ab50-5e50-11f0-afc8-5b4e4c4097f7",
 							"width": 16,
 							"height": 16,
-							"defUid": 25,
-							"px": [0,16],
+							"defUid": 3,
+							"px": [16,32],
 							"fieldInstances": [
-								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
-								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
-								{ "__identifier": "room", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 28, "realEditorValues": [{
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Say 'No, but thanks'", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] }
+									"params": ["Say 'No, but thanks'"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
+									"layerIid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
+									"levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Well, thanks for commiserating with me. I'll see you around', and she gets off at her stop.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Well, thanks for commiserating with me. I'll see you around', and she gets off at her stop."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": -192,
-							"__worldY": 80
+							"__worldX": 112,
+							"__worldY": 128
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "a1d98e10-5e50-11f0-8388-6fe5a60e091b", "dir": "n" }, { "levelIid": "2f462bb0-5e50-11f0-b7cf-a5ab33646b56", "dir": "s" } ]
+			"__neighbours": []
 		},
 		{
-			"identifier": "Hippy_Chick",
-			"iid": "2f462bb0-5e50-11f0-b7cf-a5ab33646b56",
-			"uid": 33,
-			"worldX": -192,
-			"worldY": 128,
+			"identifier": "Apartment_No",
+			"iid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
+			"uid": 36,
+			"worldX": 96,
+			"worldY": 176,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1691,19 +1164,18 @@
 			"__bgPos": null,
 			"externalRelPath": null,
 			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Hippy Chick", "__tile": null, "defUid": 1, "realEditorValues": [{
+				{ "__identifier": "name", "__type": "String", "__value": "Your Apartment", "__tile": null, "defUid": 1, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["The Hippy Chick"]
+					"params": ["Your Apartment"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "A girl wearing a tie dye shirt is swaying to the music", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. 'What was I thinking?' you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. 'Guess its just the gym tonight.' you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["A girl wearing a tie dye shirt is swaying to the music"]
+					"params": [
+						"You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. 'What was I thinking?' you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. 'Guess its just the gym tonight.' you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor."
+					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["Person"]
-				}] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1717,8 +1189,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "2f462bb1-5e50-11f0-b7cf-bdd950be7e2b",
-					"levelId": 33,
+					"iid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
+					"levelId": 36,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -1726,156 +1198,280 @@
 					"optionalRules": [],
 					"intGridCsv": [],
 					"autoLayerTiles": [],
-					"seed": 4359902,
+					"seed": 9338497,
 					"overrideTilesetUid": null,
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "TimeEntry",
-							"__grid": [0,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "977ffe90-5e50-11f0-b7cf-45ca6042f809",
-							"width": 16,
-							"height": 16,
-							"defUid": 25,
-							"px": [0,16],
-							"fieldInstances": [
-								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
-								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
-								{ "__identifier": "room", "__type": "EntityRef", "__value": {
-									"entityIid": "8fa97cf0-5e50-11f0-8388-39044bf4e405",
-									"layerIid": "51533c71-5e50-11f0-8388-3fb69682d131",
-									"levelIid": "51533c70-5e50-11f0-8388-3f0d1215eee9",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 28, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["8fa97cf0-5e50-11f0-8388-39044bf4e405"]
-								}] }
-							],
-							"__worldX": -192,
-							"__worldY": 144
-						},
-						{
-							"__identifier": "TimeEntry",
-							"__grid": [0,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "b44ce380-5e50-11f0-b7cf-879b47f38f41",
-							"width": 16,
-							"height": 16,
-							"defUid": 25,
-							"px": [0,32],
-							"fieldInstances": [
-								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
-								{ "__identifier": "minute", "__type": "Int", "__value": 1, "__tile": null, "defUid": 27, "realEditorValues": [{ "id": "V_Int", "params": [1] }] },
-								{ "__identifier": "room", "__type": "EntityRef", "__value": {
-									"entityIid": "ab6cbe40-5e50-11f0-9b7d-d17b0d908e93",
-									"layerIid": "c95a9900-5e50-11f0-9b7d-539f7f904b40",
-									"levelIid": "550818d0-5e50-11f0-9b7d-db7287efb6a6",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 28, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["ab6cbe40-5e50-11f0-9b7d-d17b0d908e93"]
-								}] }
-							],
-							"__worldX": -192,
-							"__worldY": 160
-						},
-						{
 							"__identifier": "Choice",
-							"__grid": [2,1],
+							"__grid": [1,1],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c4948590-5e50-11f0-b7cf-b3aac27318eb",
+							"iid": "f3a286c0-5e50-11f0-afc8-038303b55d9e",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
-							"px": [32,16],
+							"px": [16,16],
 							"fieldInstances": [
 								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Ask her where the dog is", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Pick up the card.", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Ask her where the dog is"]
+									"params": ["Pick up the card."]
 								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "result", "__type": "String", "__value": "She says the dog is in the living room. She says she'll meet you there.", "__tile": null, "defUid": 10, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["She says the dog is in the living room. She says she'll meet you there."]
-								}] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["askDog=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["askDog=0"]
-								}] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["askDog=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["askDog=1"]
-								}] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [{ "id": "V_Int", "params": [0] }] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": {
-									"entityIid": "615c0820-5e50-11f0-8250-ad975cecc79c",
-									"layerIid": "fb285061-5e50-11f0-9b7d-ebd85d90427c",
-									"levelIid": "fb285060-5e50-11f0-9b7d-b51ac1317c15",
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "1e202450-5e50-11f0-afc8-49f983e1f25b",
+									"layerIid": "860c8ff0-5e50-11f0-afc8-473a2d97054a",
+									"levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 31, "realEditorValues": [{
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["615c0820-5e50-11f0-8250-ad975cecc79c"]
+									"params": ["1e202450-5e50-11f0-afc8-49f983e1f25b"]
 								}] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
-							],
-							"__worldX": -160,
-							"__worldY": 144
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [2,2],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "548d9c80-5e50-11f0-b7cf-b93895272318",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [32,32],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
-								{ "__identifier": "text", "__type": "String", "__value": "She says \"See! I told you the dog was in here!\"", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["She says \"See! I told you the dog was in here!\""]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["askDog=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["askDog=1"]
+									"params": [
+										"You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'."
+									]
 								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
 								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": -160,
-							"__worldY": 160
+							"__worldX": 112,
+							"__worldY": 192
+						},
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 96,
+							"__worldY": 176
 						}
 					]
 				}
 			],
-			"__neighbours": [{ "levelIid": "77de3640-5e50-11f0-b7cf-9b522d745645", "dir": "n" }]
+			"__neighbours": []
+		},
+		{
+			"identifier": "Apartment_Card",
+			"iid": "860c68e0-5e50-11f0-afc8-21882fbdeb79",
+			"uid": 37,
+			"worldX": 96,
+			"worldY": 256,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Your Apartment", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Your Apartment"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You twirl the card around in your hand looking at it. The 'if you can' part staring at you like a challenge. 'What does that mean?' you wonder aloud to yourself. You chuckle and say 'Well, I've got nothing better to do.' and start picking out some clothes for the party.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You twirl the card around in your hand looking at it. The 'if you can' part staring at you like a challenge. 'What does that mean?' you wonder aloud to yourself. You chuckle and say 'Well, I've got nothing better to do.' and start picking out some clothes for the party."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "860c8ff0-5e50-11f0-afc8-473a2d97054a",
+					"levelId": 37,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 7467090,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "1e202450-5e50-11f0-afc8-49f983e1f25b",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 96,
+							"__worldY": 256
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
+			"identifier": "Apartment_Yes",
+			"iid": "514ac910-5e50-11f0-afc8-63eefef4d67f",
+			"uid": 38,
+			"worldX": 176,
+			"worldY": 176,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Your Apartment", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Your Apartment"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You lie down on your bed and think about the girl from the bus. There was something surreal about her.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You lie down on your bed and think about the girl from the bus. There was something surreal about her."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "514ac911-5e50-11f0-afc8-579c240d94f6",
+					"levelId": 38,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 8031363,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 176,
+							"__worldY": 176
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "0e1d4180-5e50-11f0-afc8-c1694c6ae11b",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Look at the card", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Look at the card"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "1e202450-5e50-11f0-afc8-49f983e1f25b",
+									"layerIid": "860c8ff0-5e50-11f0-afc8-473a2d97054a",
+									"levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["1e202450-5e50-11f0-afc8-49f983e1f25b"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 192,
+							"__worldY": 192
+						}
+					]
+				}
+			],
+			"__neighbours": []
 		}
 	],
 	"worlds": [],
