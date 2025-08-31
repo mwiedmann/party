@@ -1,8 +1,8 @@
-const fs = require("fs");
-const { text } = require("stream/consumers");
+const fs = require("fs")
+const { text } = require("stream/consumers")
 
-const rawText = fs.readFileSync("gfx/party.ldtk");
-const ldtk = JSON.parse(rawText);
+const rawText = fs.readFileSync("gfx/party.ldtk")
+const ldtk = JSON.parse(rawText)
 
 /*
 typedef struct Criteria {
@@ -58,13 +58,13 @@ const visualTypeValues = {
 }
 
 const gameState = {}
-let gameStateIndex = 2; // 0 is ignored, 1 is always true
+let gameStateIndex = 2 // 0 is ignored, 1 is always true
 
 const getGameStateIndex = (id) => {
-  if (gameState[id] !== undefined) return gameState[id];
+  if (gameState[id] !== undefined) return gameState[id]
 
-  gameState[id] = gameStateIndex++;
-  return gameState[id];
+  gameState[id] = gameStateIndex++
+  return gameState[id]
 }
 
 const levelData = {}
@@ -77,70 +77,72 @@ ldtk.levels.forEach((level, index) => {
 })
 
 const visuals = ldtk.levels.map((level) => {
-  let stringOffset = 1;
+  let stringOffset = 1
   const stringData = []
-  let currentString;
+  let currentString
 
+  const start = visualTypeValues[level.fieldInstances.find(f => f.__identifier === "start")?.__value]
+  
   const visualType = visualTypeValues[level.fieldInstances.find(f => f.__identifier === "visualType")?.__value]
   if (visualType === undefined) {
-    throw new Error(`Missing visualType for level ${level.iid}`);
+    throw new Error(`Missing visualType for level ${level.iid}`)
   }
 
   currentString=level.fieldInstances.find(f => f.__identifier === "name")?.__value
   if (!currentString) {
-    throw new Error(`Missing name for level ${level.iid}`);
+    throw new Error(`Missing name for level ${level.iid}`)
   }
   const nameStringOffset = stringOffset
-  stringOffset += currentString.length + 1; // +1 for null terminator
-  stringData.push(currentString);
+  stringOffset += currentString.length + 1 // +1 for null terminator
+  stringData.push(currentString)
   
   currentString=level.fieldInstances.find(f => f.__identifier === "text")?.__value
   if (!currentString) {
-    throw new Error(`Missing text for level ${level.iid}`);
+    throw new Error(`Missing text for level ${level.iid}`)
   }
   const textStringOffset = stringOffset
-  stringOffset += currentString.length + 1; // +1 for null terminator
+  stringOffset += currentString.length + 1 // +1 for null terminator
   stringData.push(currentString);
 
   currentString=level.fieldInstances.find(f => f.__identifier === "image")?.__value
-  let imageStringOffset = 0;
+  let imageStringOffset = 0
   if (currentString) {
     imageStringOffset = stringOffset
-    stringOffset += currentString.length + 1; // +1 for null terminator
-    stringData.push(currentString);
+    stringOffset += currentString.length + 1 // +1 for null terminator
+    stringData.push(currentString)
   }
 
   const choices = level.layerInstances[0].entityInstances.filter(l => l.__identifier === "Choice").map((c) => {
     const transitionBackToRoom = Boolean(c.fieldInstances.find(f => f.__identifier === "transitionBackToRoom")?.__value)
 
     const transition= c.fieldInstances.find(f => f.__identifier === "transition")?.__value?.levelIid
-    const transitionVisualId = transitionBackToRoom ? 32767 :transition ? levelData[transition].index : 0;
+    const transitionVisualId = transitionBackToRoom ? 32767 :transition ? levelData[transition].index : 0
     
     const criteriaText = c.fieldInstances.find(f => f.__identifier === "criteria").__value
 
     currentString=c.fieldInstances.find(f => f.__identifier === "text")?.__value
     if (!currentString) {
-      throw new Error(`Missing text for choice ${c.iid}`);
+      throw new Error(`Missing text for choice ${c.iid}`)
     }
     const textStringOffset = stringOffset
-    stringOffset += currentString.length + 1; // +1 for null terminator
-    stringData.push(currentString);
+    stringOffset += currentString.length + 1 // +1 for null terminator
+    stringData.push(currentString)
 
     currentString=c.fieldInstances.find(f => f.__identifier === "result")?.__value
-    let resultStringOffset = 0;
+    let resultStringOffset = 0
     if (currentString) {
       resultStringOffset = stringOffset
-      stringOffset += currentString.length + 1; // +1 for null terminator
-      stringData.push(currentString);
+      stringOffset += currentString.length + 1 // +1 for null terminator
+      stringData.push(currentString)
     }
     
-    let personRoomId = c.fieldInstances.find(f => f.__identifier === "personRoom").__value?.levelIid;
-    personRoomId = personRoomId ? levelData[personRoomId].index : 0;
+    let personRoomId = c.fieldInstances.find(f => f.__identifier === "personRoom").__value?.levelIid
+    personRoomId = personRoomId ? levelData[personRoomId].index : 0
     
-    let criteriaRoomId = c.fieldInstances.find(f => f.__identifier === "criteriaRoom").__value?.levelIid;
-    criteriaRoomId = criteriaRoomId ? levelData[criteriaRoomId].index : 0;
+    let criteriaRoomId = c.fieldInstances.find(f => f.__identifier === "criteriaRoom").__value?.levelIid
+    criteriaRoomId = criteriaRoomId ? levelData[criteriaRoomId].index : 0
 
-    let minutes = c.fieldInstances.find(f => f.__identifier === "minutes").__value;
+    let minutes = c.fieldInstances.find(f => f.__identifier === "minutes").__value
 
     const choice = {
       canSelect: c.fieldInstances.find(f => f.__identifier === "canSelect")?.__value ? 1 : 0,
@@ -164,10 +166,10 @@ const visuals = ldtk.levels.map((level) => {
           value: parseInt(parts[1], 10)
         }
       })
-    };
+    }
 
     return choice
-  });
+  })
 
   const timeEntries = level.layerInstances[0].entityInstances.filter(l => l.__identifier === "TimeEntry").map((c) => {
     const hour = c.fieldInstances.find(f => f.__identifier === "hour")?.__value
@@ -183,6 +185,7 @@ const visuals = ldtk.levels.map((level) => {
 
   return {
     data:{
+      start,
       visualType,
       nameStringOffset,
       textStringOffset,
@@ -194,9 +197,11 @@ const visuals = ldtk.levels.map((level) => {
   }
 })
 
+//visuals.sort((a,b)=> a.start?-1:1 - b.start?-1:1)
+
 const emptyCriteria = () =>({ id: 0, value: 0 })
 
-const emptyStateChange = () =>({ id: 0, value: 0 });
+const emptyStateChange = () =>({ id: 0, value: 0 })
 const emptyChoice = () => ({
   canSelect: 0,
   textStringOffset: 0,
@@ -225,39 +230,39 @@ const emptyTimeEntry = () => ({
 
 const fullVisual = (v) => {
   const fullV = emptyVisual()
-  fullV.visualType = v.visualType || 0;
-  fullV.nameStringOffset = v.nameStringOffset || 0;
-  fullV.textStringOffset = v.textStringOffset || 0;
-  fullV.imageStringOffset = v.imageStringOffset || 0;
+  fullV.visualType = v.visualType || 0
+  fullV.nameStringOffset = v.nameStringOffset || 0
+  fullV.textStringOffset = v.textStringOffset || 0
+  fullV.imageStringOffset = v.imageStringOffset || 0
 
   v.choices?.forEach((c, i) => {
-    fullV.choices[i].canSelect = c.canSelect || 0;
-    fullV.choices[i].textStringOffset = c.textStringOffset || 0;
-    fullV.choices[i].transitionVisualId = c.transitionVisualId || 0;
-    fullV.choices[i].resultStringOffset = c.resultStringOffset || 0;
-    fullV.choices[i].personRoomId = c.personRoomId || 0;
-    fullV.choices[i].minutes = c.minutes || 0;
-    fullV.choices[i].criteriaRoomId = c.criteriaRoomId || 0;
+    fullV.choices[i].canSelect = c.canSelect || 0
+    fullV.choices[i].textStringOffset = c.textStringOffset || 0
+    fullV.choices[i].transitionVisualId = c.transitionVisualId || 0
+    fullV.choices[i].resultStringOffset = c.resultStringOffset || 0
+    fullV.choices[i].personRoomId = c.personRoomId || 0
+    fullV.choices[i].minutes = c.minutes || 0
+    fullV.choices[i].criteriaRoomId = c.criteriaRoomId || 0
     c.criteria?.forEach((cr, ci) => {
-      fullV.choices[i].criteria[ci].id = cr.id || 0;
-      fullV.choices[i].criteria[ci].value = cr.value || 0;
-    });
+      fullV.choices[i].criteria[ci].id = cr.id || 0
+      fullV.choices[i].criteria[ci].value = cr.value || 0
+    })
     c.stateChanges?.forEach((sc, sci) => {
-      fullV.choices[i].stateChanges[sci].id = sc.id || 0;
-      fullV.choices[i].stateChanges[sci].value = sc.value || 0;
-    });
-  });
+      fullV.choices[i].stateChanges[sci].id = sc.id || 0
+      fullV.choices[i].stateChanges[sci].value = sc.value || 0
+    })
+  })
 
   fullV.timeEntries = v.timeEntries
 
-  return fullV;
+  return fullV
 }
 
 const fullVisuals = [...visuals.map(v => ({
     data: fullVisual(v.data),
     stringData: v.stringData
   })
-)];
+)]
 
 const personsFileData = []
 
@@ -271,42 +276,42 @@ fullVisuals.forEach((vdata,i) => {
   const filedata = []
 
   // visualType, nameStringOffset, textStringOffset, imageStringOffset
-  filedata.push(v.visualType, lowByte(v.nameStringOffset), highByte(v.nameStringOffset), lowByte(v.textStringOffset), highByte(v.textStringOffset),lowByte(v.imageStringOffset), highByte(v.imageStringOffset));
+  filedata.push(v.visualType, lowByte(v.nameStringOffset), highByte(v.nameStringOffset), lowByte(v.textStringOffset), highByte(v.textStringOffset),lowByte(v.imageStringOffset), highByte(v.imageStringOffset))
 
   v.choices.forEach(c => {
     // canSelect, textStringOffset, transitionVisualId, resultStringOffset, roomId
-    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset), lowByte(c.personRoomId), highByte(c.personRoomId), c.minutes, lowByte(c.criteriaRoomId), highByte(c.criteriaRoomId));
+    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset), lowByte(c.personRoomId), highByte(c.personRoomId), c.minutes, lowByte(c.criteriaRoomId), highByte(c.criteriaRoomId))
 
     c.criteria.forEach(cr => {
       // id, value
-      filedata.push(cr.id, cr.value);
-    });
+      filedata.push(cr.id, cr.value)
+    })
 
     c.stateChanges.forEach(sc => {
       // id, value
-      filedata.push(sc.id, sc.value);
-    });
-  });
+      filedata.push(sc.id, sc.value)
+    })
+  })
 
-  filedata.push(0); // Start with null to make offsets 1-based
+  filedata.push(0) // Start with null to make offsets 1-based
 
   stringData.forEach(s => {
     for (let i = 0; i < s.length; i++) {
-      let charCode = s.charCodeAt(i);
+      let charCode = s.charCodeAt(i)
       if (charCode >= 97 && charCode <= 122) {
-        charCode -= 32; // Convert to PETSCII
+        charCode -= 32 // Convert to PETSCII
       } else if (charCode >= 65 && charCode <= 90) {
-        charCode += 32; // Convert to PETSCII
+        charCode += 32 // Convert to PETSCII
       }
-      filedata.push(charCode);
+      filedata.push(charCode)
     }
-    filedata.push(0); // Null terminator
-  });
+    filedata.push(0) // Null terminator
+  })
 
   const id=i+1
 
-  output = new Uint8Array(filedata);
-  fs.writeFileSync(`build/VIS${id}.BIN`, output, "binary");
+  output = new Uint8Array(filedata)
+  fs.writeFileSync(`build/VIS${id}.BIN`, output, "binary")
 
   if (v.visualType === 1) { // Person
     const currrentRoom = v.timeEntries.find(t => t.hour===0 && t.minute===0).roomId
@@ -319,6 +324,6 @@ fullVisuals.forEach((vdata,i) => {
     }
   }
 
-  output = new Uint8Array(personsFileData);
-  fs.writeFileSync(`build/TIMETBL.BIN`, output, "binary");
+  output = new Uint8Array(personsFileData)
+  fs.writeFileSync(`build/TIMETBL.BIN`, output, "binary")
 });

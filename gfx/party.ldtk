@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 39,
+	"nextUid": 42,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -824,6 +824,113 @@
 	] },
 	"levels": [
 		{
+			"identifier": "Interview",
+			"iid": "b3444450-8560-11f0-8632-75c7e9aa0865",
+			"uid": 39,
+			"worldX": -160,
+			"worldY": 96,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Interview Aftermath", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Interview Aftermath"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You are standing at a bus stop down town. The dull interview questions still ringing in your mind. \"Why do you want to work here? Where do you see yourself in 5 years?\", and of course \"Tell us about your weaknesses.\". That last on might as well be \"Please give us a reason to not hire you.\". You remember muttering something about working too hard for the last one. The interviewers seemed disinterested the entire time, and honestly, you were fine with it. Based on the general demeanor of everyone you met there, the place seemed soul killing.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You are standing at a bus stop down town. The dull interview questions still ringing in your mind. \"Why do you want to work here? Where do you see yourself in 5 years?\", and of course \"Tell us about your weaknesses.\". That last on might as well be \"Please give us a reason to not hire you.\". You remember muttering something about working too hard for the last one. The interviewers seemed disinterested the entire time, and honestly, you were fine with it. Based on the general demeanor of everyone you met there, the place seemed soul killing."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "busstop", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busstop"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "b3444451-8560-11f0-8632-e9b17b90ddc8",
+					"levelId": 39,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 2425090,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e84c5ba0-8560-11f0-8632-2b9f933c5d89",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "14f2c210-8560-11f0-8632-a987fc4e1d66",
+									"layerIid": "1d2d5861-8560-11f0-8632-936b5c01b72b",
+									"levelIid": "1d2d5860-8560-11f0-8632-eb9df7aa35fc",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["14f2c210-8560-11f0-8632-a987fc4e1d66"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": -144,
+							"__worldY": 112
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
 			"identifier": "Bus",
 			"iid": "ef5294f0-5e50-11f0-afc8-970abbbc0465",
 			"uid": 34,
@@ -847,10 +954,10 @@
 					"id": "V_String",
 					"params": ["The Bus"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of 'what is my place in this world?'. A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says 'You ever had a bad interview? I just had a bad one.'", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says \"You ever had a bad interview? I just had a bad one.\"", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of 'what is my place in this world?'. A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says 'You ever had a bad interview? I just had a bad one.'"
+						"Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says \"You ever had a bad interview? I just had a bad one.\""
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
@@ -953,10 +1060,10 @@
 									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Maybe I'll see you around', and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Maybe I'll see you around', and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off."
+										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -967,6 +1074,22 @@
 							],
 							"__worldX": 16,
 							"__worldY": 128
+						},
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "e4f0fba0-8560-11f0-8632-ed09c613cb6b",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 0,
+							"__worldY": 96
 						}
 					]
 				}
@@ -997,10 +1120,10 @@
 					"id": "V_String",
 					"params": ["The Bus Girl"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says 'Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are connected.'. She uses air quotes and rolls her eyes as she says 'connected'. She says her friend got her two invites. She holds out a small card and says 'Interested?`", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says \"Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are 'connected'.\" She uses air quotes and rolls her eyes as she says \"connected\". She says her friend got her two invites. She holds out a small card and says \"Interested?\"", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says 'Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are connected.'. She uses air quotes and rolls her eyes as she says 'connected'. She says her friend got her two invites. She holds out a small card and says 'Interested?`"
+						"You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says \"Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are 'connected'.\" She uses air quotes and rolls her eyes as she says \"connected\". She says her friend got her two invites. She holds out a small card and says \"Interested?\""
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
@@ -1048,9 +1171,9 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Say 'Yes' and take the card", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Say \"Yes\" and take the card", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Say 'Yes' and take the card"]
+									"params": ["Say \"Yes\" and take the card"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
 									"entityIid": "0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e",
@@ -1062,10 +1185,10 @@
 									"params": ["0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "She smiles, leans in close and tucks the card into your shirt pocket. 'I hope to see you there.' she says as she gets up exits the bus. She gives you a wave as the bus pulls away.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus. She gives you a wave as the bus pulls away.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"She smiles, leans in close and tucks the card into your shirt pocket. 'I hope to see you there.' she says as she gets up exits the bus. She gives you a wave as the bus pulls away."
+										"She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus. She gives you a wave as the bus pulls away."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1110,9 +1233,9 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Say 'No, but thanks'", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Say \"No, but thanks\"", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Say 'No, but thanks'"]
+									"params": ["Say \"No, but thanks\""]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
 									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
@@ -1124,10 +1247,10 @@
 									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Well, thanks for commiserating with me. I'll see you around', and she gets off at her stop.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Well, thanks for commiserating with me. I'll see you around.\", and she gets off at her stop.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says 'Well, thanks for commiserating with me. I'll see you around', and she gets off at her stop."
+										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Well, thanks for commiserating with me. I'll see you around.\", and she gets off at her stop."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1168,10 +1291,10 @@
 					"id": "V_String",
 					"params": ["Your Apartment"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. 'What was I thinking?' you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. 'Guess its just the gym tonight.' you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. \"What was I thinking?\" you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. \"Guess its just the gym tonight.\" you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. 'What was I thinking?' you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. 'Guess its just the gym tonight.' you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor."
+						"You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. \"What was I thinking?\" you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. \"Guess its just the gym tonight.\" you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor."
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
@@ -1233,10 +1356,10 @@
 									"params": ["1e202450-5e50-11f0-afc8-49f983e1f25b"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words \"The Party\" above it. Written on the back it says \"Meet me in The Lounge, if you can find it. - M\".", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'."
+										"You reach down and pick up the card. It looks like a printed business card. It has an address on it and the words \"The Party\" above it. Written on the back it says \"Meet me in The Lounge, if you can find it. - M\"."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1293,10 +1416,10 @@
 					"id": "V_String",
 					"params": ["Your Apartment"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You twirl the card around in your hand looking at it. The 'if you can' part staring at you like a challenge. 'What does that mean?' you wonder aloud to yourself. You chuckle and say 'Well, I've got nothing better to do.' and start picking out some clothes for the party.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You twirl the card around in your hand looking at it. The \"if you can\" part staring at you like a challenge. \"What does that mean?\" you wonder aloud to yourself. You chuckle and say \"Well, I've got nothing better to do.\" and start picking out some clothes for the party.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"You twirl the card around in your hand looking at it. The 'if you can' part staring at you like a challenge. 'What does that mean?' you wonder aloud to yourself. You chuckle and say 'Well, I've got nothing better to do.' and start picking out some clothes for the party."
+						"You twirl the card around in your hand looking at it. The \"if you can\" part staring at you like a challenge. \"What does that mean?\" you wonder aloud to yourself. You chuckle and say \"Well, I've got nothing better to do.\" and start picking out some clothes for the party."
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
@@ -1453,10 +1576,10 @@
 									"params": ["1e202450-5e50-11f0-afc8-49f983e1f25b"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words \"The Party\" above it. Written on the back it says \"Meet me in The Lounge, if you can find it. - M\".", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words 'The Party' above it. Written on the back it says 'Meet me in The Lounge, if you can find it. - M'."
+										"You reach into your shirt pocket and pull out the card. It looks like a printed business card. It has an address on it and the words \"The Party\" above it. Written on the back it says \"Meet me in The Lounge, if you can find it. - M\"."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1467,6 +1590,126 @@
 							],
 							"__worldX": 192,
 							"__worldY": 192
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
+			"identifier": "The_Interview_2",
+			"iid": "1d2d5860-8560-11f0-8632-eb9df7aa35fc",
+			"uid": 40,
+			"worldX": -80,
+			"worldY": 96,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Canceled", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Canceled"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You check your watch and see you have 30 mins before your last interview today. One of your professors hooked you up with this one. He was pretty vague about what they did. You got the impression it was a non-profit. Probably means the pay is shit and people only stay for a year or two until they find something better. As you look up the address, you get a text from their recruiter that the interview is canceled. No explanation. \"Just as well.\", you say, \"I have student loans to pay off.\". The bus pulls up, you sigh, and hop on.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You check your watch and see you have 30 mins before your last interview today. One of your professors hooked you up with this one. He was pretty vague about what they did. You got the impression it was a non-profit. Probably means the pay is shit and people only stay for a year or two until they find something better. As you look up the address, you get a text from their recruiter that the interview is canceled. No explanation. \"Just as well.\", you say, \"I have student loans to pay off.\". The bus pulls up, you sigh, and hop on."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "1d2d5861-8560-11f0-8632-936b5c01b72b",
+					"levelId": 40,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 6002689,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "14f2c210-8560-11f0-8632-a987fc4e1d66",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": -80,
+							"__worldY": 96
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "2d79bff0-8560-11f0-8632-5138fe0abdce",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "e4f0fba0-8560-11f0-8632-ed09c613cb6b",
+									"layerIid": "ef5294f1-5e50-11f0-afc8-b78c49c041bb",
+									"levelIid": "ef5294f0-5e50-11f0-afc8-970abbbc0465",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["e4f0fba0-8560-11f0-8632-ed09c613cb6b"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": -64,
+							"__worldY": 112
 						}
 					]
 				}

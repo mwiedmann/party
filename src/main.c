@@ -286,7 +286,7 @@ void main() {
 
         // Print the room name
         printWordWrapped(getString(currentVisual.nameStringOffset, &currentVisual));
-        cursorY++;
+        cursorY+=2;
         cursorX=0;
 
         // Print the room description
