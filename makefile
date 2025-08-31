@@ -3,7 +3,7 @@ EMU=../../x16emur47/x16emu
 
 make:
 	$(CC) --cpu 65SC02 -Or -Cl -o ./build/PARTY.PRG -t cx16 \
-	src/main.c src/utils.c
+	src/globals.c src/config.c src/utils.c src/main.c 
 
 run:
 	cd build && \

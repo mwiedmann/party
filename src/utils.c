@@ -1,4 +1,8 @@
 #include <cx16.h>
+#include <cbm.h>
+#include <stdio.h>
+
+#include "globals.h"
 
 void printString(char *str, unsigned char *x, unsigned char *y) {
     unsigned short offset;
@@ -34,3 +38,119 @@ void printString(char *str, unsigned char *x, unsigned char *y) {
         }
     }
 }
+
+char * getString(unsigned short offset, Visual *visual) {
+  return &visual->stringData[offset];
+}
+
+void printWordWrapped(char *text) {
+    int i, t;
+    char *wordStart;
+    int wordLen;
+    char word[81]; // Max word length
+
+    t=0;
+    while (text[t]) {
+        // Skip spaces and print them
+        while (text[t] == ' ') {
+            if (cursorX == 0) {
+                // Skip these at beginning of line
+            } else if (cursorX >= SCREEN_WIDTH - 1) {
+                cursorX = 0;
+                cursorY++;
+            } else {
+                cursorX++;
+            }
+            t++;
+        }
+
+        // Find word length
+        wordStart = text+t;
+        wordLen = 0;
+        while (text[t] && text[t] != ' ' && text[t] != '\n') {
+            if (wordLen < 80) {
+                word[wordLen++] = text[t];
+            }
+            t++;
+        }
+        word[wordLen] = '\0';
+
+        // If word doesn't fit, move to next line
+        if (cursorX + wordLen > SCREEN_WIDTH) {
+            cursorX = 0;
+            cursorY++;
+        }
+
+        printString(word+i, &cursorX, &cursorY);
+
+        // Handle newline in input
+        if (text[t] == '\n') {
+            cursorX = 0;
+            cursorY++;
+            t++;
+        }
+    }
+}
+
+void clearImageArea() {
+    unsigned short x,y;
+
+    // Point to layer0 mapbase
+    VERA.address = VERA.layer1.mapbase<<9;
+    VERA.address_hi = 1;
+    // Set the Increment Mode, turn on bit 4
+    VERA.address_hi |= 0b10000;
+
+    for (y=0; y<60; y++) {
+        for (x=0; x<128; x++) {
+            if (y<30) {
+                VERA.data0 = x>=40 ? 32 : 0;
+                VERA.data0 = x>=40 ? 6<<4|1 : 0;
+            } else {
+                VERA.data0 = 32;
+                VERA.data0 = 6<<4|1;
+            }
+        }
+    }
+}
+
+void loadVisual(unsigned short id) {
+    char buf[16];
+
+    sprintf(buf, "vis%u.bin", id);
+
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(0, ((unsigned short)&currentVisual));
+}
+
+void loadPerson(unsigned short id, unsigned char index) {
+    char buf[16];
+
+    sprintf(buf, "vis%u.bin", id);
+
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(0, ((unsigned short)&persons[index]));
+}
+
+void loadTimeTable() {
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam("timetbl.bin");
+	cbm_k_load(0, ((unsigned short)&timeTable));
+}
+
+void loadImage(char * imageName) {
+    char buf[16];
+
+    sprintf(buf, "%s.pal", imageName);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(3, 0x1FA00L);
+
+    sprintf(buf, "%s.bin", imageName);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	cbm_k_load(2, 0);
+}
+
