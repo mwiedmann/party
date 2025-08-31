@@ -1,6 +1,7 @@
 #include <cx16.h>
 #include <cbm.h>
 #include <stdio.h>
+#include <conio.h>
 
 #include "globals.h"
 
@@ -44,22 +45,33 @@ char * getString(unsigned short offset, Visual *visual) {
 }
 
 void printWordWrapped(char *text) {
-    int i, t;
+    int t;
     char *wordStart;
     int wordLen;
     char word[81]; // Max word length
 
     t=0;
     while (text[t]) {
-        // Skip spaces and print them
-        while (text[t] == ' ') {
-            if (cursorX == 0) {
-                // Skip these at beginning of line
-            } else if (cursorX >= SCREEN_WIDTH - 1) {
+        // Handle non-printables
+        while (text[t] == ' ' || text[t] == '\n' || text[t] == '\t') {
+            // Handle newline
+            if (text[t] == '\n') {
                 cursorX = 0;
                 cursorY++;
-            } else {
-                cursorX++;
+            } else if (text[t] == '\t') {  // Tabs
+                cursorX+=2;
+            }
+
+            // Handle spaces   
+            if (text[t] == ' ') {            
+                if (cursorX == 0) {
+                    // Skip these at beginning of line
+                } else if (cursorX >= SCREEN_WIDTH - 1) {
+                    cursorX = 0;
+                    cursorY++;
+                } else {
+                    cursorX++;
+                }
             }
             t++;
         }
@@ -67,7 +79,7 @@ void printWordWrapped(char *text) {
         // Find word length
         wordStart = text+t;
         wordLen = 0;
-        while (text[t] && text[t] != ' ' && text[t] != '\n') {
+        while (text[t] && text[t] != ' ' && text[t] != '\n' && text[t] != '\t') {
             if (wordLen < 80) {
                 word[wordLen++] = text[t];
             }
@@ -81,14 +93,7 @@ void printWordWrapped(char *text) {
             cursorY++;
         }
 
-        printString(word+i, &cursorX, &cursorY);
-
-        // Handle newline in input
-        if (text[t] == '\n') {
-            cursorX = 0;
-            cursorY++;
-            t++;
-        }
+        printString(word, &cursorX, &cursorY);
     }
 }
 

@@ -1,5 +1,4 @@
 const fs = require("fs")
-const { text } = require("stream/consumers")
 
 const rawText = fs.readFileSync("gfx/party.ldtk")
 const ldtk = JSON.parse(rawText)
@@ -81,6 +80,12 @@ const visuals = ldtk.levels.map((level) => {
   const stringData = []
   let currentString
 
+  const addStringData = (str) => {
+    const finalStr=str.replace("{P}",String.fromCharCode(13)+String.fromCharCode(9))
+    stringData.push(finalStr)
+    return finalStr
+  }
+
   const start = visualTypeValues[level.fieldInstances.find(f => f.__identifier === "start")?.__value]
   
   const visualType = visualTypeValues[level.fieldInstances.find(f => f.__identifier === "visualType")?.__value]
@@ -92,24 +97,24 @@ const visuals = ldtk.levels.map((level) => {
   if (!currentString) {
     throw new Error(`Missing name for level ${level.iid}`)
   }
+  currentString=addStringData(currentString)
   const nameStringOffset = stringOffset
   stringOffset += currentString.length + 1 // +1 for null terminator
-  stringData.push(currentString)
   
   currentString=level.fieldInstances.find(f => f.__identifier === "text")?.__value
   if (!currentString) {
     throw new Error(`Missing text for level ${level.iid}`)
   }
+  currentString=addStringData(currentString)
   const textStringOffset = stringOffset
   stringOffset += currentString.length + 1 // +1 for null terminator
-  stringData.push(currentString);
 
   currentString=level.fieldInstances.find(f => f.__identifier === "image")?.__value
   let imageStringOffset = 0
   if (currentString) {
+    currentString=addStringData(currentString)
     imageStringOffset = stringOffset
     stringOffset += currentString.length + 1 // +1 for null terminator
-    stringData.push(currentString)
   }
 
   const choices = level.layerInstances[0].entityInstances.filter(l => l.__identifier === "Choice").map((c) => {
@@ -125,15 +130,15 @@ const visuals = ldtk.levels.map((level) => {
       throw new Error(`Missing text for choice ${c.iid}`)
     }
     const textStringOffset = stringOffset
+    currentString=addStringData(currentString)
     stringOffset += currentString.length + 1 // +1 for null terminator
-    stringData.push(currentString)
 
     currentString=c.fieldInstances.find(f => f.__identifier === "result")?.__value
     let resultStringOffset = 0
     if (currentString) {
+      currentString=addStringData(currentString)
       resultStringOffset = stringOffset
       stringOffset += currentString.length + 1 // +1 for null terminator
-      stringData.push(currentString)
     }
     
     let personRoomId = c.fieldInstances.find(f => f.__identifier === "personRoom").__value?.levelIid
