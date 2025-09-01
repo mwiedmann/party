@@ -33,12 +33,33 @@ void advanceTime(unsigned char minutesToAdd) {
     }
 }
 
-void showTime() {
-    unsigned char showHour;
-    
+void showStatus() {
+    unsigned char showHour, i;
+    char buffer[40];
+
+    cursorX=41;
+    cursorY=1;
     showHour = hour+START_HOUR;
     showHour = showHour>12 ? showHour-12 : showHour;
-    printf("Time: %u:%02u", showHour, minutes);
+    sprintf(buffer, "%u:%02u %s - %s",
+        showHour,
+        minutes,
+        showHour >= 6 && showHour <= 11 ? "PM" : "AM",
+        getString(currentVisual.nameStringOffset, &currentVisual)
+    );
+    printWordWrapped(buffer);
+
+    cursorX=41;
+    cursorY=3;
+    printWordWrapped("--INVENTORY--\n");
+
+    for (i=0; i<INV_STRING_COUNT; i++) {
+        if (gameState[128+i]) {
+            cursorX=41;
+            printWordWrapped(invStrings[i]);
+            cursorY++;
+        }
+    }
 }
 
 void main() {
@@ -53,6 +74,7 @@ void main() {
 
     init();
 
+    loadInvStrings();
     loadTimeTable();
     loadVisual(visualId);
 
@@ -69,10 +91,7 @@ void main() {
         clearImageArea();
 
         // Show the Time
-        // TODO: Show other status in top right
-        //gotoxy(40, 1);
-        //showTime();
-        //gotoxy(0, 31);
+        showStatus();
         cursorX=0;
         cursorY=31;
     

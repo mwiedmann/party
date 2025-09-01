@@ -48,6 +48,29 @@ typedef struct Person {
 } Person;
 */
 
+const charConvert = (c) => {
+  let charCode = c
+  if (charCode >= 97 && charCode <= 122) {
+    charCode -= 32 // Convert to PETSCII
+  } else if (charCode >= 65 && charCode <= 90) {
+    charCode += 32 // Convert to PETSCII
+  }
+  return charCode
+}
+
+const INV_STRING_LEN=30
+const inv = require("./inv.json")
+
+const invbindata = new Uint8Array(inv.reduce((prev,curr) => {
+  for (let i=0; i<INV_STRING_LEN-1; i++) {
+    prev.push(i >= curr.text.length ? 0 : charConvert(curr.text.charCodeAt(i)))
+  }
+  prev.push(0)
+  return prev
+}, []))
+
+fs.writeFileSync(`build/INVSTR.BIN`, invbindata, "binary")
+
 const timeEntryCount = 5
 
 const visualTypeValues = {
@@ -302,13 +325,7 @@ fullVisuals.forEach((vdata,i) => {
 
   stringData.forEach(s => {
     for (let i = 0; i < s.length; i++) {
-      let charCode = s.charCodeAt(i)
-      if (charCode >= 97 && charCode <= 122) {
-        charCode -= 32 // Convert to PETSCII
-      } else if (charCode >= 65 && charCode <= 90) {
-        charCode += 32 // Convert to PETSCII
-      }
-      filedata.push(charCode)
+      filedata.push(charConvert(s.charCodeAt(i)))
     }
     filedata.push(0) // Null terminator
   })

@@ -11,6 +11,8 @@
 #define START_HOUR 8
 
 #define SCREEN_WIDTH 80
+#define INV_STRING_COUNT 32
+#define INV_STRING_LENGTH 30
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -61,6 +63,7 @@ typedef struct PersonInfo {
 } PersonInfo;
 
 extern char gameState[256];
+extern char invStrings[INV_STRING_COUNT][INV_STRING_LENGTH];
 
 extern Visual currentVisual;
 extern PersonInfo persons[5];

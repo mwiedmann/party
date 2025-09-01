@@ -145,6 +145,12 @@ void loadTimeTable() {
 	cbm_k_load(0, ((unsigned short)&timeTable));
 }
 
+void loadInvStrings() {
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam("invstr.bin");
+	cbm_k_load(0, ((unsigned short)&invStrings));
+}
+
 void loadImage(char * imageName) {
     char buf[16];
 
