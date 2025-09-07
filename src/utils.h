@@ -8,8 +8,8 @@ char * getString(unsigned short offset, Visual *visual);
 void printWordWrapped(char *text);
 void clearImageArea();
 void loadInvStrings();
-void loadVisual(unsigned short id);
-void loadPerson(unsigned short id, unsigned char index);
+unsigned short loadVisual(unsigned short id, unsigned short stringOffset);
+unsigned short loadPerson(unsigned short id, unsigned char index, unsigned short stringOffset);
 void loadTimeTable();
 void loadImage(char * imageName);
 

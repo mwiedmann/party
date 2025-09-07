@@ -41,7 +41,7 @@ void printString(char *str, unsigned char *x, unsigned char *y) {
 }
 
 char * getString(unsigned short offset, Visual *visual) {
-  return &visual->stringData[offset];
+  return (char *)(((unsigned short)BANK_RAM)+(visual->stringDataOffset)+offset);
 }
 
 void printWordWrapped(char *text) {
@@ -119,24 +119,38 @@ void clearImageArea() {
     }
 }
 
-void loadVisual(unsigned short id) {
+unsigned short loadVisual(unsigned short id, unsigned short stringOffset) {
     char buf[16];
+    unsigned short strLength;
 
     sprintf(buf, "vis%u.bin", id);
-
     cbm_k_setlfs(0, 8, 2);
 	cbm_k_setnam(buf);
 	cbm_k_load(0, ((unsigned short)&currentVisual));
+
+    sprintf(buf, "str%u.bin", id);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+    strLength = cbm_k_load(0, ((unsigned short)BANK_RAM)+stringOffset);
+
+    return strLength;
 }
 
-void loadPerson(unsigned short id, unsigned char index) {
+unsigned short loadPerson(unsigned short id, unsigned char index, unsigned short stringOffset) {
     char buf[16];
+    unsigned short strLength;
 
     sprintf(buf, "vis%u.bin", id);
-
     cbm_k_setlfs(0, 8, 2);
 	cbm_k_setnam(buf);
 	cbm_k_load(0, ((unsigned short)&persons[index]));
+
+    sprintf(buf, "str%u.bin", id);
+    cbm_k_setlfs(0, 8, 2);
+	cbm_k_setnam(buf);
+	strLength = cbm_k_load(0, ((unsigned short)BANK_RAM)+stringOffset);
+
+    return strLength;
 }
 
 void loadTimeTable() {

@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 42,
+	"nextUid": 48,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -820,6 +820,46 @@
 			"allowedRefsEntityUid": null,
 			"allowedRefTags": [],
 			"tilesetUid": null
+		},
+		{
+			"identifier": "canWait",
+			"doc": null,
+			"__type": "Bool",
+			"uid": 44,
+			"type": "F_Bool",
+			"isArray": false,
+			"canBeNull": false,
+			"arrayMinLength": null,
+			"arrayMaxLength": null,
+			"editorDisplayMode": "Hidden",
+			"editorDisplayScale": 1,
+			"editorDisplayPos": "Above",
+			"editorLinkStyle": "StraightArrow",
+			"editorDisplayColor": null,
+			"editorAlwaysShow": false,
+			"editorShowInWorld": true,
+			"editorCutLongValues": true,
+			"editorTextSuffix": null,
+			"editorTextPrefix": null,
+			"useForSmartColor": false,
+			"exportToToc": false,
+			"searchable": false,
+			"min": null,
+			"max": null,
+			"regex": null,
+			"acceptFileTypes": null,
+			"defaultOverride": {
+				"id": "V_Bool",
+				"params": [ true ]
+			},
+			"textLanguageMode": null,
+			"symmetricalRef": false,
+			"autoChainRef": true,
+			"allowOutOfLevelRef": true,
+			"allowedRefs": "OnlySame",
+			"allowedRefsEntityUid": null,
+			"allowedRefTags": [],
+			"tilesetUid": null
 		}
 	] },
 	"levels": [
@@ -857,7 +897,8 @@
 					"id": "V_String",
 					"params": ["busstop"]
 				}] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -961,7 +1002,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1127,7 +1169,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1298,7 +1341,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1423,7 +1467,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1465,6 +1510,47 @@
 							"fieldInstances": [],
 							"__worldX": 96,
 							"__worldY": 256
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "40f71050-8560-11f0-9bc5-17d795f768e6",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Go to the party", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Go to the party"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 112,
+							"__worldY": 272
 						}
 					]
 				}
@@ -1502,7 +1588,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1627,7 +1714,8 @@
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
-				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] }
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
 			"layerInstances": [
 				{
@@ -1710,6 +1798,436 @@
 							],
 							"__worldX": -64,
 							"__worldY": 112
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
+			"identifier": "The_Gate",
+			"iid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+			"uid": 45,
+			"worldX": 96,
+			"worldY": 336,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Gate", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Gate"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You are standing at the gate to the house.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["You are standing at the gate to the house."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+					"levelId": 45,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 1192103,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 96,
+							"__worldY": 336
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "cfa8acc0-8560-11f0-9bc5-d17142c5e8ab",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Walk along the fence", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Walk along the fence"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "cc294a00-8560-11f0-9bc5-fb891d3f09b0",
+									"layerIid": "980cd5c1-8560-11f0-9bc5-9d2963d296ca",
+									"levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["cc294a00-8560-11f0-9bc5-fb891d3f09b0"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 112,
+							"__worldY": 352
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
+			"identifier": "The_Fence",
+			"iid": "980cd5c0-8560-11f0-9bc5-bb043322c03f",
+			"uid": 46,
+			"worldX": 176,
+			"worldY": 336,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Fence", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Fence"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You are looking at a tall fence surrounding the house.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["You are looking at a tall fence surrounding the house."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "980cd5c1-8560-11f0-9bc5-9d2963d296ca",
+					"levelId": 46,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 6538739,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "cc294a00-8560-11f0-9bc5-fb891d3f09b0",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 176,
+							"__worldY": 336
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "eea20ea0-8560-11f0-9bc5-9756fafa57ac",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Walk to the gate", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Walk to the gate"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 192,
+							"__worldY": 352
+						}
+					]
+				}
+			],
+			"__neighbours": []
+		},
+		{
+			"identifier": "The_Guard_Dog",
+			"iid": "afb05170-8560-11f0-9bc5-3966717c4a89",
+			"uid": 47,
+			"worldX": 176,
+			"worldY": 416,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Guard Dog", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Guard Dog"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The guard dog is growling at you.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The guard dog is growling at you."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Person", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Person"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "afb05171-8560-11f0-9bc5-2fb544dbabfa",
+					"levelId": 47,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 6883656,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "0568e5f0-8560-11f0-9bc5-a5991a9a55f2",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Send dog to the gate", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Send dog to the gate"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 31, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": {
+									"entityIid": "cc294a00-8560-11f0-9bc5-fb891d3f09b0",
+									"layerIid": "980cd5c1-8560-11f0-9bc5-9d2963d296ca",
+									"levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 32, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["cc294a00-8560-11f0-9bc5-fb891d3f09b0"]
+								}] }
+							],
+							"__worldX": 192,
+							"__worldY": 432
+						},
+						{
+							"__identifier": "TimeEntry",
+							"__grid": [0,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#EAD4AA",
+							"iid": "30586a10-8560-11f0-9bc5-d14806e7f81d",
+							"width": 16,
+							"height": 16,
+							"defUid": 25,
+							"px": [0,16],
+							"fieldInstances": [
+								{ "__identifier": "hour", "__type": "Int", "__value": 0, "__tile": null, "defUid": 26, "realEditorValues": [] },
+								{ "__identifier": "minute", "__type": "Int", "__value": 0, "__tile": null, "defUid": 27, "realEditorValues": [] },
+								{ "__identifier": "room", "__type": "EntityRef", "__value": {
+									"entityIid": "cc294a00-8560-11f0-9bc5-fb891d3f09b0",
+									"layerIid": "980cd5c1-8560-11f0-9bc5-9d2963d296ca",
+									"levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 28, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["cc294a00-8560-11f0-9bc5-fb891d3f09b0"]
+								}] }
+							],
+							"__worldX": 176,
+							"__worldY": 432
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "5609c470-8560-11f0-9bc5-df7e45497ba9",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Ask dog to open gate", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Ask dog to open gate"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": true, "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "result", "__type": "String", "__value": "He just barks at you", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["He just barks at you"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 32, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] }
+							],
+							"__worldX": 192,
+							"__worldY": 448
 						}
 					]
 				}

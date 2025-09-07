@@ -321,8 +321,18 @@ fullVisuals.forEach((vdata,i) => {
     })
   })
 
-  filedata.push(0) // Start with null to make offsets 1-based
+  // 0 for the string offset
+  // This is set in code if needed (mainly for persons)
+  filedata.push(0,0)
 
+  const id=i+1
+  
+  output = new Uint8Array(filedata)
+  fs.writeFileSync(`build/VIS${id}.BIN`, output, "binary")
+
+  filedata.length = 0;
+
+  filedata.push(0) // Start with null to make offsets 1-based
   stringData.forEach(s => {
     for (let i = 0; i < s.length; i++) {
       filedata.push(charConvert(s.charCodeAt(i)))
@@ -330,10 +340,8 @@ fullVisuals.forEach((vdata,i) => {
     filedata.push(0) // Null terminator
   })
 
-  const id=i+1
-
   output = new Uint8Array(filedata)
-  fs.writeFileSync(`build/VIS${id}.BIN`, output, "binary")
+  fs.writeFileSync(`build/STR${id}.BIN`, output, "binary")
 
   if (v.visualType === 1) { // Person
     const currrentRoom = v.timeEntries.find(t => t.hour===0 && t.minute===0).roomId

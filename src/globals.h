@@ -42,7 +42,7 @@ typedef struct Visual {
   unsigned short textStringOffset;
   unsigned short imageStringOffset;
   Choice choices[10];
-  char stringData[2048];
+  unsigned short stringDataOffset;
 } Visual;
 
 typedef struct TimeEntry {

@@ -63,9 +63,9 @@ void showStatus() {
 }
 
 void main() {
-    unsigned short visualId = 1, currentImage = 0; // Start in the foyer
+    unsigned short visualId = 1, currentImage = 0, stringOffset, temp; // Start in the foyer
     unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex;
-    unsigned char choice;
+    unsigned char choice, showedPerson;
     char resultString[1024];
     char buffer[80];
     PersonInfo currentPerson;
@@ -76,8 +76,8 @@ void main() {
 
     loadInvStrings();
     loadTimeTable();
-    loadVisual(visualId);
-
+    stringOffset = loadVisual(visualId, 0);
+    
     while (1) {
         if (currentVisual.visualType == ROOM_TYPE) { // Room
             gameState[CURRENT_ROOM_ID] = visualId; // Store current room ID
@@ -118,22 +118,27 @@ void main() {
             memset(persons, 0, sizeof(persons));
 
             personIndex=0;
+            showedPerson=0;
             for (i=0; i<TIME_TABLE_LENGTH; i++) {
                 if (timeTable[i].currentRoomId == gameState[CURRENT_ROOM_ID]) {
-                    loadPerson(timeTable[i].id, personIndex);
+                    temp = loadPerson(timeTable[i].id, personIndex, stringOffset);
+                    persons[personIndex].person.stringDataOffset = stringOffset;
+                    stringOffset+= temp;
                     persons[personIndex].timeTableIndex = i;
-                    // Print an option to talk to this person
-                    // printf("%c: Talk to %s\n", 'A'+personIndex, getString(persons[personIndex].person.nameStringOffset, &persons[personIndex].person));
+                    showedPerson=1;
+
                     printWordWrapped(getString(persons[personIndex].person.textStringOffset, &persons[personIndex].person));
+                    cursorY++;
+                    cursorX=0;
                     personIndex++;
                 }
             }
+        }
 
-            // If we have and showed any Persons, add a blank line
-            if (persons[0].timeTableIndex) {
-                cursorY++;
-                cursorX=0;
-            }
+        // If we have and showed any Persons, add a blank line
+        if (showedPerson) {
+            cursorY++;
+            cursorX=0;
         }
 
         // Show choices
@@ -203,7 +208,7 @@ void main() {
         // See if exiting this interaction
         if (currentVisual.visualType != ROOM_TYPE && choice == 'x') {
             visualId = gameState[CURRENT_ROOM_ID];
-            loadVisual(visualId);
+            stringOffset = loadVisual(visualId, 0);
             continue;
         }
 
@@ -219,7 +224,7 @@ void main() {
             // Transition to person
             currentPerson = persons[choice];
             visualId = timeTable[persons[choice].timeTableIndex].id;
-            loadVisual(visualId);     
+            stringOffset = loadVisual(visualId, 0);
         } else {
             // Making a non-person selection
             choice -= '0';
@@ -258,7 +263,7 @@ void main() {
                 if (visualId == TRANSITION_CURRENT_ROOM) {
                     visualId = gameState[CURRENT_ROOM_ID];
                 }
-                loadVisual(visualId);
+                stringOffset = loadVisual(visualId, 0);
             }
         }
     }
