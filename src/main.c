@@ -192,7 +192,8 @@ void main() {
             printWordWrapped("\nW: Wait for a minute\n");
         } else {
             // Always add a choice to leave this person or thing
-            printWordWrapped("\nX: Return to the room\n");
+            sprintf(buffer, "\nX: Leave %s\n", getString(currentVisual.nameStringOffset, &currentVisual));
+            printWordWrapped(buffer);
         }
 
         printWordWrapped("\nChoose an option: ");

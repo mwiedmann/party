@@ -19,6 +19,24 @@ gdata:
 img:
 	node tools/gimp-img-convert.js gfx/bus-stop.data build/BUSSTOP.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/bus-stop.data.pal build/BUSSTOP.PAL
+	node tools/gimp-img-convert.js gfx/bus-girl-mad.data build/BUSGMAD.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/bus-girl-mad.data.pal build/BUSGMAD.PAL
+	node tools/gimp-img-convert.js gfx/bus-girl-happy.data build/BUSGHAP.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/bus-girl-happy.data.pal build/BUSGHAP.PAL
+	node tools/gimp-img-convert.js gfx/bus-girl-walk.data build/BUSGWALK.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/bus-girl-walk.data.pal build/BUSGWALK.PAL
+	node tools/gimp-img-convert.js gfx/apartment.data build/APARTMNT.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/apartment.data.pal build/APARTMNT.PAL
+	node tools/gimp-img-convert.js gfx/gate.data build/GATE.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/gate.data.pal build/GATE.PAL
+	node tools/gimp-img-convert.js gfx/side-dog.data build/SIDEDOG.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/side-dog.data.pal build/SIDEDOG.PAL
+	node tools/gimp-img-convert.js gfx/skyline.data build/SKYLINE.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/skyline.data.pal build/SKYLINE.PAL
+	node tools/gimp-img-convert.js gfx/bus-dark.data build/BUSDARK.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/bus-dark.data.pal build/BUSDARK.PAL
+	node tools/gimp-img-convert.js gfx/gate-pad.data build/GATEPAD.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/gate-pad.data.pal build/GATEPAD.PAL
 
 zip:
 	cd build && \

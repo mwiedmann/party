@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 48,
+	"nextUid": 53,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -39,7 +39,7 @@
 	"levelNamePattern": "Level_%idx",
 	"tutorialDesc": null,
 	"customCommands": [],
-	"flags": [],
+	"flags": ["IgnoreBackupSuggest"],
 	"defs": { "layers": [
 		{
 			"__type": "Entities",
@@ -995,13 +995,16 @@
 					"id": "V_String",
 					"params": ["The Bus"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says \"You ever had a bad interview? I just had a bad one.\"", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She looks pretty frustrated. She sighs and makes eye contact with you for a moment before gazing out the window. You think about talking to her when she says without looking at you, \"You ever had a bad interview? I just had a shitty one.\"", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She smiles at you and then gazes out the window. You think about talking to her when she turns to you and says \"You ever had a bad interview? I just had a bad one.\""
+						"Riding home on the bus, you look around at all the people wondering if any of them feel the same sense of \"Doesn't the world feel like a badly designed video game?\". A girl gets on at the next stop and sits across from you. She looks pretty frustrated. She sighs and makes eye contact with you for a moment before gazing out the window. You think about talking to her when she says without looking at you, \"You ever had a bad interview? I just had a shitty one.\""
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "busgmad", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busgmad"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1093,19 +1096,19 @@
 									"params": ["Ignore her"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
-									"layerIid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
-									"levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
+									"entityIid": "62084bd0-8560-11f0-9bc5-6f4c10666273",
+									"layerIid": "02279e50-8560-11f0-9bc5-cdda8f19146c",
+									"levelIid": "02277740-8560-11f0-9bc5-2fa760535061",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
+									"params": ["62084bd0-8560-11f0-9bc5-6f4c10666273"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "You see the girl looking at you our of the corner of your eye. She shrugs her shoulders after a moment and returns her gaze to the window. After a few minutes she gets up to exit the bus. As she walks by you she leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop. You watch her as the bus pulls away. She give you another smile as she pulls up her hoodie and walks off."
+										"You see the girl looking at you our of the corner of your eye. She shrugs her shoulders after a moment and returns her gaze to the window. After a few minutes she gets up to exit the bus. As she walks by you she leans in close. The faint smell of perfume distracts you for a moment. She says \"Maybe I'll see you around...\", and she gets off at her stop."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1168,7 +1171,10 @@
 						"You laugh and tell her about your recent interviews and how you are questioning everything about your future. She laughs and tells you about her own interview horror stories. You feel slightly better hearing that it's not just you, but also worse as you wonder what you do want to do with your life. You talk a bit more and she says her stop is coming up. She tells you about a party that night. She says \"Everyone says this is the best party of the year and you can meet some really interesting people. It's up in the hills. Some benefactor at the school throws it for students who are 'connected'.\" She uses air quotes and rolls her eyes as she says \"connected\". She says her friend got her two invites. She holds out a small card and says \"Interested?\""
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "busghap", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busghap"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1219,19 +1225,19 @@
 									"params": ["Say \"Yes\" and take the card"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e",
-									"layerIid": "514ac911-5e50-11f0-afc8-579c240d94f6",
-									"levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f",
+									"entityIid": "f89dcbb2-8560-11f0-9bc5-817fb8f21509",
+									"layerIid": "f89dcbb1-8560-11f0-9bc5-b34d9a04af02",
+									"levelIid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e"]
+									"params": ["f89dcbb2-8560-11f0-9bc5-817fb8f21509"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus. She gives you a wave as the bus pulls away.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus.", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus. She gives you a wave as the bus pulls away."
+										"She smiles, leans in close and tucks the card into your shirt pocket. \"I hope to see you there.\" she says as she gets up exits the bus."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
@@ -1281,13 +1287,13 @@
 									"params": ["Say \"No, but thanks\""]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
-									"layerIid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
-									"levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
+									"entityIid": "62084bd0-8560-11f0-9bc5-6f4c10666273",
+									"layerIid": "02279e50-8560-11f0-9bc5-cdda8f19146c",
+									"levelIid": "02277740-8560-11f0-9bc5-2fa760535061",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
+									"params": ["62084bd0-8560-11f0-9bc5-6f4c10666273"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "The girl smiles and leans in close. The faint smell of perfume distracts you for a moment. She says \"Well, thanks for commiserating with me. I'll see you around.\", and she gets off at her stop.", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -1314,8 +1320,8 @@
 			"identifier": "Apartment_No",
 			"iid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
 			"uid": 36,
-			"worldX": 96,
-			"worldY": 176,
+			"worldX": 112,
+			"worldY": 288,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1340,7 +1346,10 @@
 						"You enter your apartment and lie down on your bed, just staring at the ceiling. You doze off for a bit and have a strange dream about the girl on the bus. Like she was some key to unlocking something in your life. You get up and grab a seltzer from the fridge. \"What was I thinking?\" you say out loud as you regret how the interaction went with her. You walk to your closet to change into some workout clothes. \"Guess its just the gym tonight.\" you sadly mutter, but as you take off your shirt, a small card falls out of the breast pocket and lands on the floor."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "apartmnt", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["apartmnt"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1412,8 +1421,8 @@
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": 112,
-							"__worldY": 192
+							"__worldX": 128,
+							"__worldY": 304
 						},
 						{
 							"__identifier": "Anchor",
@@ -1428,20 +1437,26 @@
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": 96,
-							"__worldY": 176
+							"__worldX": 112,
+							"__worldY": 288
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [
+				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "s" },
+				{ "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "e" },
+				{ "levelIid": "02277740-8560-11f0-9bc5-2fa760535061", "dir": "n" },
+				{ "levelIid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b", "dir": "ne" },
+				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "se" }
+			]
 		},
 		{
 			"identifier": "Apartment_Card",
 			"iid": "860c68e0-5e50-11f0-afc8-21882fbdeb79",
 			"uid": 37,
-			"worldX": 96,
-			"worldY": 256,
+			"worldX": 112,
+			"worldY": 352,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1508,8 +1523,8 @@
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": 96,
-							"__worldY": 256
+							"__worldX": 112,
+							"__worldY": 352
 						},
 						{
 							"__identifier": "Choice",
@@ -1533,36 +1548,48 @@
 									"params": ["Go to the party"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "242e3b00-8560-11f0-9bc5-bbe8f9fe9229",
+									"layerIid": "0bd658e1-8560-11f0-9bc5-6944e9b01594",
+									"levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["242e3b00-8560-11f0-9bc5-bbe8f9fe9229"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You check the address again. It's way up in the hills. You look at the bus schedule and there is one bus that will take you most of the way there. You freshen up a little, grab your phone and the card, and head out.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You check the address again. It's way up in the hills. You look at the bus schedule and there is one bus that will take you most of the way there. You freshen up a little, grab your phone and the card, and head out."
+									]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
 								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": 112,
-							"__worldY": 272
+							"__worldX": 128,
+							"__worldY": 368
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [
+				{ "levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde", "dir": "n" },
+				{ "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "ne" },
+				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "s" },
+				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "se" },
+				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "e" },
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "sw" }
+			]
 		},
 		{
 			"identifier": "Apartment_Yes",
 			"iid": "514ac910-5e50-11f0-afc8-63eefef4d67f",
 			"uid": 38,
 			"worldX": 176,
-			"worldY": 176,
+			"worldY": 288,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1587,7 +1614,10 @@
 						"You lie down on your bed and think about the girl from the bus. There was something surreal about her."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "apartmnt", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["apartmnt"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1630,7 +1660,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 176,
-							"__worldY": 176
+							"__worldY": 288
 						},
 						{
 							"__identifier": "Choice",
@@ -1676,12 +1706,19 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
 							"__worldX": 192,
-							"__worldY": 192
+							"__worldY": 304
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [
+				{ "levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde", "dir": "w" },
+				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "sw" },
+				{ "levelIid": "02277740-8560-11f0-9bc5-2fa760535061", "dir": "nw" },
+				{ "levelIid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b", "dir": "n" },
+				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "s" },
+				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "se" }
+			]
 		},
 		{
 			"identifier": "The_Interview_2",
@@ -1808,8 +1845,8 @@
 			"identifier": "The_Gate",
 			"iid": "73dc7610-8560-11f0-9bc5-65583f066c57",
 			"uid": 45,
-			"worldX": 96,
-			"worldY": 336,
+			"worldX": 112,
+			"worldY": 416,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1828,11 +1865,16 @@
 					"id": "V_String",
 					"params": ["The Gate"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You are standing at the gate to the house.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "You find yourself standing at the end of a long gated driveway. An impressive mansion sits at the end of it. You see lights on but nobody seems to be around. There is a keypad next to the gate and a guard dog patrolling the yard. A wrought iron fence with spikes on top extends around the property.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["You are standing at the gate to the house."]
+					"params": [
+						"You find yourself standing at the end of a long gated driveway. An impressive mansion sits at the end of it. You see lights on but nobody seems to be around. There is a keypad next to the gate and a guard dog patrolling the yard. A wrought iron fence with spikes on top extends around the property."
+					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "gate", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["gate"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1874,8 +1916,8 @@
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": 96,
-							"__worldY": 336
+							"__worldX": 112,
+							"__worldY": 416
 						},
 						{
 							"__identifier": "Choice",
@@ -1915,20 +1957,67 @@
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
-							"__worldX": 112,
-							"__worldY": 352
+							"__worldX": 128,
+							"__worldY": 432
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "8ed24b90-8560-11f0-bf44-11ba8528b28d",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Look at the keypad", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Look at the keypad"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 128,
+							"__worldY": 448
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [
+				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "n" },
+				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "e" },
+				{ "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "se" },
+				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "ne" },
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "w" }
+			]
 		},
 		{
 			"identifier": "The_Fence",
 			"iid": "980cd5c0-8560-11f0-9bc5-bb043322c03f",
 			"uid": 46,
 			"worldX": 176,
-			"worldY": 336,
+			"worldY": 416,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -1951,7 +2040,10 @@
 					"id": "V_String",
 					"params": ["You are looking at a tall fence surrounding the house."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "sidedog", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["sidedog"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -1994,7 +2086,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 176,
-							"__worldY": 336
+							"__worldY": 416
 						},
 						{
 							"__identifier": "Choice",
@@ -2035,19 +2127,25 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
 							],
 							"__worldX": 192,
-							"__worldY": 352
+							"__worldY": 432
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [
+				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "nw" },
+				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "w" },
+				{ "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "s" },
+				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "n" },
+				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "ne" }
+			]
 		},
 		{
 			"identifier": "The_Guard_Dog",
 			"iid": "afb05170-8560-11f0-9bc5-3966717c4a89",
 			"uid": 47,
 			"worldX": 176,
-			"worldY": 416,
+			"worldY": 480,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -2152,7 +2250,7 @@
 								}] }
 							],
 							"__worldX": 192,
-							"__worldY": 432
+							"__worldY": 496
 						},
 						{
 							"__identifier": "TimeEntry",
@@ -2180,7 +2278,7 @@
 								}] }
 							],
 							"__worldX": 176,
-							"__worldY": 432
+							"__worldY": 496
 						},
 						{
 							"__identifier": "Choice",
@@ -2227,12 +2325,599 @@
 								}] }
 							],
 							"__worldX": 192,
-							"__worldY": 448
+							"__worldY": 512
 						}
 					]
 				}
 			],
-			"__neighbours": []
+			"__neighbours": [ { "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "nw" }, { "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "n" } ]
+		},
+		{
+			"identifier": "Girl_Walk_No",
+			"iid": "02277740-8560-11f0-9bc5-2fa760535061",
+			"uid": 48,
+			"worldX": 112,
+			"worldY": 224,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Girl Walking Away", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Girl Walking Away"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You watch her out the window as the bus pulls away. She looks amazing and confident in her business suit. You wonder how you are ever going to survive in this world if its eating up someone like her. She walks down the block and disappears behind a building. A few stops later you get off near your apartment, still thinking about her.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You watch her out the window as the bus pulls away. She looks amazing and confident in her business suit. You wonder how you are ever going to survive in this world if its eating up someone like her. She walks down the block and disappears behind a building. A few stops later you get off near your apartment, still thinking about her."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "busgwalk", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busgwalk"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "02279e50-8560-11f0-9bc5-cdda8f19146c",
+					"levelId": 48,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 5215655,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "62084bd0-8560-11f0-9bc5-6f4c10666273",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 112,
+							"__worldY": 224
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "65105bb0-8560-11f0-9bc5-3d214c4769bf",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "d92b3520-5e50-11f0-afc8-d54f9029acd0",
+									"layerIid": "b0e7dab1-5e50-11f0-afc8-8ddd00261fa3",
+									"levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["d92b3520-5e50-11f0-afc8-d54f9029acd0"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 128,
+							"__worldY": 240
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde", "dir": "s" }, { "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "se" }, { "levelIid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b", "dir": "e" } ]
+		},
+		{
+			"identifier": "Girl_Walk_Yes",
+			"iid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b",
+			"uid": 49,
+			"worldX": 176,
+			"worldY": 224,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Girl Walking Away", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Girl Walking Away"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You watch her out the window as the bus pulls away. She looks amazing and confident in her business suit. You wonder how you are ever going to survive in this world if its eating up someone like her. She walks down the block and disappears behind a building. A few stops later you get off near your apartment, still thinking about her.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You watch her out the window as the bus pulls away. She looks amazing and confident in her business suit. You wonder how you are ever going to survive in this world if its eating up someone like her. She walks down the block and disappears behind a building. A few stops later you get off near your apartment, still thinking about her."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "busgwalk", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busgwalk"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "f89dcbb1-8560-11f0-9bc5-b34d9a04af02",
+					"levelId": 49,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 5215655,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "f89dcbb2-8560-11f0-9bc5-817fb8f21509",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 176,
+							"__worldY": 224
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "f89dcbb3-8560-11f0-9bc5-a1a0ffe54138",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e",
+									"layerIid": "514ac911-5e50-11f0-afc8-579c240d94f6",
+									"levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["0c8e8b30-5e50-11f0-afc8-4f1aaa1af05e"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 192,
+							"__worldY": 240
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde", "dir": "sw" }, { "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "s" }, { "levelIid": "02277740-8560-11f0-9bc5-2fa760535061", "dir": "w" } ]
+		},
+		{
+			"identifier": "Skyline",
+			"iid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9",
+			"uid": 50,
+			"worldX": 176,
+			"worldY": 352,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Skyline", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Skyline"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "As the bus rolls up into the hills, the sun sinks lower and casts a peaceful glow across the skyline. For a brief moment, you imagine the rat race pausing. Perhaps never to start again. Your thought is interrupted by a man on his phone bragging to someone about a bonus check he got. \"Now I can finally get that yacht!\" he says excitedly. You wonder how long the rush of getting a yacht will keep him happy.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"As the bus rolls up into the hills, the sun sinks lower and casts a peaceful glow across the skyline. For a brief moment, you imagine the rat race pausing. Perhaps never to start again. Your thought is interrupted by a man on his phone bragging to someone about a bonus check he got. \"Now I can finally get that yacht!\" he says excitedly. You wonder how long the rush of getting a yacht will keep him happy."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "skyline", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["skyline"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "0bd658e1-8560-11f0-9bc5-6944e9b01594",
+					"levelId": 50,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 7637596,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "242e3b00-8560-11f0-9bc5-bbe8f9fe9229",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 176,
+							"__worldY": 352
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "25b83660-8560-11f0-9bc5-992d948f61f0",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "97e84330-8560-11f0-9bc5-5da7f48a8424",
+									"layerIid": "a6559c71-8560-11f0-9bc5-2b75238bacb0",
+									"levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["97e84330-8560-11f0-9bc5-5da7f48a8424"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 192,
+							"__worldY": 368
+						}
+					]
+				}
+			],
+			"__neighbours": [
+				{ "levelIid": "b0e7dab0-5e50-11f0-afc8-751373d20bde", "dir": "nw" },
+				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "w" },
+				{ "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "n" },
+				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "sw" },
+				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "s" },
+				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "e" }
+			]
+		},
+		{
+			"identifier": "Dark_Bus_Stop",
+			"iid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc",
+			"uid": 51,
+			"worldX": 240,
+			"worldY": 352,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Dark Bus Stop", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Dark Bus Stop"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward. You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward. You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "busdark", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busdark"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "a6559c71-8560-11f0-9bc5-2b75238bacb0",
+					"levelId": 51,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 2072534,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "97e84330-8560-11f0-9bc5-5da7f48a8424",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 240,
+							"__worldY": 352
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "996e6e00-8560-11f0-9bc5-6f79904dc02d",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] }
+							],
+							"__worldX": 256,
+							"__worldY": 368
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "nw" }, { "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "sw" }, { "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "w" } ]
+		},
+		{
+			"identifier": "Gate_Keypad",
+			"iid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+			"uid": 52,
+			"worldX": 48,
+			"worldY": 416,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Gate Keypad", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Gate Keypad"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The keypad has numbers and a # symbol.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The keypad has numbers and a # symbol."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["gatepad"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+					"levelId": 52,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 1144517,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 48,
+							"__worldY": 416
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "ne" }, { "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "e" } ]
 		}
 	],
 	"worlds": [],
