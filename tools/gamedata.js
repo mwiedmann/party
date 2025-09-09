@@ -149,9 +149,9 @@ const visuals = ldtk.levels.map((level) => {
     const criteriaText = c.fieldInstances.find(f => f.__identifier === "criteria").__value
 
     currentString=c.fieldInstances.find(f => f.__identifier === "text")?.__value
-    if (!currentString) {
-      throw new Error(`Missing text for choice ${c.iid}`)
-    }
+    // if (!currentString) {
+    //   throw new Error(`Missing text for choice ${c.iid}`)
+    // }
     const textStringOffset = stringOffset
     currentString=addStringData(currentString)
     stringOffset += currentString.length + 1 // +1 for null terminator
@@ -172,6 +172,8 @@ const visuals = ldtk.levels.map((level) => {
 
     let minutes = c.fieldInstances.find(f => f.__identifier === "minutes").__value
 
+    let force = c.fieldInstances.find(f => f.__identifier === "force").__value
+
     const choice = {
       canSelect: c.fieldInstances.find(f => f.__identifier === "canSelect")?.__value ? 1 : 0,
       textStringOffset,
@@ -180,6 +182,7 @@ const visuals = ldtk.levels.map((level) => {
       personRoomId,
       minutes,
       criteriaRoomId,
+      force,
       criteria: criteriaText.length>0 ? criteriaText.map((cr) => {
         const parts=cr.split("=")
         return {
@@ -238,8 +241,9 @@ const emptyChoice = () => ({
   personRoomId: 0,
   minutes: 0,
   criteriaRoomId: 0,
-  criteria: [emptyCriteria(), emptyCriteria()],
-  stateChanges: [emptyStateChange(), emptyStateChange()],
+  force: 0,
+  criteria: [emptyCriteria(), emptyCriteria(), emptyCriteria(), emptyCriteria(), emptyCriteria()],
+  stateChanges: [emptyStateChange(), emptyStateChange(), emptyStateChange(), emptyStateChange(), emptyStateChange()],
 })
 
 const emptyVisual = () => ({
@@ -271,6 +275,7 @@ const fullVisual = (v) => {
     fullV.choices[i].personRoomId = c.personRoomId || 0
     fullV.choices[i].minutes = c.minutes || 0
     fullV.choices[i].criteriaRoomId = c.criteriaRoomId || 0
+    fullV.choices[i].force = c.force || 0
     c.criteria?.forEach((cr, ci) => {
       fullV.choices[i].criteria[ci].id = cr.id || 0
       fullV.choices[i].criteria[ci].value = cr.value || 0
@@ -308,7 +313,7 @@ fullVisuals.forEach((vdata,i) => {
 
   v.choices.forEach(c => {
     // canSelect, textStringOffset, transitionVisualId, resultStringOffset, roomId
-    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset), lowByte(c.personRoomId), highByte(c.personRoomId), c.minutes, lowByte(c.criteriaRoomId), highByte(c.criteriaRoomId))
+    filedata.push(c.canSelect, lowByte(c.textStringOffset), highByte(c.textStringOffset), lowByte(c.transitionVisualId), highByte(c.transitionVisualId), lowByte(c.resultStringOffset), highByte(c.resultStringOffset), lowByte(c.personRoomId), highByte(c.personRoomId), c.minutes, lowByte(c.criteriaRoomId), highByte(c.criteriaRoomId), c.force)
 
     c.criteria.forEach(cr => {
       // id, value

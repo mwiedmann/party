@@ -64,7 +64,7 @@ void showStatus() {
 
 void main() {
     unsigned short visualId = 1, currentImage = 0, stringOffset, temp; // Start in the foyer
-    unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex;
+    unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex, forcingChoiceId;
     unsigned char choice, showedPerson;
     char resultString[1024];
     char buffer[80];
@@ -81,6 +81,48 @@ void main() {
     while (1) {
         if (currentVisual.visualType == ROOM_TYPE) { // Room
             gameState[CURRENT_ROOM_ID] = visualId; // Store current room ID
+        }
+
+        // Look for any "force" choices. We take those immediatedly (if criteria ok) and don't draw anything.
+        forcingChoiceId=255;
+        for (i = 0; i < CHOICE_COUNT; i++) {
+            if (currentVisual.choices[i].force) {
+                // Check all criteria
+                foundActiveCriteria = 0;
+                criteriaFailed = 0;
+                for (c=0; c<CRITERIA_COUNT; c++) {
+                    if (currentVisual.choices[i].criteria[c].gameStateId != 0) {
+                        if (gameState[currentVisual.choices[i].criteria[c].gameStateId] != currentVisual.choices[i].criteria[c].value) {
+                            criteriaFailed = 1; // Criteria not met
+                            break;
+                        }
+                        foundActiveCriteria = 1; // At least one criteria is active
+                    }
+                }
+
+                // Check if the current choice is only available in a certain room
+                if (currentVisual.choices[i].criteriaRoomId && currentVisual.choices[i].criteriaRoomId != gameState[CURRENT_ROOM_ID]) {
+                    criteriaFailed = 1;
+                }
+
+                if (!foundActiveCriteria || criteriaFailed) {
+                    continue; // No active criteria or criteria failed, skip this choice
+                }
+                
+                // Found a "force" choice where criteria passes
+                forcingChoiceId=i;
+                break;
+            }
+        }
+
+        // If forcing a choice, load the transition and continue the loop
+        if (forcingChoiceId!=255) {
+            visualId = currentVisual.choices[forcingChoiceId].transitionVisualId;
+            if (visualId == TRANSITION_CURRENT_ROOM) {
+                visualId = gameState[CURRENT_ROOM_ID];
+            }
+            stringOffset = loadVisual(visualId, 0);
+            continue;
         }
 
         if (currentVisual.imageStringOffset != 0 && currentImage != currentVisual.imageStringOffset) {
@@ -142,11 +184,15 @@ void main() {
         }
 
         // Show choices
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < CHOICE_COUNT; i++) {
+            // No need to show forced choices
+            if (currentVisual.choices[i].force) {
+                continue;
+            }
             // Check all criteria
             foundActiveCriteria = 0;
             criteriaFailed = 0;
-            for (c=0; c<2; c++) {
+            for (c=0; c<CRITERIA_COUNT; c++) {
                 if (currentVisual.choices[i].criteria[c].gameStateId != 0) {
                     if (gameState[currentVisual.choices[i].criteria[c].gameStateId] != currentVisual.choices[i].criteria[c].value) {
                         criteriaFailed = 1; // Criteria not met
@@ -236,7 +282,7 @@ void main() {
             }
 
             // apply state changes
-            for (i = 0; i < 2; i++) {
+            for (i = 0; i < STATE_CHANGE_COUNT; i++) {
                 if (currentVisual.choices[choice].stateChanges[i].id != 0) {
                     gameState[currentVisual.choices[choice].stateChanges[i].id] = currentVisual.choices[choice].stateChanges[i].value;
                 }

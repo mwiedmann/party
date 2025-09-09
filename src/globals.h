@@ -13,6 +13,9 @@
 #define SCREEN_WIDTH 80
 #define INV_STRING_COUNT 32
 #define INV_STRING_LENGTH 30
+#define CRITERIA_COUNT 5
+#define STATE_CHANGE_COUNT 5
+#define CHOICE_COUNT 10
 
 typedef struct Criteria {
   unsigned char gameStateId;
@@ -32,8 +35,9 @@ typedef struct Choice {
   unsigned short personRoomId; // Room to move Person to if this is a choice on a Person
   unsigned char minutes; // How many minutes this choice takes
   unsigned short criteriaRoomId; // Room Person must be in for this choice to be active
-  Criteria criteria[2];
-  StateChange stateChanges[2];
+  unsigned char force; // Choice is auto-selected
+  Criteria criteria[CRITERIA_COUNT];
+  StateChange stateChanges[STATE_CHANGE_COUNT];
 } Choice;
 
 typedef struct Visual {
@@ -41,7 +45,7 @@ typedef struct Visual {
   unsigned short nameStringOffset;
   unsigned short textStringOffset;
   unsigned short imageStringOffset;
-  Choice choices[10];
+  Choice choices[CHOICE_COUNT];
   unsigned short stringDataOffset;
 } Visual;
 
