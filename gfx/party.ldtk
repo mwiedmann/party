@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 64,
+	"nextUid": 70,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -1003,6 +1003,48 @@
 							],
 							"__worldX": -144,
 							"__worldY": 112
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "58d6a840-8560-11f0-a55d-8bf7c5fdb84b",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "TESTING - Jump to location", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["TESTING - Jump to location"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": -144,
+							"__worldY": 128
 						}
 					]
 				}
@@ -2100,7 +2142,8 @@
 				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "e" },
 				{ "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "se" },
 				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "ne" },
-				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "w" }
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "w" },
+				{ "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "sw" }
 			]
 		},
 		{
@@ -2219,7 +2262,14 @@
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "n" }, { "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "ne" }, { "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "e" }, { "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "nw" } ]
+			"__neighbours": [
+				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "n" },
+				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "ne" },
+				{ "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "e" },
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "nw" },
+				{ "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "w" },
+				{ "levelIid": "226384b0-8560-11f0-bf44-b5bddb901e41", "dir": "sw" }
+			]
 		},
 		{
 			"identifier": "The_Fence",
@@ -3148,25 +3198,15 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
-								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [null] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": [
-										"The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed."
-									]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
@@ -3459,13 +3499,13 @@
 									"params": ["Press 8"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "c6b8ac32-8560-11f0-bf44-05655579726a",
-									"layerIid": "c6b8ac31-8560-11f0-bf44-a1f5b34724be",
-									"levelIid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2",
+									"entityIid": "fa5459a2-8560-11f0-bf44-c38e85eb0ed4",
+									"layerIid": "fa5459a1-8560-11f0-bf44-abc22f276686",
+									"levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["c6b8ac32-8560-11f0-bf44-05655579726a"]
+									"params": ["fa5459a2-8560-11f0-bf44-c38e85eb0ed4"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Bork", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -3481,6 +3521,40 @@
 							],
 							"__worldX": 96,
 							"__worldY": 416
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "bf4750b0-8560-11f0-bf44-6ff58eb2f1e0",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 96,
+							"__worldY": 432
 						}
 					]
 				}
@@ -3489,14 +3563,15 @@
 				{ "levelIid": "860c68e0-5e50-11f0-afc8-21882fbdeb79", "dir": "ne" },
 				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "e" },
 				{ "levelIid": "0d5083b0-8560-11f0-bf44-7b158af7ff52", "dir": "se" },
-				{ "levelIid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2", "dir": "w" },
-				{ "levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f", "dir": "sw" }
+				{ "levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4", "dir": "w" },
+				{ "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "s" },
+				{ "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "sw" }
 			]
 		},
 		{
 			"identifier": "Gate_Keypad2",
-			"iid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2",
-			"uid": 57,
+			"iid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4",
+			"uid": 64,
 			"worldX": -16,
 			"worldY": 416,
 			"worldDepth": 0,
@@ -3521,10 +3596,7 @@
 					"id": "V_String",
 					"params": ["The keypad has numbers and a # symbol."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["gatepad"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["Other"]
@@ -3543,8 +3615,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "c6b8ac31-8560-11f0-bf44-a1f5b34724be",
-					"levelId": 57,
+					"iid": "fa5459a1-8560-11f0-bf44-abc22f276686",
+					"levelId": 64,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -3563,7 +3635,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "c6b8ac32-8560-11f0-bf44-05655579726a",
+							"iid": "fa5459a2-8560-11f0-bf44-c38e85eb0ed4",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
@@ -3579,7 +3651,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac33-8560-11f0-bf44-f7ae5d8ccdda",
+							"iid": "fa5459a3-8560-11f0-bf44-89c0f37f975b",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3589,25 +3661,23 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": [
-										"The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed."
-									]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
@@ -3626,7 +3696,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac34-8560-11f0-bf44-e35c345eb040",
+							"iid": "fa5459a4-8560-11f0-bf44-b50ebdbcbfd9",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3671,7 +3741,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac35-8560-11f0-bf44-fd9706a5be86",
+							"iid": "fa5459a5-8560-11f0-bf44-65e9c1ab6670",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3716,7 +3786,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac36-8560-11f0-bf44-f3b7c97b714f",
+							"iid": "fa5459a6-8560-11f0-bf44-6184d14883be",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3761,7 +3831,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac37-8560-11f0-bf44-2b30eeb809cb",
+							"iid": "fa5459a7-8560-11f0-bf44-974e18077cad",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3806,7 +3876,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac38-8560-11f0-bf44-4f3f0b7fa09b",
+							"iid": "fa5459a8-8560-11f0-bf44-77699067004d",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3851,7 +3921,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac39-8560-11f0-bf44-6b1607c5db79",
+							"iid": "fa5459a9-8560-11f0-bf44-170689b6ac3d",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3866,13 +3936,13 @@
 									"params": ["Press 6"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "161e99b2-8560-11f0-bf44-3db033ce8037",
-									"layerIid": "161e99b1-8560-11f0-bf44-79798970d2c5",
-									"levelIid": "161e99b0-8560-11f0-bf44-6dbd63cbd1ae",
+									"entityIid": "04bfe442-8560-11f0-bf44-a75dc763d334",
+									"layerIid": "04bfe441-8560-11f0-bf44-8deff4cc92e3",
+									"levelIid": "04bfe440-8560-11f0-bf44-35d4315ff9ce",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["161e99b2-8560-11f0-bf44-3db033ce8037"]
+									"params": ["04bfe442-8560-11f0-bf44-a75dc763d334"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Blorp", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -3896,7 +3966,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac3a-8560-11f0-bf44-d10254eb1223",
+							"iid": "fa5459aa-8560-11f0-bf44-6135031fc814",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3941,7 +4011,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "c6b8ac3b-8560-11f0-bf44-f5d945efe2b7",
+							"iid": "fa5459ab-8560-11f0-bf44-b37bf824f298",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -3978,16 +4048,64 @@
 							],
 							"__worldX": 32,
 							"__worldY": 416
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "fa5480b0-8560-11f0-bf44-e767422da4fb",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 32,
+							"__worldY": 432
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "e" }, { "levelIid": "161e99b0-8560-11f0-bf44-6dbd63cbd1ae", "dir": "w" }, { "levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f", "dir": "s" }, { "levelIid": "0f055c70-8560-11f0-bf44-0bb5357b3b25", "dir": "sw" } ]
+			"__neighbours": [
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "e" },
+				{ "levelIid": "04bfe440-8560-11f0-bf44-35d4315ff9ce", "dir": "w" },
+				{ "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "se" },
+				{ "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "s" },
+				{ "levelIid": "1bf89ac0-8560-11f0-bf44-df8fdc7afeda", "dir": "sw" }
+			]
 		},
 		{
 			"identifier": "Gate_Keypad3",
-			"iid": "161e99b0-8560-11f0-bf44-6dbd63cbd1ae",
-			"uid": 58,
+			"iid": "04bfe440-8560-11f0-bf44-35d4315ff9ce",
+			"uid": 65,
 			"worldX": -80,
 			"worldY": 416,
 			"worldDepth": 0,
@@ -4012,10 +4130,7 @@
 					"id": "V_String",
 					"params": ["The keypad has numbers and a # symbol."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["gatepad"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["Other"]
@@ -4034,8 +4149,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "161e99b1-8560-11f0-bf44-79798970d2c5",
-					"levelId": 58,
+					"iid": "04bfe441-8560-11f0-bf44-8deff4cc92e3",
+					"levelId": 65,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -4054,7 +4169,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "161e99b2-8560-11f0-bf44-3db033ce8037",
+							"iid": "04bfe442-8560-11f0-bf44-a75dc763d334",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
@@ -4070,7 +4185,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b3-8560-11f0-bf44-b54ef653ad0d",
+							"iid": "04bfe443-8560-11f0-bf44-a3eb963da720",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4080,25 +4195,23 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": [
-										"The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed."
-									]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
@@ -4117,7 +4230,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b4-8560-11f0-bf44-4d4232d4db44",
+							"iid": "04bfe444-8560-11f0-bf44-6b5d0993f4bf",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4162,7 +4275,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b5-8560-11f0-bf44-b10c392e4f22",
+							"iid": "04bfe445-8560-11f0-bf44-b5eb1e29fe2a",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4207,7 +4320,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b6-8560-11f0-bf44-8d1eb67d5f2f",
+							"iid": "04bfe446-8560-11f0-bf44-0d6ce6d08508",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4252,7 +4365,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b7-8560-11f0-bf44-512f257035a3",
+							"iid": "04bfe447-8560-11f0-bf44-f516b6fc57ab",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4297,7 +4410,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b8-8560-11f0-bf44-5dc7886bc796",
+							"iid": "04bfe448-8560-11f0-bf44-8f94345da81e",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4342,7 +4455,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99b9-8560-11f0-bf44-b722f8e6e627",
+							"iid": "04bfe449-8560-11f0-bf44-47f6f8739069",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4387,7 +4500,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99ba-8560-11f0-bf44-79585f5c21c4",
+							"iid": "04bfe44a-8560-11f0-bf44-5f3adbd4ad39",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4402,13 +4515,13 @@
 									"params": ["Press 7"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "81f82892-8560-11f0-bf44-d169221d5b0d",
-									"layerIid": "81f82891-8560-11f0-bf44-8570f86b319d",
-									"levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f",
+									"entityIid": "07e34452-8560-11f0-bf44-a3fb785bdcc2",
+									"layerIid": "07e34451-8560-11f0-bf44-db17b60505f4",
+									"levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["81f82892-8560-11f0-bf44-d169221d5b0d"]
+									"params": ["07e34452-8560-11f0-bf44-a3fb785bdcc2"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Burp", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -4432,7 +4545,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "161e99bb-8560-11f0-bf44-c141e5dffed1",
+							"iid": "04bfe44b-8560-11f0-bf44-8b13fc319f55",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4469,16 +4582,593 @@
 							],
 							"__worldX": -32,
 							"__worldY": 416
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "04bfe44c-8560-11f0-bf44-4df7b76565f3",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": -32,
+							"__worldY": 432
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2", "dir": "e" }, { "levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f", "dir": "se" }, { "levelIid": "0f055c70-8560-11f0-bf44-0bb5357b3b25", "dir": "s" } ]
+			"__neighbours": [ { "levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4", "dir": "e" }, { "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "se" }, { "levelIid": "1bf89ac0-8560-11f0-bf44-df8fdc7afeda", "dir": "s" } ]
 		},
 		{
 			"identifier": "Gate_Keypad4",
-			"iid": "81f82890-8560-11f0-bf44-a3fc49202d8f",
-			"uid": 59,
+			"iid": "07e34450-8560-11f0-bf44-f57d672eafa1",
+			"uid": 66,
+			"worldX": 48,
+			"worldY": 480,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Gate Keypad", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Gate Keypad"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The keypad has numbers and a # symbol.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The keypad has numbers and a # symbol."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "07e34451-8560-11f0-bf44-db17b60505f4",
+					"levelId": 66,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 1144517,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "07e34452-8560-11f0-bf44-a3fb785bdcc2",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 48,
+							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e34453-8560-11f0-bf44-5be467cbf3ed",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,0],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 0"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Blep"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b60-8560-11f0-bf44-fbe92960fa89",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 1", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 1"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Beep", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Beep"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 496
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b61-8560-11f0-bf44-f1d21793bb3b",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 2", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 2"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Boop", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Boop"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 512
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,3],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b62-8560-11f0-bf44-f71c8df0acbb",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,48],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 3", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 3"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Buzz", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Buzz"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 528
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b63-8560-11f0-bf44-af34ff04bac0",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,0],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 4", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 4"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Blip", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Blip"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b64-8560-11f0-bf44-7d2189dc6680",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 5", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 5"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "18f8ef52-8560-11f0-bf44-0d7d9a578235",
+									"layerIid": "18f8ef51-8560-11f0-bf44-fd5857c042e0",
+									"levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["18f8ef52-8560-11f0-bf44-0d7d9a578235"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bap", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bap"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 496
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b65-8560-11f0-bf44-a3a12f969187",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 6", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 6"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Blorp", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Blorp"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 512
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,3],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b66-8560-11f0-bf44-d781d205d20f",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,48],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 7", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 7"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Burp", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Burp"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 528
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b67-8560-11f0-bf44-37685e7f3133",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,0],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 8", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 8"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bork", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bork"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 96,
+							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "07e36b68-8560-11f0-bf44-43227b51b516",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 96,
+							"__worldY": 496
+						}
+					]
+				}
+			],
+			"__neighbours": [
+				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "ne" },
+				{ "levelIid": "0d5083b0-8560-11f0-bf44-7b158af7ff52", "dir": "e" },
+				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "n" },
+				{ "levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4", "dir": "nw" },
+				{ "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "w" },
+				{ "levelIid": "226384b0-8560-11f0-bf44-b5bddb901e41", "dir": "s" }
+			]
+		},
+		{
+			"identifier": "Gate_Keypad5",
+			"iid": "18f8ef50-8560-11f0-bf44-9565437233f1",
+			"uid": 67,
 			"worldX": -16,
 			"worldY": 480,
 			"worldDepth": 0,
@@ -4503,10 +5193,7 @@
 					"id": "V_String",
 					"params": ["The keypad has numbers and a # symbol."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["gatepad"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["Other"]
@@ -4525,8 +5212,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "81f82891-8560-11f0-bf44-8570f86b319d",
-					"levelId": 59,
+					"iid": "18f8ef51-8560-11f0-bf44-fd5857c042e0",
+					"levelId": 67,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -4545,7 +5232,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "81f82892-8560-11f0-bf44-d169221d5b0d",
+							"iid": "18f8ef52-8560-11f0-bf44-0d7d9a578235",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
@@ -4561,7 +5248,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82893-8560-11f0-bf44-4d902f3949ea",
+							"iid": "18f8ef53-8560-11f0-bf44-813612b095e0",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4571,25 +5258,23 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": [
-										"The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed."
-									]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
@@ -4608,7 +5293,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82894-8560-11f0-bf44-45049e71a33a",
+							"iid": "18f8ef54-8560-11f0-bf44-97ebcd205082",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4653,7 +5338,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82895-8560-11f0-bf44-45aadfe4f629",
+							"iid": "18f8ef55-8560-11f0-bf44-dbbfc43da95b",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4698,7 +5383,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82896-8560-11f0-bf44-071a123b4028",
+							"iid": "18f8ef56-8560-11f0-bf44-616333509218",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4713,13 +5398,13 @@
 									"params": ["Press 3"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
-									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
-									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"entityIid": "1bf89ac2-8560-11f0-bf44-7d4a6a95c019",
+									"layerIid": "1bf89ac1-8560-11f0-bf44-0b3fcfd00b7f",
+									"levelIid": "1bf89ac0-8560-11f0-bf44-df8fdc7afeda",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+									"params": ["1bf89ac2-8560-11f0-bf44-7d4a6a95c019"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Buzz", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -4743,7 +5428,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82897-8560-11f0-bf44-996d7d903023",
+							"iid": "18f8ef57-8560-11f0-bf44-7723d0b37c19",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4788,7 +5473,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82898-8560-11f0-bf44-5d948ccd664e",
+							"iid": "18f8ef58-8560-11f0-bf44-b9a7f267c4ef",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4803,13 +5488,13 @@
 									"params": ["Press 5"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "0f055c72-8560-11f0-bf44-594a97cb28c7",
-									"layerIid": "0f055c71-8560-11f0-bf44-61d3339b9ffb",
-									"levelIid": "0f055c70-8560-11f0-bf44-0bb5357b3b25",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["0f055c72-8560-11f0-bf44-594a97cb28c7"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Bap", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -4833,7 +5518,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f82899-8560-11f0-bf44-f508a081f64b",
+							"iid": "18f8ef59-8560-11f0-bf44-1b12674f185b",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4878,7 +5563,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f8289a-8560-11f0-bf44-63d520313550",
+							"iid": "18f8ef5a-8560-11f0-bf44-d1000f8513ec",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4923,7 +5608,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "81f8289b-8560-11f0-bf44-610249d81f6e",
+							"iid": "18f8ef5b-8560-11f0-bf44-47791c4ea1c8",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -4960,22 +5645,65 @@
 							],
 							"__worldX": 32,
 							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "18f8ef5c-8560-11f0-bf44-b780982ccedb",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 32,
+							"__worldY": 496
 						}
 					]
 				}
 			],
 			"__neighbours": [
 				{ "levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45", "dir": "ne" },
-				{ "levelIid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2", "dir": "n" },
-				{ "levelIid": "161e99b0-8560-11f0-bf44-6dbd63cbd1ae", "dir": "nw" },
-				{ "levelIid": "0f055c70-8560-11f0-bf44-0bb5357b3b25", "dir": "w" },
-				{ "levelIid": "70468450-8560-11f0-bf44-b702faa8547f", "dir": "s" }
+				{ "levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4", "dir": "n" },
+				{ "levelIid": "04bfe440-8560-11f0-bf44-35d4315ff9ce", "dir": "nw" },
+				{ "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "e" },
+				{ "levelIid": "1bf89ac0-8560-11f0-bf44-df8fdc7afeda", "dir": "w" },
+				{ "levelIid": "226384b0-8560-11f0-bf44-b5bddb901e41", "dir": "se" }
 			]
 		},
 		{
-			"identifier": "Gate_Keypad5",
-			"iid": "0f055c70-8560-11f0-bf44-0bb5357b3b25",
-			"uid": 60,
+			"identifier": "Gate_Keypad6",
+			"iid": "1bf89ac0-8560-11f0-bf44-df8fdc7afeda",
+			"uid": 68,
 			"worldX": -80,
 			"worldY": 480,
 			"worldDepth": 0,
@@ -5000,10 +5728,7 @@
 					"id": "V_String",
 					"params": ["The keypad has numbers and a # symbol."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["gatepad"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["Other"]
@@ -5022,8 +5747,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "0f055c71-8560-11f0-bf44-61d3339b9ffb",
-					"levelId": 60,
+					"iid": "1bf89ac1-8560-11f0-bf44-0b3fcfd00b7f",
+					"levelId": 68,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -5042,7 +5767,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "0f055c72-8560-11f0-bf44-594a97cb28c7",
+							"iid": "1bf89ac2-8560-11f0-bf44-7d4a6a95c019",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
@@ -5058,7 +5783,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c73-8560-11f0-bf44-8b7ae6c55e2c",
+							"iid": "1bf89ac3-8560-11f0-bf44-edaf845e99cf",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5068,25 +5793,23 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "226384b2-8560-11f0-bf44-2f47fd198988",
+									"layerIid": "226384b1-8560-11f0-bf44-ffff784be47b",
+									"levelIid": "226384b0-8560-11f0-bf44-b5bddb901e41",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["226384b2-8560-11f0-bf44-2f47fd198988"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": [
-										"The keypad buzzes and the gate makes a sound for a moment, but it still seems to be closed."
-									]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
@@ -5105,7 +5828,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c74-8560-11f0-bf44-d35e1b7b0798",
+							"iid": "1bf89ac4-8560-11f0-bf44-95502caf4cc8",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5150,7 +5873,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c75-8560-11f0-bf44-bbd26ae31752",
+							"iid": "1bf89ac5-8560-11f0-bf44-65333a5465f5",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5195,7 +5918,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c76-8560-11f0-bf44-cbd2646d059b",
+							"iid": "1bf89ac6-8560-11f0-bf44-1153fe505aa8",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5210,13 +5933,13 @@
 									"params": ["Press 3"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "70468452-8560-11f0-bf44-dbe2a19e1b53",
-									"layerIid": "70468451-8560-11f0-bf44-0d69955b34d3",
-									"levelIid": "70468450-8560-11f0-bf44-b702faa8547f",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["70468452-8560-11f0-bf44-dbe2a19e1b53"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": "Buzz", "__tile": null, "defUid": 10, "realEditorValues": [{
@@ -5240,7 +5963,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c77-8560-11f0-bf44-fbc1ff42afac",
+							"iid": "1bf89ac7-8560-11f0-bf44-976e5cc27fb0",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5285,7 +6008,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c78-8560-11f0-bf44-35a21ec0e452",
+							"iid": "1bf89ac8-8560-11f0-bf44-e1a2fe567ac4",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5330,7 +6053,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c79-8560-11f0-bf44-79d0a7ec41e4",
+							"iid": "1bf89ac9-8560-11f0-bf44-512a9b192581",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5375,7 +6098,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c7a-8560-11f0-bf44-5d30a2852f6d",
+							"iid": "1bf89aca-8560-11f0-bf44-a5eabd73ab86",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5420,7 +6143,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "0f055c7b-8560-11f0-bf44-051801ef065a",
+							"iid": "1bf89acb-8560-11f0-bf44-e9e1e5ab108b",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5457,17 +6180,59 @@
 							],
 							"__worldX": -32,
 							"__worldY": 480
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "1bf89acc-8560-11f0-bf44-79180752d6d5",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "Bink", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bink"]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": -32,
+							"__worldY": 496
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "c6b8ac30-8560-11f0-bf44-6d3abc633fe2", "dir": "ne" }, { "levelIid": "161e99b0-8560-11f0-bf44-6dbd63cbd1ae", "dir": "n" }, { "levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f", "dir": "e" }, { "levelIid": "70468450-8560-11f0-bf44-b702faa8547f", "dir": "se" } ]
+			"__neighbours": [ { "levelIid": "fa5459a0-8560-11f0-bf44-e39d3bd88ed4", "dir": "ne" }, { "levelIid": "04bfe440-8560-11f0-bf44-35d4315ff9ce", "dir": "n" }, { "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "e" } ]
 		},
 		{
-			"identifier": "Gate_Keypad6",
-			"iid": "70468450-8560-11f0-bf44-b702faa8547f",
-			"uid": 61,
-			"worldX": -16,
+			"identifier": "Gate_Keypad7",
+			"iid": "226384b0-8560-11f0-bf44-b5bddb901e41",
+			"uid": 69,
+			"worldX": 48,
 			"worldY": 544,
 			"worldDepth": 0,
 			"pxWid": 64,
@@ -5491,10 +6256,7 @@
 					"id": "V_String",
 					"params": ["The keypad has numbers and a # symbol."]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": "gatepad", "__tile": null, "defUid": 19, "realEditorValues": [{
-					"id": "V_String",
-					"params": ["gatepad"]
-				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
 					"id": "V_String",
 					"params": ["Other"]
@@ -5513,8 +6275,8 @@
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": null,
 					"__tilesetRelPath": null,
-					"iid": "70468451-8560-11f0-bf44-0d69955b34d3",
-					"levelId": 61,
+					"iid": "226384b1-8560-11f0-bf44-ffff784be47b",
+					"levelId": 69,
 					"layerDefUid": 14,
 					"pxOffsetX": 0,
 					"pxOffsetY": 0,
@@ -5533,13 +6295,13 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#D77643",
-							"iid": "70468452-8560-11f0-bf44-dbe2a19e1b53",
+							"iid": "226384b2-8560-11f0-bf44-2f47fd198988",
 							"width": 16,
 							"height": 16,
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": -16,
+							"__worldX": 48,
 							"__worldY": 544
 						},
 						{
@@ -5549,7 +6311,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468453-8560-11f0-bf44-7b03e57def2e",
+							"iid": "226384b3-8560-11f0-bf44-17608bf25fef",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5559,35 +6321,32 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Press #", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Press 0", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Press #"]
+									"params": ["Press 0"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "eb7ba660-8560-11f0-bf44-4bbd9fcddf20",
+									"layerIid": "99cbe560-8560-11f0-bf44-ef6b08e2ddfc",
+									"levelIid": "99cbbe50-8560-11f0-bf44-6388ed1aec45",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["eb7ba660-8560-11f0-bf44-4bbd9fcddf20"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "The keypad buzzes and the gate makes a grinding sound as it starts to swing open!", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "Blep", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["The keypad buzzes and the gate makes a grinding sound as it starts to swing open!"]
+									"params": ["Blep"]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["gate=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["gate=1"]
-								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
 								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
 								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 0,
+							"__worldX": 64,
 							"__worldY": 544
 						},
 						{
@@ -5597,7 +6356,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468454-8560-11f0-bf44-67076bdf488d",
+							"iid": "226384b4-8560-11f0-bf44-a78fc9565a0e",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5632,7 +6391,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 0,
+							"__worldX": 64,
 							"__worldY": 560
 						},
 						{
@@ -5642,7 +6401,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468455-8560-11f0-bf44-8d297903205e",
+							"iid": "226384b5-8560-11f0-bf44-a3d5f21b2d50",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5677,7 +6436,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 0,
+							"__worldX": 64,
 							"__worldY": 576
 						},
 						{
@@ -5687,7 +6446,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468456-8560-11f0-bf44-496c440462fa",
+							"iid": "226384b6-8560-11f0-bf44-4db3b4c8a76a",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5722,7 +6481,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 0,
+							"__worldX": 64,
 							"__worldY": 592
 						},
 						{
@@ -5732,7 +6491,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468457-8560-11f0-bf44-435b08dfbd68",
+							"iid": "226384b7-8560-11f0-bf44-9d57ea2918b2",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5767,7 +6526,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 16,
+							"__worldX": 80,
 							"__worldY": 544
 						},
 						{
@@ -5777,7 +6536,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468458-8560-11f0-bf44-0565b9dd7033",
+							"iid": "226384b8-8560-11f0-bf44-094b5a232426",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5812,7 +6571,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 16,
+							"__worldX": 80,
 							"__worldY": 560
 						},
 						{
@@ -5822,7 +6581,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "70468459-8560-11f0-bf44-8d21460e71d7",
+							"iid": "226384b9-8560-11f0-bf44-2d430ad5bb9d",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5857,7 +6616,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 16,
+							"__worldX": 80,
 							"__worldY": 576
 						},
 						{
@@ -5867,7 +6626,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "7046845a-8560-11f0-bf44-1ff4c9a2e8d0",
+							"iid": "226384ba-8560-11f0-bf44-eb9834f3052d",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5902,7 +6661,7 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 16,
+							"__worldX": 80,
 							"__worldY": 592
 						},
 						{
@@ -5912,7 +6671,7 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#BE4A2F",
-							"iid": "7046845b-8560-11f0-bf44-197340cd09aa",
+							"iid": "226384bb-8560-11f0-bf44-cb0bc313f298",
 							"width": 16,
 							"height": 16,
 							"defUid": 3,
@@ -5947,13 +6706,60 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 32,
+							"__worldX": 96,
 							"__worldY": 544
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [3,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "226384bc-8560-11f0-bf44-b3cce86efa81",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [48,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Press 9", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Press 9"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
+									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
+									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "The keypad plays a positive sounding beep and the gate makes a grinding sound as it opens!", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"The keypad plays a positive sounding beep and the gate makes a grinding sound as it opens!"
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["gate=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["gate=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 96,
+							"__worldY": 560
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "81f82890-8560-11f0-bf44-a3fc49202d8f", "dir": "n" }, { "levelIid": "0f055c70-8560-11f0-bf44-0bb5357b3b25", "dir": "nw" } ]
+			"__neighbours": [ { "levelIid": "0d5083b0-8560-11f0-bf44-7b158af7ff52", "dir": "ne" }, { "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "n" }, { "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "nw" } ]
 		}
 	],
 	"worlds": [],
