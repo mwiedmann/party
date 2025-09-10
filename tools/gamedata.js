@@ -3,51 +3,6 @@ const fs = require("fs")
 const rawText = fs.readFileSync("gfx/party.ldtk")
 const ldtk = JSON.parse(rawText)
 
-/*
-typedef struct Criteria {
-  unsigned char gameStateId;
-  unsigned char value;
-} Criteria;
-
-typedef struct StateChange {
-  unsigned char id;
-  unsigned char value;
-} StateChange;
-
-typedef struct Choice {
-  unsigned char canSelect;
-  unsigned short textStringOffset;
-  unsigned short transitionVisualId; // Visual to transition to
-  unsigned short resultStringOffset; // Shows after you pick this choice
-  unsigned short personRoomId; // Room to move to if this is a choice on a Person
-  unsigned char minutes; // How many minutes this choice takes
-  unsigned short criteriaRoomId; // Room Person must be in for this choice to be active
-  Criteria criteria[2];
-  StateChange stateChanges[2];
-} Choice;
-
-typedef struct Visual {
-  unsigned char visualType; // 0 = Room, 1 = Person, 2 = Other
-  unsigned short nameStringOffset;
-  unsigned short textStringOffset;
-  unsigned short imageStringOffset;
-  Choice choices[10];
-  char stringData[512];
-} Visual;
-
-typedef struct TimeEntry {
-    unsigned char hour;
-    unsigned char minute;
-    unsigned short roomId;
-} TimeEntry;
-
-typedef struct Person {
-    unsigned short id;
-    unsigned short currentRoomId;
-    TimeEntry timeEntries[1]; // Up to ? time entries
-} Person;
-*/
-
 const charConvert = (c) => {
   let charCode = c
   if (charCode >= 97 && charCode <= 122) {
@@ -58,6 +13,7 @@ const charConvert = (c) => {
   return charCode
 }
 
+const INV_PREFIX = "INV_"
 const INV_STRING_LEN=30
 const inv = require("./inv.json")
 
@@ -81,11 +37,16 @@ const visualTypeValues = {
 
 const gameState = {}
 let gameStateIndex = 2 // 0 is ignored, 1 is always true
+let invIndex = 128
 
 const getGameStateIndex = (id) => {
   if (gameState[id] !== undefined) return gameState[id]
 
-  gameState[id] = gameStateIndex++
+  if (id.startsWith(INV_PREFIX)) {
+    gameState[id] = invIndex++
+  } else {
+    gameState[id] = gameStateIndex++
+  }
   return gameState[id]
 }
 

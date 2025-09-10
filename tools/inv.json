@@ -1,11 +1,6 @@
 [
     {
-        "id": "invite",
-        "text": "The party invitation"
-    },
-    {
-        "id": "burger",
-        "text": "A cheeseburger"
+        "id": "stick",
+        "text": "A good stick"
     }
-
 ]

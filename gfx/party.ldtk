@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 70,
+	"nextUid": 71,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -1026,13 +1026,13 @@
 									"params": ["TESTING - Jump to location"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
-									"layerIid": "73dc9d20-8560-11f0-9bc5-af4e67a6a613",
-									"levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57",
+									"entityIid": "242e3b00-8560-11f0-9bc5-bbe8f9fe9229",
+									"layerIid": "0bd658e1-8560-11f0-9bc5-6944e9b01594",
+									"levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
+									"params": ["242e3b00-8560-11f0-9bc5-bbe8f9fe9229"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
@@ -1804,7 +1804,7 @@
 				{ "levelIid": "02277740-8560-11f0-9bc5-2fa760535061", "dir": "nw" },
 				{ "levelIid": "f89dcbb0-8560-11f0-9bc5-7db833e8eb0b", "dir": "n" },
 				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "s" },
-				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "se" }
+				{ "levelIid": "5405e450-8560-11f0-a55d-83c345130fce", "dir": "se" }
 			]
 		},
 		{
@@ -2398,7 +2398,7 @@
 				{ "levelIid": "0d5083b0-8560-11f0-bf44-7b158af7ff52", "dir": "sw" },
 				{ "levelIid": "afb05170-8560-11f0-9bc5-3966717c4a89", "dir": "s" },
 				{ "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "n" },
-				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "ne" }
+				{ "levelIid": "5405e450-8560-11f0-a55d-83c345130fce", "dir": "ne" }
 			]
 		},
 		{
@@ -2945,13 +2945,13 @@
 									"params": ["Continue."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "97e84330-8560-11f0-9bc5-5da7f48a8424",
-									"layerIid": "a6559c71-8560-11f0-9bc5-2b75238bacb0",
-									"levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc",
+									"entityIid": "58c51a10-8560-11f0-a55d-9360dce5b0e3",
+									"layerIid": "5405e451-8560-11f0-a55d-1321e6651cc3",
+									"levelIid": "5405e450-8560-11f0-a55d-83c345130fce",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["97e84330-8560-11f0-9bc5-5da7f48a8424"]
+									"params": ["58c51a10-8560-11f0-a55d-9360dce5b0e3"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
@@ -2974,14 +2974,14 @@
 				{ "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "n" },
 				{ "levelIid": "73dc7610-8560-11f0-9bc5-65583f066c57", "dir": "sw" },
 				{ "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "s" },
-				{ "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "e" }
+				{ "levelIid": "5405e450-8560-11f0-a55d-83c345130fce", "dir": "e" }
 			]
 		},
 		{
 			"identifier": "Dark_Bus_Stop",
 			"iid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc",
 			"uid": 51,
-			"worldX": 240,
+			"worldX": 304,
 			"worldY": 352,
 			"worldDepth": 0,
 			"pxWid": 64,
@@ -3001,10 +3001,10 @@
 					"id": "V_String",
 					"params": ["Dark Bus Stop"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward. You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "The bus stop could use some love. The dingy streetlamp doesn't provide much light and most of the paint has peeled off the bench. The houses up here don't look like they are for people who need to take the bus. \"The help needs to get up here somehow.\" you say to yourself. You shake your head as you imagine some old guy saying that to his buddies before knocking back a scotch. The road continues up the hill into the darkness. There is a pile of sticks on the side of the road. Looks like some unfinished landscaping.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward. You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead."
+						"The bus stop could use some love. The dingy streetlamp doesn't provide much light and most of the paint has peeled off the bench. The houses up here don't look like they are for people who need to take the bus. \"The help needs to get up here somehow.\" you say to yourself. You shake your head as you imagine some old guy saying that to his buddies before knocking back a scotch. The road continues up the hill into the darkness. There is a pile of sticks on the side of the road. Looks like some unfinished landscaping."
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": "busdark", "__tile": null, "defUid": 19, "realEditorValues": [{
@@ -3052,7 +3052,7 @@
 							"defUid": 8,
 							"px": [0,0],
 							"fieldInstances": [],
-							"__worldX": 240,
+							"__worldX": 304,
 							"__worldY": 352
 						},
 						{
@@ -3072,9 +3072,9 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Continue", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Continue up the road.", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Continue"]
+									"params": ["Continue up the road."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
 									"entityIid": "ca3430c0-8560-11f0-9bc5-3f9fe555f2a4",
@@ -3086,7 +3086,12 @@
 									"params": ["ca3430c0-8560-11f0-9bc5-3f9fe555f2a4"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You're not sure if it's the girl or just general mystery of it, but you find yourself walking up the road. After about 10 minutes you think you see lights up ahead."
+									]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
 								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
 								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
@@ -3094,13 +3099,55 @@
 								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
-							"__worldX": 256,
+							"__worldX": 320,
 							"__worldY": 368
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e07192f0-8560-11f0-a55d-f3ae9cb0fc2c",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Grab a stick.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Grab a stick."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You laugh as you pick up one of the sticks and remember an old girlfriend saying \"What's up with guys and finding good sticks?\"", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You laugh as you pick up one of the sticks and remember an old girlfriend saying \"What's up with guys and finding good sticks?\""
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["INV_stick=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_stick=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 320,
+							"__worldY": 384
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "nw" }, { "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "sw" }, { "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "w" } ]
+			"__neighbours": [{ "levelIid": "5405e450-8560-11f0-a55d-83c345130fce", "dir": "w" }]
 		},
 		{
 			"identifier": "Gate_Keypad",
@@ -6760,6 +6807,131 @@
 				}
 			],
 			"__neighbours": [ { "levelIid": "0d5083b0-8560-11f0-bf44-7b158af7ff52", "dir": "ne" }, { "levelIid": "07e34450-8560-11f0-bf44-f57d672eafa1", "dir": "n" }, { "levelIid": "18f8ef50-8560-11f0-bf44-9565437233f1", "dir": "nw" } ]
+		},
+		{
+			"identifier": "Level_22",
+			"iid": "5405e450-8560-11f0-a55d-83c345130fce",
+			"uid": 70,
+			"worldX": 240,
+			"worldY": 352,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": true,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Last Stop", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Last Stop"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"You are the last person on the bus for quite a while before it finally reaches your stop. You poke your head out and look around. It's pitch dark except for a single streetlight illuminating the bus stop. As soon as you step completely out, the bus driver quickly closes the door, does a U-turn, and drives back down the hill. You look at your phone...no bars. You wonder if this is a mistake but take a look at the card once again. Something about it is urging you forward."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "busdark", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["busdark"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "5405e451-8560-11f0-a55d-1321e6651cc3",
+					"levelId": 70,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 3440654,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "58c51a10-8560-11f0-a55d-9360dce5b0e3",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 240,
+							"__worldY": 352
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "8086b6d0-8560-11f0-a55d-952b2d600830",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "97e84330-8560-11f0-9bc5-5da7f48a8424",
+									"layerIid": "a6559c71-8560-11f0-9bc5-2b75238bacb0",
+									"levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["97e84330-8560-11f0-9bc5-5da7f48a8424"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 256,
+							"__worldY": 368
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "514ac910-5e50-11f0-afc8-63eefef4d67f", "dir": "nw" }, { "levelIid": "980cd5c0-8560-11f0-9bc5-bb043322c03f", "dir": "sw" }, { "levelIid": "0bd658e0-8560-11f0-9bc5-f907eda62ed9", "dir": "w" }, { "levelIid": "a6559c70-8560-11f0-9bc5-fb88f1dbedcc", "dir": "e" } ]
 		}
 	],
 	"worlds": [],
