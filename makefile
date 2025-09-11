@@ -39,6 +39,8 @@ img:
 	node tools/gimp-pal-convert.js gfx/gate-pad.data.pal build/GATEPAD.PAL
 	node tools/gimp-img-convert.js gfx/gate-open.data build/GATEOPEN.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/gate-open.data.pal build/GATEOPEN.PAL
+	node tools/gimp-img-convert.js gfx/raccoon.data build/RACCOON.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/raccoon.data.pal build/RACCOON.PAL
 
 zip:
 	cd build && \
