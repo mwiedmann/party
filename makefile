@@ -44,3 +44,6 @@ zip:
 	cd build && \
 	rm -f dng.zip && \
 	zip dng.zip *
+
+dark:
+	node tools/gimp-create-pal.js

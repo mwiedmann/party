@@ -11,7 +11,7 @@ const palData = fs.readFileSync(palName);
 
 const finalPal = []
 
-const adjustColor = (c) => c>>4
+const adjustColor = (c) => Math.min(Math.round(c/16),15)
 
 // The raw data is just a long array of R,G and B bytes
 // Convert them to G+B and R (4 bytes each)
