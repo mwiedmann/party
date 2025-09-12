@@ -70,6 +70,10 @@ void main() {
     char buffer[80];
     PersonInfo currentPerson;
 
+    // Cursor shows up sometimes. Not sure how to disable.
+    // cursor(0) doesn't work so just put it here.
+    gotoxy(40,0);
+
     gameState[0] = 1; // Default criteria will always skip/fail
 
     init();
@@ -136,7 +140,7 @@ void main() {
         showStatus();
         cursorX=0;
         cursorY=31;
-    
+
         if (*resultString) {
             printWordWrapped(resultString); 
             cursorY+=2;
