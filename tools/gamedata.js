@@ -14,18 +14,6 @@ const charConvert = (c) => {
 }
 
 const INV_PREFIX = "INV_"
-const INV_STRING_LEN=30
-const inv = require("./inv.json")
-
-const invbindata = new Uint8Array(inv.reduce((prev,curr) => {
-  for (let i=0; i<INV_STRING_LEN-1; i++) {
-    prev.push(i >= curr.text.length ? 0 : charConvert(curr.text.charCodeAt(i)))
-  }
-  prev.push(0)
-  return prev
-}, []))
-
-fs.writeFileSync(`build/INVSTR.BIN`, invbindata, "binary")
 
 const timeEntryCount = 5
 
@@ -49,6 +37,22 @@ const getGameStateIndex = (id) => {
   }
   return gameState[id]
 }
+
+const INV_STRING_LEN=30
+const inv = require("./inv.json")
+
+const invbindata = new Uint8Array(inv.reduce((prev,curr, idx) => {
+  for (let i=0; i<INV_STRING_LEN-1; i++) {
+    prev.push(i >= curr.text.length ? 0 : charConvert(curr.text.charCodeAt(i)))
+  }
+  prev.push(0)
+
+  // Set the id for this inv item so when referenced later it is correct
+  getGameStateIndex(`${INV_PREFIX}${curr.id}`)
+  return prev
+}, []))
+
+fs.writeFileSync(`build/INVSTR.BIN`, invbindata, "binary")
 
 const levelData = {}
 

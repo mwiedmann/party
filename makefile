@@ -41,6 +41,8 @@ img:
 	node tools/gimp-pal-convert.js gfx/gate-open.data.pal build/GATEOPEN.PAL
 	node tools/gimp-img-convert.js gfx/raccoon.data build/RACCOON.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/raccoon.data.pal build/RACCOON.PAL
+	node tools/gimp-img-convert.js gfx/cheeseburger.data build/CHEBUR.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/cheeseburger.data.pal build/CHEBUR.PAL
 
 zip:
 	cd build && \

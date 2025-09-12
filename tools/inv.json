@@ -2,5 +2,9 @@
     {
         "id": "stick",
         "text": "A good stick"
+    },
+    {
+        "id": "burger",
+        "text": "A half eaten cheeseburger"
     }
 ]
