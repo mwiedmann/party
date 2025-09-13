@@ -34,7 +34,7 @@ void advanceTime(unsigned char minutesToAdd) {
 }
 
 void showStatus() {
-    unsigned char showHour, i;
+    unsigned char showHour, i, letterChoice;
     char buffer[40];
 
     cursorX=41;
@@ -53,37 +53,16 @@ void showStatus() {
     cursorY=3;
     printWordWrapped("--INVENTORY--\n");
 
+    letterChoice=0;
     for (i=0; i<INV_STRING_COUNT; i++) {
-        if (gameState[128+i]) {
+        if (gameState[GAME_STATE_INV_START+i]) {
             cursorX=41;
-            printWordWrapped(invStrings[i]);
+            sprintf(buffer, "%c. %s", 'A'+letterChoice, invStrings[i]);
+            printWordWrapped(buffer);
             cursorY++;
+            letterChoice++;
         }
     }
-}
-
-unsigned char pickItem() {
-    unsigned char choice, i, gsId, count;
-
-    gsId=0;
-    choice = cgetc();
-
-    if (choice >= 'a' && choice <= 'z') {
-        choice -= 'a';
-    }
-
-    count=0;
-    for (i=0; i<INV_STRING_COUNT; i++) {
-        if (gameState[128+i]) {
-            if (count==choice) {
-                // found selected item
-                gsId=128+i;
-            }
-            count++;
-        }
-    }
-
-    return gsId;
 }
 
 unsigned char criteriaCheck(Choice *choice) {
@@ -114,10 +93,48 @@ unsigned char criteriaCheck(Choice *choice) {
     return 1;
 }
 
+unsigned char pickItemChoice() {
+    unsigned char choice, i, gsId, count;
+
+    gsId=0;
+    choice = cgetc();
+
+    if (choice >= 'a' && choice <= 'z') {
+        choice -= 'a';
+    } else {
+        return 255; // Not an item
+    }
+
+    count=0;
+    for (i=0; i<INV_STRING_COUNT; i++) {
+        if (gameState[GAME_STATE_INV_START+i]) {
+            if (count==choice) {
+                // found selected item
+                gsId=GAME_STATE_INV_START+i;
+
+                // See if there is a option to use the item
+                // First criteria option should be for the item
+                // and all criteria should pass
+                for (i = 0; i < CHOICE_COUNT; i++) {
+                    if (currentVisual.choices[i].criteria[0].gameStateId == gsId && criteriaCheck(&currentVisual.choices[i])) {
+                        return i; // valid choice that uses the item
+                    }
+                }
+
+                // No valid choice for this item
+                return 254;
+            }
+            count++;
+        }
+    }
+
+    return 255;
+}
+
 void main() {
     unsigned short visualId = 1, currentImage = 0, stringOffset, temp; // Start in the foyer
     unsigned char i, personIndex, forcingChoiceId;
-    unsigned char choice, showedPerson, selectedGSId;
+    unsigned char choice, showedPerson, usedItem;
     char resultString[1024];
     char buffer[80];
     PersonInfo currentPerson;
@@ -223,8 +240,8 @@ void main() {
 
         // Show choices
         for (i = 0; i < CHOICE_COUNT; i++) {
-            // No need to show forced choices
-            if (currentVisual.choices[i].force) {
+            // No need to show forced choices or choices that require an item (those are selected via the inventory)
+            if (currentVisual.choices[i].force || (currentVisual.choices[i].criteria[0].gameStateId >= GAME_STATE_INV_START && currentVisual.choices[i].criteria[0].value)) {
                 continue;
             }
 
@@ -245,6 +262,9 @@ void main() {
             cursorX=0;
         }
         
+        // Always add a choice to use an item
+        printWordWrapped("\nI: Use an item\n");
+
         if (currentVisual.visualType == ROOM_TYPE) {
             personIndex=0;
             for (i=0; i<TIME_TABLE_LENGTH; i++) {
@@ -257,24 +277,32 @@ void main() {
             }
 
             // Always add a choice to wait for a minute if in a room
-            printWordWrapped("\nW: Wait for a minute\n");
+            printWordWrapped("W: Wait for a minute\n");
         } else {
             // Always add a choice to leave this person or thing
-            sprintf(buffer, "\nX: Leave %s\n", getString(currentVisual.nameStringOffset, &currentVisual));
+            sprintf(buffer, "X: Leave %s\n", getString(currentVisual.nameStringOffset, &currentVisual));
             printWordWrapped(buffer);
         }
 
-        // Always add a choice to wait for a minute if in a room
-        printWordWrapped("\nI: Use an item\n");
 
         printWordWrapped("\nChoose an option: ");
         choice = cgetc(); // Convert char to index
         printWordWrapped("\n");
 
+        usedItem=0;
         // Pick inv item
         if (choice == 'i') {
-            printWordWrapped("\nPick an item to use: ");
-            selectedGSId = pickItem();
+            usedItem=1;
+            printWordWrapped("Press an item letter to use: ");
+            choice = pickItemChoice();
+            if (choice == 255) {
+                strcpy(resultString, "You don't have that item.");
+                continue;
+            }
+            if (choice == 254) {
+                strcpy(resultString, "You can't think of a good way to use that item.");
+                continue;
+            }
         }
 
         // See if waiting a minute
@@ -305,9 +333,16 @@ void main() {
             stringOffset = loadVisual(visualId, 0);
         } else {
             // Making a non-person selection
-            choice -= '0';
+            // If using an item, a choiceId is already set
+            if (!usedItem) {
+                choice -= '0';
+            }
         
-            if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0 || !criteriaCheck(&currentVisual.choices[choice])) {
+            // Check for invalid choice
+            // Out of range, failed criteria, picked an item choice but didn't actually use the item
+            if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0 ||
+                !criteriaCheck(&currentVisual.choices[choice]) || 
+                (!usedItem && currentVisual.choices[choice].criteria[0].gameStateId >= GAME_STATE_INV_START && currentVisual.choices[choice].criteria[0].value)) {
                 // printf("Invalid choice. Try again.\n");
                 continue;
             }

@@ -16,6 +16,7 @@
 #define CRITERIA_COUNT 5
 #define STATE_CHANGE_COUNT 5
 #define CHOICE_COUNT 10
+#define GAME_STATE_INV_START 128
 
 typedef struct Criteria {
   unsigned char gameStateId;
