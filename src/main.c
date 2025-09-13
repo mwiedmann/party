@@ -62,10 +62,62 @@ void showStatus() {
     }
 }
 
+unsigned char pickItem() {
+    unsigned char choice, i, gsId, count;
+
+    gsId=0;
+    choice = cgetc();
+
+    if (choice >= 'a' && choice <= 'z') {
+        choice -= 'a';
+    }
+
+    count=0;
+    for (i=0; i<INV_STRING_COUNT; i++) {
+        if (gameState[128+i]) {
+            if (count==choice) {
+                // found selected item
+                gsId=128+i;
+            }
+            count++;
+        }
+    }
+
+    return gsId;
+}
+
+unsigned char criteriaCheck(Choice *choice) {
+    unsigned char c, foundActiveCriteria, criteriaFailed;
+
+    // Check all criteria
+    foundActiveCriteria = 0;
+    criteriaFailed = 0;
+    for (c=0; c<CRITERIA_COUNT; c++) {
+        if (choice->criteria[c].gameStateId != 0) {
+            if (gameState[choice->criteria[c].gameStateId] != choice->criteria[c].value) {
+                criteriaFailed = 1; // Criteria not met
+                break;
+            }
+            foundActiveCriteria = 1; // At least one criteria is active
+        }
+    }
+
+    // Check if the current choice is only available in a certain room
+    if (choice->criteriaRoomId && choice->criteriaRoomId != gameState[CURRENT_ROOM_ID]) {
+        criteriaFailed = 1;
+    }
+
+    if (!foundActiveCriteria || criteriaFailed) {
+        return 0; // No active criteria or criteria failed, skip this choice
+    }
+    
+    return 1;
+}
+
 void main() {
     unsigned short visualId = 1, currentImage = 0, stringOffset, temp; // Start in the foyer
-    unsigned char i, c, foundActiveCriteria, criteriaFailed, personIndex, forcingChoiceId;
-    unsigned char choice, showedPerson;
+    unsigned char i, personIndex, forcingChoiceId;
+    unsigned char choice, showedPerson, selectedGSId;
     char resultString[1024];
     char buffer[80];
     PersonInfo currentPerson;
@@ -91,28 +143,10 @@ void main() {
         forcingChoiceId=255;
         for (i = 0; i < CHOICE_COUNT; i++) {
             if (currentVisual.choices[i].force) {
-                // Check all criteria
-                foundActiveCriteria = 0;
-                criteriaFailed = 0;
-                for (c=0; c<CRITERIA_COUNT; c++) {
-                    if (currentVisual.choices[i].criteria[c].gameStateId != 0) {
-                        if (gameState[currentVisual.choices[i].criteria[c].gameStateId] != currentVisual.choices[i].criteria[c].value) {
-                            criteriaFailed = 1; // Criteria not met
-                            break;
-                        }
-                        foundActiveCriteria = 1; // At least one criteria is active
-                    }
+                if (!criteriaCheck(&currentVisual.choices[i])) {
+                    continue;
                 }
 
-                // Check if the current choice is only available in a certain room
-                if (currentVisual.choices[i].criteriaRoomId && currentVisual.choices[i].criteriaRoomId != gameState[CURRENT_ROOM_ID]) {
-                    criteriaFailed = 1;
-                }
-
-                if (!foundActiveCriteria || criteriaFailed) {
-                    continue; // No active criteria or criteria failed, skip this choice
-                }
-                
                 // Found a "force" choice where criteria passes
                 forcingChoiceId=i;
                 break;
@@ -193,26 +227,10 @@ void main() {
             if (currentVisual.choices[i].force) {
                 continue;
             }
+
             // Check all criteria
-            foundActiveCriteria = 0;
-            criteriaFailed = 0;
-            for (c=0; c<CRITERIA_COUNT; c++) {
-                if (currentVisual.choices[i].criteria[c].gameStateId != 0) {
-                    if (gameState[currentVisual.choices[i].criteria[c].gameStateId] != currentVisual.choices[i].criteria[c].value) {
-                        criteriaFailed = 1; // Criteria not met
-                        break;
-                    }
-                    foundActiveCriteria = 1; // At least one criteria is active
-                }
-            }
-
-            // Check if the current choice is only available in a certain room
-            if (currentVisual.choices[i].criteriaRoomId && currentVisual.choices[i].criteriaRoomId != gameState[CURRENT_ROOM_ID]) {
-                criteriaFailed = 1;
-            }
-
-            if (!foundActiveCriteria || criteriaFailed) {
-                continue; // No active criteria or criteria failed, skip this choice
+            if (!criteriaCheck(&currentVisual.choices[i])) {
+                continue;
             }
             
             // Print the choice number if it can be selected
@@ -246,9 +264,18 @@ void main() {
             printWordWrapped(buffer);
         }
 
+        // Always add a choice to wait for a minute if in a room
+        printWordWrapped("\nI: Use an item\n");
+
         printWordWrapped("\nChoose an option: ");
         choice = cgetc(); // Convert char to index
         printWordWrapped("\n");
+
+        // Pick inv item
+        if (choice == 'i') {
+            printWordWrapped("\nPick an item to use: ");
+            selectedGSId = pickItem();
+        }
 
         // See if waiting a minute
         if (currentVisual.visualType == ROOM_TYPE && choice == 'w') {
@@ -280,7 +307,7 @@ void main() {
             // Making a non-person selection
             choice -= '0';
         
-            if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0) {
+            if (choice > 9 || currentVisual.choices[choice].criteria[0].gameStateId == 0 || !criteriaCheck(&currentVisual.choices[choice])) {
                 // printf("Invalid choice. Try again.\n");
                 continue;
             }
