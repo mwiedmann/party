@@ -45,6 +45,17 @@ img:
 	node tools/gimp-pal-convert.js gfx/cheeseburger.data.pal build/CHEBUR.PAL
 	node tools/gimp-img-convert.js gfx/dog-close.data build/DOGCLS.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/dog-close.data.pal build/DOGCLS.PAL
+	node tools/gimp-img-convert.js gfx/front-door.data build/FRTDOOR.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/front-door.data.pal build/FRTDOOR.PAL
+	node tools/gimp-img-convert.js gfx/doormat.data build/DOORMAT.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/doormat.data.pal build/DOORMAT.PAL
+	node tools/gimp-img-convert.js gfx/doormatu.data build/DOORMATU.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/doormatu.data.pal build/DOORMATU.PAL
+	node tools/gimp-img-convert.js gfx/knocker.data build/KNOCKER.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/knocker.data.pal build/KNOCKER.PAL
+
+new:
+	
 
 zip:
 	cd build && \
