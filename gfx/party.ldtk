@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 82,
+	"nextUid": 83,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -1026,13 +1026,13 @@
 									"params": ["TESTING - Jump to location"]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "efee6430-8560-11f0-bba1-3d8e7d7ee772",
-									"layerIid": "ccfe25a1-8560-11f0-bba1-8f59edc179bd",
-									"levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5",
+									"entityIid": "183d6b30-8560-11f0-ac3f-4927f06c4618",
+									"layerIid": "0f380041-8560-11f0-ac3f-49eb41254592",
+									"levelIid": "0f380040-8560-11f0-ac3f-97257948b402",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["efee6430-8560-11f0-bba1-3d8e7d7ee772"]
+									"params": ["183d6b30-8560-11f0-ac3f-4927f06c4618"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
@@ -8272,13 +8272,16 @@
 					"id": "V_String",
 					"params": ["The Shed Interior"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a small wooden box on the ground.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "The smell of old gasoline and cut grass hits your nose. There are some tools and a few sets of fishing gear hanging on the wall. There is a small wooden box on the ground.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a small wooden box on the ground."
+						"The smell of old gasoline and cut grass hits your nose. There are some tools and a few sets of fishing gear hanging on the wall. There is a small wooden box on the ground."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
+				{ "__identifier": "image", "__type": "String", "__value": "shedint", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["shedint"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -8383,9 +8386,9 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Grab the fishing pole.", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Grab a fishing pole.", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Grab the fishing pole."]
+									"params": ["Grab a fishing pole."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
@@ -8426,9 +8429,9 @@
 									"id": "V_Bool",
 									"params": [ true ]
 								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Grab the net.", "__tile": null, "defUid": 5, "realEditorValues": [{
+								{ "__identifier": "text", "__type": "String", "__value": "Grab a net.", "__tile": null, "defUid": 5, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["Grab the net."]
+									"params": ["Grab a net."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
@@ -9537,10 +9540,10 @@
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": "You lower the cat down to the box. The possum does not like this at all. He fearfully looks at the cat. The cat calmly walks over the the box and gives a stare. You get the impression that they know each other. The possum gets an angry look and scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then he jumps back onto the roof.", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "result", "__type": "String", "__value": "You lower the cat down to the box. The rat does not like this at all. He fearfully looks at the cat and gets low. The cat calmly walks over the the box and gives the rat a stare. You get the impression that they know each other. The rat squeaks a few times then scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then jumps back onto the roof and resumes his bathing..", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": [
-										"You lower the cat down to the box. The possum does not like this at all. He fearfully looks at the cat. The cat calmly walks over the the box and gives a stare. You get the impression that they know each other. The possum gets an angry look and scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then he jumps back onto the roof."
+										"You lower the cat down to the box. The rat does not like this at all. He fearfully looks at the cat and gets low. The cat calmly walks over the the box and gives the rat a stare. You get the impression that they know each other. The rat squeaks a few times then scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then jumps back onto the roof and resumes his bathing.."
 									]
 								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [ "INV_cat=1", "boxrat=0" ], "__tile": null, "defUid": 12, "realEditorValues": [ {
@@ -9580,11 +9583,227 @@
 							"fieldInstances": [],
 							"__worldX": 48,
 							"__worldY": 832
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "075130a0-8560-11f0-ac3f-e3e951d28e84",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "To fuses", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["To fuses"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "dc189590-8560-11f0-ac3f-b128417cb11b",
+									"layerIid": "aa234711-8560-11f0-ac3f-59a4c9085692",
+									"levelIid": "aa234710-8560-11f0-ac3f-1994385e61c1",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["dc189590-8560-11f0-ac3f-b128417cb11b"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["boxrat=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["boxrat=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": true, "__tile": null, "defUid": 62, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] }
+							],
+							"__worldX": 64,
+							"__worldY": 864
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "8a4e6760-8560-11f0-ac3f-99cbd701b00a",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Use the net.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Use the net."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You clamp the net down on the box but the rat wriggles through one of the holes and starts squeaking and chittering at you. Damn, he is upset!", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You clamp the net down on the box but the rat wriggles through one of the holes and starts squeaking and chittering at you. Damn, he is upset!"
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_net=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_net=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 848
 						}
 					]
 				}
 			],
-			"__neighbours": [{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "n" }]
+			"__neighbours": [ { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "n" }, { "levelIid": "aa234710-8560-11f0-ac3f-1994385e61c1", "dir": "s" } ]
+		},
+		{
+			"identifier": "Box_Of_Fuses",
+			"iid": "aa234710-8560-11f0-ac3f-1994385e61c1",
+			"uid": 82,
+			"worldX": 48,
+			"worldY": 896,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Box of Fuses", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Box of Fuses"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The wooden box contains a box of fuses. You couldn't see them before under the giant rat.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"The wooden box contains a box of fuses. You couldn't see them before under the giant rat."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "fuses", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["fuses"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "aa234711-8560-11f0-ac3f-59a4c9085692",
+					"levelId": 82,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 719745,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "dc189590-8560-11f0-ac3f-b128417cb11b",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 48,
+							"__worldY": 896
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "df5d1230-8560-11f0-ac3f-6b253bca395c",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Grab a fuse.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Grab a fuse."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You reach into the box of fuses an pull one out.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You reach into the box of fuses an pull one out."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_fuse=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_fuse=0"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["INV_fuse=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_fuse=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 912
+						}
+					]
+				}
+			],
+			"__neighbours": [{ "levelIid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d", "dir": "n" }]
 		}
 	],
 	"worlds": [],

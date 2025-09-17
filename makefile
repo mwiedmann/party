@@ -61,8 +61,13 @@ img:
 	node tools/gimp-pal-convert.js gfx/shed.data.pal build/SHED.PAL
 	node tools/gimp-img-convert.js gfx/boxrat.data build/BOXRAT.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/boxrat.data.pal build/BOXRAT.PAL
-
+	node tools/gimp-img-convert.js gfx/fuses.data build/FUSES.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/fuses.data.pal build/FUSES.PAL
+	node tools/gimp-img-convert.js gfx/shedint.data build/SHEDINT.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/shedint.data.pal build/SHEDINT.PAL
+	
 new:
+	
 
 zip:
 	cd build && \

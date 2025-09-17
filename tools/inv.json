@@ -23,5 +23,9 @@
     {
         "id": "cat",
         "text": "A playful cat"
+    },
+    {
+        "id": "fuse",
+        "text": "An electrical fuse"
     }
 ]
