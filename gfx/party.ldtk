@@ -9267,7 +9267,10 @@
 						"A small shed sits behind the pond. The door is open and you see some tools hanging along the wall."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
+				{ "__identifier": "image", "__type": "String", "__value": "shed", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["shed"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],

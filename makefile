@@ -57,9 +57,10 @@ img:
 	node tools/gimp-pal-convert.js gfx/pond-muck.data.pal build/PONDMUCK.PAL
 	node tools/gimp-img-convert.js gfx/shedcat.data build/SHEDCAT.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/shedcat.data.pal build/SHEDCAT.PAL
-	
+	node tools/gimp-img-convert.js gfx/shed.data build/SHED.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/shed.data.pal build/SHED.PAL
+
 new:
-	
 
 zip:
 	cd build && \
