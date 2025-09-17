@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 81,
+	"nextUid": 82,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -8272,10 +8272,10 @@
 					"id": "V_String",
 					"params": ["The Shed Interior"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a box on the ground. It's open.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a small wooden box on the ground.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a box on the ground. It's open."
+						"The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a small wooden box on the ground."
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
@@ -8493,11 +8493,53 @@
 							],
 							"__worldX": 64,
 							"__worldY": 784
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "7b764d20-8560-11f0-ac3f-5ff9463c3782",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Look at the wooden box.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Look at the wooden box."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "107d8150-8560-11f0-ac3f-f93c28ee4390",
+									"layerIid": "e08afd21-8560-11f0-ac3f-c90336891fd0",
+									"levelIid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["107d8150-8560-11f0-ac3f-f93c28ee4390"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 800
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "n" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "nw" } ]
+			"__neighbours": [ { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "n" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "nw" }, { "levelIid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d", "dir": "s" } ]
 		},
 		{
 			"identifier": "Doormat",
@@ -9406,6 +9448,143 @@
 				}
 			],
 			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" } ]
+		},
+		{
+			"identifier": "The_Shed_Box_Possum",
+			"iid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d",
+			"uid": 81,
+			"worldX": 48,
+			"worldY": 832,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Wooden Box and Big Rat", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Wooden Box and Big Rat"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "A small wooden box sits on the floor. You peak inside and jump back when a big angry rat who was sleeping inside snaps at you.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"A small wooden box sits on the floor. You peak inside and jump back when a big angry rat who was sleeping inside snaps at you."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "boxrat", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["boxrat"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "e08afd21-8560-11f0-ac3f-c90336891fd0",
+					"levelId": 81,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 5630085,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "0ef09fc0-8560-11f0-ac3f-1b57eeef205e",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Use the cat.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Use the cat."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You lower the cat down to the box. The possum does not like this at all. He fearfully looks at the cat. The cat calmly walks over the the box and gives a stare. You get the impression that they know each other. The possum gets an angry look and scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then he jumps back onto the roof.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You lower the cat down to the box. The possum does not like this at all. He fearfully looks at the cat. The cat calmly walks over the the box and gives a stare. You get the impression that they know each other. The possum gets an angry look and scampers out of the box and out of the shed. The cat follows him out to make sure his work is done, then he jumps back onto the roof."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [ "INV_cat=1", "boxrat=0" ], "__tile": null, "defUid": 12, "realEditorValues": [ {
+									"id": "V_String",
+									"params": ["INV_cat=1"]
+								}, {
+									"id": "V_String",
+									"params": ["boxrat=0"]
+								} ] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [ "INV_cat=0", "boxrat=1" ], "__tile": null, "defUid": 13, "realEditorValues": [ {
+									"id": "V_String",
+									"params": ["INV_cat=0"]
+								}, {
+									"id": "V_String",
+									"params": ["boxrat=1"]
+								} ] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 848
+						},
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "107d8150-8560-11f0-ac3f-f93c28ee4390",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 48,
+							"__worldY": 832
+						}
+					]
+				}
+			],
+			"__neighbours": [{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "n" }]
 		}
 	],
 	"worlds": [],
