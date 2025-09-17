@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 79,
+	"nextUid": 81,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -7997,10 +7997,10 @@
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "w" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "sw" }, { "levelIid": "9ae28550-8560-11f0-ac3f-c700e0a4483b", "dir": "e" } ]
+			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "w" }, { "levelIid": "9ae28550-8560-11f0-ac3f-c700e0a4483b", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "sw" } ]
 		},
 		{
-			"identifier": "Garden",
+			"identifier": "Pond_Muck",
 			"iid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140",
 			"uid": 74,
 			"worldX": 48,
@@ -8019,17 +8019,20 @@
 			"__bgPos": null,
 			"externalRelPath": null,
 			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Garden", "__tile": null, "defUid": 1, "realEditorValues": [{
+				{ "__identifier": "name", "__type": "String", "__value": "The Pond", "__tile": null, "defUid": 1, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["The Garden"]
+					"params": ["The Pond"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "A small garden sits next to the mansion. A variety of flowers and plants sit among a few benches and a coy pond.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"A small garden sits next to the mansion. A variety of flowers and plants sit among a few benches and a coy pond."
+						"A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": "pondmuck", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["pondmuck"]
+				}] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -8138,13 +8141,13 @@
 									"params": ["Continue around the back."]
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "88e41530-8560-11f0-ac3f-0717a725f4de",
-									"layerIid": "59799041-8560-11f0-ac3f-6d34ec4e3953",
-									"levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844",
+									"entityIid": "183d6b30-8560-11f0-ac3f-4927f06c4618",
+									"layerIid": "0f380041-8560-11f0-ac3f-49eb41254592",
+									"levelIid": "0f380040-8560-11f0-ac3f-97257948b402",
 									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
 								}, "__tile": null, "defUid": 9, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["88e41530-8560-11f0-ac3f-0717a725f4de"]
+									"params": ["183d6b30-8560-11f0-ac3f-4927f06c4618"]
 								}] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
 								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
@@ -8157,18 +8160,100 @@
 							],
 							"__worldX": 64,
 							"__worldY": 672
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,3],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "daf2a670-8560-11f0-ac3f-59b73c7209f5",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,48],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Pick a flower.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Pick a flower."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You prick your finger trying to grab one and give up.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You prick your finger trying to grab one and give up."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 688
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "0dd22de0-8560-11f0-ac3f-fb7ee53e8911",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Cut flower.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Cut flower."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You reach in with the shears and safely snip a rose. It drops and you pick it up, careful to avoid the thorns.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You reach in with the shears and safely snip a rose. It drops and you pick it up, careful to avoid the thorns."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_shears=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_shears=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["INV_Rose=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_Rose=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 656
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "e" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" } ]
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "sw" } ]
 		},
 		{
-			"identifier": "The_Shed",
+			"identifier": "The_Shed_Inside",
 			"iid": "59799040-8560-11f0-ac3f-4bd11afa0844",
 			"uid": 75,
 			"worldX": 48,
-			"worldY": 704,
+			"worldY": 768,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -8183,17 +8268,17 @@
 			"__bgPos": null,
 			"externalRelPath": null,
 			"fieldInstances": [
-				{ "__identifier": "name", "__type": "String", "__value": "The Shed", "__tile": null, "defUid": 1, "realEditorValues": [{
+				{ "__identifier": "name", "__type": "String", "__value": "The Shed Interior", "__tile": null, "defUid": 1, "realEditorValues": [{
 					"id": "V_String",
-					"params": ["The Shed"]
+					"params": ["The Shed Interior"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "A small shed sits behind the garden. It contains various gardening tools, fertilizer, and some fishing gear including a pole and a net. There is a cat bathing himself on the roof.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a box on the ground. It's open.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"A small shed sits behind the garden. It contains various gardening tools, fertilizer, and some fishing gear including a pole and a net. There is a cat bathing himself on the roof."
+						"The smell of old gasoline and cut grass hits your nose. There are some tools and fishing gear hanging on the wall. There is a box on the ground. It's open."
 					]
 				}] },
-				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
 				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
 			],
@@ -8236,49 +8321,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 48,
-							"__worldY": 704
-						},
-						{
-							"__identifier": "Choice",
-							"__grid": [1,1],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#BE4A2F",
-							"iid": "8a29b490-8560-11f0-ac3f-a9498d0909af",
-							"width": 16,
-							"height": 16,
-							"defUid": 3,
-							"px": [16,16],
-							"fieldInstances": [
-								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
-									"id": "V_Bool",
-									"params": [ true ]
-								}] },
-								{ "__identifier": "text", "__type": "String", "__value": "Walk to the garden", "__tile": null, "defUid": 5, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["Walk to the garden"]
-								}] },
-								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
-									"entityIid": "0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36",
-									"layerIid": "e0a874b1-8560-11f0-ac3f-f560bb6ad70c",
-									"levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140",
-									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
-								}, "__tile": null, "defUid": 9, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36"]
-								}] },
-								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
-								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
-								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
-								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
-								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
-								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
-								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
-							],
-							"__worldX": 64,
-							"__worldY": 720
+							"__worldY": 768
 						},
 						{
 							"__identifier": "Choice",
@@ -8303,7 +8346,10 @@
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You grab the shears.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You grab the shears."]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_shears=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["INV_shears=0"]
@@ -8318,7 +8364,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 736
+							"__worldY": 800
 						},
 						{
 							"__identifier": "Choice",
@@ -8343,7 +8389,10 @@
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You grab the fishing pole.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You grab the fishing pole."]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_fishingpole=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["INV_fishingpole=0"]
@@ -8358,7 +8407,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 752
+							"__worldY": 816
 						},
 						{
 							"__identifier": "Choice",
@@ -8383,7 +8432,10 @@
 								}] },
 								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
 								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
-								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You grab the large fishing net.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You grab the large fishing net."]
+								}] },
 								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_net=0"], "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["INV_net=0"]
@@ -8398,12 +8450,54 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 80,
-							"__worldY": 720
+							"__worldY": 784
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "9a539c80-8560-11f0-ac3f-d907541d01e0",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Leave the shed.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Leave the shed."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "183d6b30-8560-11f0-ac3f-4927f06c4618",
+									"layerIid": "0f380041-8560-11f0-ac3f-49eb41254592",
+									"levelIid": "0f380040-8560-11f0-ac3f-97257948b402",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["183d6b30-8560-11f0-ac3f-4927f06c4618"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 784
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" }, { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "n" } ]
+			"__neighbours": [ { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "n" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "nw" } ]
 		},
 		{
 			"identifier": "Doormat",
@@ -8885,6 +8979,430 @@
 				}
 			],
 			"__neighbours": [{ "levelIid": "f15820e0-8560-11f0-ac3f-cfa2b5e5e852", "dir": "w" }]
+		},
+		{
+			"identifier": "The_Shed",
+			"iid": "0f380040-8560-11f0-ac3f-97257948b402",
+			"uid": 79,
+			"worldX": 48,
+			"worldY": 704,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Shed", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Shed"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "A small shed sits behind the pond. The door is open and you see some tools hanging along the wall. There is a cat bathing himself on the roof. He pauses occasionally to slow blink his eyes at you.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"A small shed sits behind the pond. The door is open and you see some tools hanging along the wall. There is a cat bathing himself on the roof. He pauses occasionally to slow blink his eyes at you."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "shedcat", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["shedcat"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "0f380041-8560-11f0-ac3f-49eb41254592",
+					"levelId": 79,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 961120,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "183d6b30-8560-11f0-ac3f-4927f06c4618",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 48,
+							"__worldY": 704
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "2c2f9eb0-8560-11f0-ac3f-37c7f759206d",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Enter the shed", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Enter the shed"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "88e41530-8560-11f0-ac3f-0717a725f4de",
+									"layerIid": "59799041-8560-11f0-ac3f-6d34ec4e3953",
+									"levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["88e41530-8560-11f0-ac3f-0717a725f4de"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You walk into the shed trying not to bump your head on the small door frame.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You walk into the shed trying not to bump your head on the small door frame."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 736
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "7ea8bfa0-8560-11f0-ac3f-753f7f3d8235",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Walk to the pond.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Walk to the pond."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36",
+									"layerIid": "e0a874b1-8560-11f0-ac3f-f560bb6ad70c",
+									"levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 64,
+							"__worldY": 720
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "8c31dd20-8560-11f0-ac3f-216b76b638b9",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Catch cat.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Catch cat."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You reach up with the net and catch the unsuspecting cat. He actually seems pretty chill about it.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You reach up with the net and catch the unsuspecting cat. He actually seems pretty chill about it."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_net=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_net=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["INV_cat=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_cat=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 720
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "80ca70e0-8560-11f0-ac3f-d18ec1dd98cc",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,0],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "", "__tile": null, "defUid": 5, "realEditorValues": [] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "2145ed20-8560-11f0-ac3f-2328fe777fd6",
+									"layerIid": "2145c611-8560-11f0-ac3f-612347e888b0",
+									"levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["2145ed20-8560-11f0-ac3f-2328fe777fd6"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_cat=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_cat=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": true, "__tile": null, "defUid": 62, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] }
+							],
+							"__worldX": 64,
+							"__worldY": 704
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" }, { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "n" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "w" } ]
+		},
+		{
+			"identifier": "The_Shed_No_Cat",
+			"iid": "2145c610-8560-11f0-ac3f-675243bbda7d",
+			"uid": 80,
+			"worldX": -16,
+			"worldY": 704,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Shed", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Shed"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "A small shed sits behind the pond. The door is open and you see some tools hanging along the wall.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"A small shed sits behind the pond. The door is open and you see some tools hanging along the wall."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "2145c611-8560-11f0-ac3f-612347e888b0",
+					"levelId": 80,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 961120,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "2145ed20-8560-11f0-ac3f-2328fe777fd6",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": -16,
+							"__worldY": 704
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "2145ed21-8560-11f0-ac3f-71a3f5eabc01",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Enter the shed", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Enter the shed"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "88e41530-8560-11f0-ac3f-0717a725f4de",
+									"layerIid": "59799041-8560-11f0-ac3f-6d34ec4e3953",
+									"levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["88e41530-8560-11f0-ac3f-0717a725f4de"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You walk into the shed trying not to bump your head on the small door frame.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You walk into the shed trying not to bump your head on the small door frame."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 0,
+							"__worldY": 736
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "2145ed22-8560-11f0-ac3f-a3c23166fa2a",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Walk to the pond.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Walk to the pond."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36",
+									"layerIid": "e0a874b1-8560-11f0-ac3f-f560bb6ad70c",
+									"levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["0e2ab1a0-8560-11f0-ac3f-5f0c74aadf36"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 0,
+							"__worldY": 720
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" } ]
 		}
 	],
 	"worlds": [],

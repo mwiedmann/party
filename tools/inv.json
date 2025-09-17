@@ -7,4 +7,21 @@
         "id": "burger",
         "text": "A half eaten cheeseburger"
     }
+    ,
+    {
+        "id": "net",
+        "text": "A large fishing net"
+    },
+    {
+        "id": "fishingpole",
+        "text": "A fishing pole"
+    },
+    {
+        "id": "shears",
+        "text": "A pair of garden shears"
+    },
+    {
+        "id": "cat",
+        "text": "A playful cat"
+    }
 ]

@@ -53,7 +53,11 @@ img:
 	node tools/gimp-pal-convert.js gfx/doormatu.data.pal build/DOORMATU.PAL
 	node tools/gimp-img-convert.js gfx/knocker.data build/KNOCKER.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/knocker.data.pal build/KNOCKER.PAL
-
+	node tools/gimp-img-convert.js gfx/pond-muck.data build/PONDMUCK.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/pond-muck.data.pal build/PONDMUCK.PAL
+	node tools/gimp-img-convert.js gfx/shedcat.data build/SHEDCAT.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/shedcat.data.pal build/SHEDCAT.PAL
+	
 new:
 	
 
