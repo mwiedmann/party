@@ -65,6 +65,12 @@ img:
 	node tools/gimp-pal-convert.js gfx/fuses.data.pal build/FUSES.PAL
 	node tools/gimp-img-convert.js gfx/shedint.data build/SHEDINT.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/shedint.data.pal build/SHEDINT.PAL
+	node tools/gimp-img-convert.js gfx/fusebox.data build/FUSEBOX.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/fusebox.data.pal build/FUSEBOX.PAL
+	node tools/gimp-img-convert.js gfx/fuseboxb.data build/FUSEBOXB.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/fuseboxb.data.pal build/FUSEBOXB.PAL
+	node tools/gimp-img-convert.js gfx/fuseboxf.data build/FUSEBOXF.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/fuseboxf.data.pal build/FUSEBOXF.PAL
 	
 new:
 	

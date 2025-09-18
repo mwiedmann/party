@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 83,
+	"nextUid": 86,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -8023,10 +8023,10 @@
 					"id": "V_String",
 					"params": ["The Pond"]
 				}] },
-				{ "__identifier": "text", "__type": "String", "__value": "A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running.", "__tile": null, "defUid": 2, "realEditorValues": [{
+				{ "__identifier": "text", "__type": "String", "__value": "A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running. A small electrical panel is attached to the bench.", "__tile": null, "defUid": 2, "realEditorValues": [{
 					"id": "V_String",
 					"params": [
-						"A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running."
+						"A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond looks a bit mucky. You think you see something swimming but it's difficult to see through the dirty water. It looks like there is a filtration system but its not running. A small electrical panel is attached to the bench."
 					]
 				}] },
 				{ "__identifier": "image", "__type": "String", "__value": "pondmuck", "__tile": null, "defUid": 19, "realEditorValues": [{
@@ -8242,11 +8242,53 @@
 							],
 							"__worldX": 80,
 							"__worldY": 656
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "8f956690-8560-11f0-ac3f-49acfc507759",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Look at the electrical panel.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Look at the electrical panel."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "d7abd680-8560-11f0-ac3f-f742473a3790",
+									"layerIid": "9ea9dfd1-8560-11f0-ac3f-8f216eac929a",
+									"levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["d7abd680-8560-11f0-ac3f-f742473a3790"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 80,
+							"__worldY": 672
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "sw" } ]
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "sw" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "w" } ]
 		},
 		{
 			"identifier": "The_Shed_Inside",
@@ -9280,7 +9322,13 @@
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" }, { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "n" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "w" } ]
+			"__neighbours": [
+				{ "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" },
+				{ "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "n" },
+				{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" },
+				{ "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "w" },
+				{ "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "nw" }
+			]
 		},
 		{
 			"identifier": "The_Shed_No_Cat",
@@ -9450,7 +9498,13 @@
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" } ]
+			"__neighbours": [
+				{ "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" },
+				{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" },
+				{ "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" },
+				{ "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "n" },
+				{ "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "nw" }
+			]
 		},
 		{
 			"identifier": "The_Shed_Box_Possum",
@@ -9804,6 +9858,398 @@
 				}
 			],
 			"__neighbours": [{ "levelIid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d", "dir": "n" }]
+		},
+		{
+			"identifier": "Fusebox_Closed",
+			"iid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2",
+			"uid": 83,
+			"worldX": -16,
+			"worldY": 640,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "Electrical Panel", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Electrical Panel"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "There are a few wires leading out of the panel and into the ground towards the pond. It's currently closed.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"There are a few wires leading out of the panel and into the ground towards the pond. It's currently closed."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "fusebox", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["fusebox"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "9ea9dfd1-8560-11f0-ac3f-8f216eac929a",
+					"levelId": 83,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 7451040,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "d7abd680-8560-11f0-ac3f-f742473a3790",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": -16,
+							"__worldY": 640
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e568af00-8560-11f0-ac3f-67cd3156fe6f",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Open the panel", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Open the panel"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "6b81c130-8560-11f0-ac3f-2b72cd70ef67",
+									"layerIid": "1ef4bd41-8560-11f0-ac3f-7de8015abe92",
+									"levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["6b81c130-8560-11f0-ac3f-2b72cd70ef67"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You grab the small access panel and open it.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You grab the small access panel and open it."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 0,
+							"__worldY": 656
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "se" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "s" }, { "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "w" } ]
+		},
+		{
+			"identifier": "Fusebox_Open",
+			"iid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4",
+			"uid": 84,
+			"worldX": -80,
+			"worldY": 640,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Fusebox", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Fusebox"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The open panel reveals a fusebox. One of the fuses looks to be burnt out.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The open panel reveals a fusebox. One of the fuses looks to be burnt out."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "fuseboxb", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["fuseboxb"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "1ef4bd41-8560-11f0-ac3f-7de8015abe92",
+					"levelId": 84,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 8065191,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "6b81c130-8560-11f0-ac3f-2b72cd70ef67",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": -80,
+							"__worldY": 640
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "f8bda630-8560-11f0-ac3f-3b6dc94deb4a",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Replace fuse", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Replace fuse"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You remove the blown fuse and replace it with one from the shed. You immediately hear a pump in the pond turn on and some water flowing.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You remove the blown fuse and replace it with one from the shed. You immediately hear a pump in the pond turn on and some water flowing."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_fuse=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_fuse=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [ "INV_fuse=0", "fusefix=1" ], "__tile": null, "defUid": 13, "realEditorValues": [ {
+									"id": "V_String",
+									"params": ["INV_fuse=0"]
+								}, {
+									"id": "V_String",
+									"params": ["fusefix=1"]
+								} ] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": -64,
+							"__worldY": 656
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "7db71790-8560-11f0-ac3f-d94641e5561f",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Fixed", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Fixed"]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "9bf6c660-8560-11f0-ac3f-53e7e8f3fe61",
+									"layerIid": "58a97741-8560-11f0-ac3f-47e402b96e46",
+									"levelIid": "58a97740-8560-11f0-ac3f-2769aaa71d24",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["9bf6c660-8560-11f0-ac3f-53e7e8f3fe61"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["fusefix=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["fusefix=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": true, "__tile": null, "defUid": 62, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] }
+							],
+							"__worldX": -64,
+							"__worldY": 672
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "se" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "e" }, { "levelIid": "58a97740-8560-11f0-ac3f-2769aaa71d24", "dir": "w" } ]
+		},
+		{
+			"identifier": "Fusbox_fixed",
+			"iid": "58a97740-8560-11f0-ac3f-2769aaa71d24",
+			"uid": 85,
+			"worldX": -144,
+			"worldY": 640,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Fusebox", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Fusebox"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "The pond filter seems to be humming now that you replaced the blown fuse.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The pond filter seems to be humming now that you replaced the blown fuse."]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "fuseboxf", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["fuseboxf"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Other", "__tile": null, "defUid": 21, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["Other"]
+				}] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "58a97741-8560-11f0-ac3f-47e402b96e46",
+					"levelId": 85,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 8238447,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "9bf6c660-8560-11f0-ac3f-53e7e8f3fe61",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": -144,
+							"__worldY": 640
+						}
+					]
+				}
+			],
+			"__neighbours": [{ "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "e" }]
 		}
 	],
 	"worlds": [],

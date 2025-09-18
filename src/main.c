@@ -132,11 +132,12 @@ unsigned char pickItemChoice() {
 }
 
 void main() {
-    unsigned short visualId = 1, currentImage = 0, stringOffset, temp; // Start in the foyer
+    unsigned short visualId = 1, stringOffset, temp; // Start in the foyer
     unsigned char i, personIndex, forcingChoiceId;
     unsigned char choice, showedPerson, usedItem;
     char resultString[1024];
     char buffer[80];
+    char currentImage[16]={0};
     PersonInfo currentPerson;
 
     // Cursor shows up sometimes. Not sure how to disable.
@@ -180,11 +181,13 @@ void main() {
             continue;
         }
 
-        if (currentVisual.imageStringOffset != 0 && currentImage != currentVisual.imageStringOffset) {
-            currentImage = currentVisual.imageStringOffset;
-            loadImage(getString(currentVisual.imageStringOffset, &currentVisual));
+        // See if we need to load a new image
+        strcpy(buffer, getString(currentVisual.imageStringOffset, &currentVisual));
+        if (strcmp(buffer, currentImage) != 0) {
+            strcpy(currentImage, buffer);
+            loadImage(currentImage);
         }
-        
+
         clearImageArea();
 
         // Show the Time
