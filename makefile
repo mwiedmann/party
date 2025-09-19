@@ -71,6 +71,8 @@ img:
 	node tools/gimp-pal-convert.js gfx/fuseboxb.data.pal build/FUSEBOXB.PAL
 	node tools/gimp-img-convert.js gfx/fuseboxf.data build/FUSEBOXF.BIN 320 240 0 1 1
 	node tools/gimp-pal-convert.js gfx/fuseboxf.data.pal build/FUSEBOXF.PAL
+	node tools/gimp-img-convert.js gfx/pond-clear.data build/PONDCLR.BIN 320 240 0 1 1
+	node tools/gimp-pal-convert.js gfx/pond-clear.data.pal build/PONDCLR.PAL
 	
 new:
 	

@@ -11,7 +11,7 @@
 	"iid": "5507cab0-5e50-11f0-9b7d-9f5902f1689a",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 86,
+	"nextUid": 87,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -7719,7 +7719,7 @@
 			"iid": "ccfe25a0-8560-11f0-bba1-758179128fb5",
 			"uid": 73,
 			"worldX": 112,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -7790,7 +7790,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 112,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -7829,7 +7829,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 128,
-							"__worldY": 656
+							"__worldY": 720
 						},
 						{
 							"__identifier": "Choice",
@@ -7866,7 +7866,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 128,
-							"__worldY": 672
+							"__worldY": 736
 						},
 						{
 							"__identifier": "Choice",
@@ -7908,7 +7908,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 144,
-							"__worldY": 656
+							"__worldY": 720
 						},
 						{
 							"__identifier": "Choice",
@@ -7950,7 +7950,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 144,
-							"__worldY": 672
+							"__worldY": 736
 						},
 						{
 							"__identifier": "Choice",
@@ -7992,12 +7992,12 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 128,
-							"__worldY": 688
+							"__worldY": 752
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "w" }, { "levelIid": "9ae28550-8560-11f0-ac3f-c700e0a4483b", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "sw" } ]
+			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "nw" }, { "levelIid": "e9161a90-8560-11f0-ac3f-35236201f40f", "dir": "n" }, { "levelIid": "9ae28550-8560-11f0-ac3f-c700e0a4483b", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "sw" } ]
 		},
 		{
 			"identifier": "Pond_Muck",
@@ -8284,18 +8284,312 @@
 							],
 							"__worldX": 80,
 							"__worldY": 672
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,3],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "5a2bd760-8560-11f0-ac3f-8bc81af65889",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,48],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": false, "__tile": null, "defUid": 4, "realEditorValues": [] },
+								{ "__identifier": "text", "__type": "String", "__value": "Clear.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Clear."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "e9161a92-8560-11f0-ac3f-45ac0896b7ff",
+									"layerIid": "e9161a91-8560-11f0-ac3f-1bd37605d164",
+									"levelIid": "e9161a90-8560-11f0-ac3f-35236201f40f",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["e9161a92-8560-11f0-ac3f-45ac0896b7ff"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["fusefix=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["fusefix=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": true, "__tile": null, "defUid": 62, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] }
+							],
+							"__worldX": 80,
+							"__worldY": 688
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "sw" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "w" } ]
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "se" }, { "levelIid": "e9161a90-8560-11f0-ac3f-35236201f40f", "dir": "e" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "sw" } ]
+		},
+		{
+			"identifier": "Pond_Clear",
+			"iid": "e9161a90-8560-11f0-ac3f-35236201f40f",
+			"uid": 86,
+			"worldX": 112,
+			"worldY": 640,
+			"worldDepth": 0,
+			"pxWid": 64,
+			"pxHei": 64,
+			"__bgColor": "#696A79",
+			"bgColor": null,
+			"useAutoIdentifier": false,
+			"bgRelPath": null,
+			"bgPos": null,
+			"bgPivotX": 0.5,
+			"bgPivotY": 0.5,
+			"__smartColor": "#ADADB5",
+			"__bgPos": null,
+			"externalRelPath": null,
+			"fieldInstances": [
+				{ "__identifier": "name", "__type": "String", "__value": "The Pond", "__tile": null, "defUid": 1, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["The Pond"]
+				}] },
+				{ "__identifier": "text", "__type": "String", "__value": "A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond is nice and clear now that the filtration system is running. You see a few beautiful coy swimming around. Something metallic sitting at the bottom of the pond is shimmering through the water.", "__tile": null, "defUid": 2, "realEditorValues": [{
+					"id": "V_String",
+					"params": [
+						"A small pond sits next to the mansion. Some beautiful flowers grow in some nearby beds. The pond is nice and clear now that the filtration system is running. You see a few beautiful coy swimming around. Something metallic sitting at the bottom of the pond is shimmering through the water."
+					]
+				}] },
+				{ "__identifier": "image", "__type": "String", "__value": "pondclr", "__tile": null, "defUid": 19, "realEditorValues": [{
+					"id": "V_String",
+					"params": ["pondclr"]
+				}] },
+				{ "__identifier": "visualType", "__type": "LocalEnum.VisualType", "__value": "Room", "__tile": null, "defUid": 21, "realEditorValues": [] },
+				{ "__identifier": "canWait", "__type": "Bool", "__value": true, "__tile": null, "defUid": 44, "realEditorValues": [] }
+			],
+			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 4,
+					"__cHei": 4,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"iid": "e9161a91-8560-11f0-ac3f-1bd37605d164",
+					"levelId": 86,
+					"layerDefUid": 14,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 5938217,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "Anchor",
+							"__grid": [0,0],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D77643",
+							"iid": "e9161a92-8560-11f0-ac3f-45ac0896b7ff",
+							"width": 16,
+							"height": 16,
+							"defUid": 8,
+							"px": [0,0],
+							"fieldInstances": [],
+							"__worldX": 112,
+							"__worldY": 640
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e9161a93-8560-11f0-ac3f-f169fdad3c5f",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Walk to the front door.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Walk to the front door."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "efee6430-8560-11f0-bba1-3d8e7d7ee772",
+									"layerIid": "ccfe25a1-8560-11f0-bba1-8f59edc179bd",
+									"levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["efee6430-8560-11f0-bba1-3d8e7d7ee772"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 128,
+							"__worldY": 656
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,2],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e9161a94-8560-11f0-ac3f-3f6c05af9101",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,32],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Continue around the back.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Continue around the back."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": {
+									"entityIid": "183d6b30-8560-11f0-ac3f-4927f06c4618",
+									"layerIid": "0f380041-8560-11f0-ac3f-49eb41254592",
+									"levelIid": "0f380040-8560-11f0-ac3f-97257948b402",
+									"worldIid": "5507f1c0-5e50-11f0-9b7d-abb3a781eea7"
+								}, "__tile": null, "defUid": 9, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["183d6b30-8560-11f0-ac3f-4927f06c4618"]
+								}] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": null, "__tile": null, "defUid": 10, "realEditorValues": [] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 128,
+							"__worldY": 672
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [1,3],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e9161a95-8560-11f0-ac3f-8f13e6bbe622",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [16,48],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Pick a flower.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Pick a flower."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You prick your finger trying to grab one and give up.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["You prick your finger trying to grab one and give up."]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 12, "realEditorValues": [] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": [], "__tile": null, "defUid": 13, "realEditorValues": [] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 128,
+							"__worldY": 688
+						},
+						{
+							"__identifier": "Choice",
+							"__grid": [2,1],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#BE4A2F",
+							"iid": "e9161a96-8560-11f0-ac3f-af06cca25d7a",
+							"width": 16,
+							"height": 16,
+							"defUid": 3,
+							"px": [32,16],
+							"fieldInstances": [
+								{ "__identifier": "canSelect", "__type": "Bool", "__value": true, "__tile": null, "defUid": 4, "realEditorValues": [{
+									"id": "V_Bool",
+									"params": [ true ]
+								}] },
+								{ "__identifier": "text", "__type": "String", "__value": "Cut flower.", "__tile": null, "defUid": 5, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Cut flower."]
+								}] },
+								{ "__identifier": "transition", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "transitionBackToRoom", "__type": "Bool", "__value": false, "__tile": null, "defUid": 23, "realEditorValues": [] },
+								{ "__identifier": "result", "__type": "String", "__value": "You reach in with the shears and safely snip a rose. It drops and you pick it up, careful to avoid the thorns.", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": [
+										"You reach in with the shears and safely snip a rose. It drops and you pick it up, careful to avoid the thorns."
+									]
+								}] },
+								{ "__identifier": "criteria", "__type": "Array<String>", "__value": ["INV_shears=1"], "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_shears=1"]
+								}] },
+								{ "__identifier": "stateChanges", "__type": "Array<String>", "__value": ["INV_Rose=1"], "__tile": null, "defUid": 13, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["INV_Rose=1"]
+								}] },
+								{ "__identifier": "minutes", "__type": "Int", "__value": 0, "__tile": null, "defUid": 30, "realEditorValues": [] },
+								{ "__identifier": "personRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 31, "realEditorValues": [] },
+								{ "__identifier": "criteriaRoom", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 32, "realEditorValues": [] },
+								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
+							],
+							"__worldX": 144,
+							"__worldY": 656
+						}
+					]
+				}
+			],
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "s" }, { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "w" }, { "levelIid": "9ae28550-8560-11f0-ac3f-c700e0a4483b", "dir": "se" } ]
 		},
 		{
 			"identifier": "The_Shed_Inside",
 			"iid": "59799040-8560-11f0-ac3f-4bd11afa0844",
 			"uid": 75,
 			"worldX": 48,
-			"worldY": 768,
+			"worldY": 832,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -8366,7 +8660,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 48,
-							"__worldY": 768
+							"__worldY": 832
 						},
 						{
 							"__identifier": "Choice",
@@ -8409,7 +8703,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 800
+							"__worldY": 864
 						},
 						{
 							"__identifier": "Choice",
@@ -8452,7 +8746,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 816
+							"__worldY": 880
 						},
 						{
 							"__identifier": "Choice",
@@ -8495,7 +8789,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 80,
-							"__worldY": 784
+							"__worldY": 848
 						},
 						{
 							"__identifier": "Choice",
@@ -8537,7 +8831,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 784
+							"__worldY": 848
 						},
 						{
 							"__identifier": "Choice",
@@ -8579,7 +8873,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 80,
-							"__worldY": 800
+							"__worldY": 864
 						}
 					]
 				}
@@ -8591,7 +8885,7 @@
 			"iid": "9ae28550-8560-11f0-ac3f-c700e0a4483b",
 			"uid": 76,
 			"worldX": 176,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -8663,7 +8957,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 176,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -8702,7 +8996,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 192,
-							"__worldY": 656
+							"__worldY": 720
 						},
 						{
 							"__identifier": "Choice",
@@ -8744,7 +9038,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 192,
-							"__worldY": 672
+							"__worldY": 736
 						},
 						{
 							"__identifier": "Choice",
@@ -8772,19 +9066,19 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 192,
-							"__worldY": 688
+							"__worldY": 752
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "w" }, { "levelIid": "f15820e0-8560-11f0-ac3f-cfa2b5e5e852", "dir": "e" } ]
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "w" }, { "levelIid": "e9161a90-8560-11f0-ac3f-35236201f40f", "dir": "nw" }, { "levelIid": "f15820e0-8560-11f0-ac3f-cfa2b5e5e852", "dir": "e" } ]
 		},
 		{
 			"identifier": "Under_Doormat",
 			"iid": "f15820e0-8560-11f0-ac3f-cfa2b5e5e852",
 			"uid": 77,
 			"worldX": 240,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -8858,7 +9152,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 240,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -8900,7 +9194,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 256,
-							"__worldY": 656
+							"__worldY": 720
 						},
 						{
 							"__identifier": "Choice",
@@ -8939,7 +9233,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 256,
-							"__worldY": 672
+							"__worldY": 736
 						}
 					]
 				}
@@ -8951,7 +9245,7 @@
 			"iid": "da3ff0f0-8560-11f0-ac3f-a16d0ce29dc9",
 			"uid": 78,
 			"worldX": 304,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9023,7 +9317,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 304,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -9060,7 +9354,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 320,
-							"__worldY": 656
+							"__worldY": 720
 						}
 					]
 				}
@@ -9072,7 +9366,7 @@
 			"iid": "0f380040-8560-11f0-ac3f-97257948b402",
 			"uid": 79,
 			"worldX": 48,
-			"worldY": 704,
+			"worldY": 768,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9143,7 +9437,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 48,
-							"__worldY": 704
+							"__worldY": 768
 						},
 						{
 							"__identifier": "Choice",
@@ -9188,7 +9482,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 736
+							"__worldY": 800
 						},
 						{
 							"__identifier": "Choice",
@@ -9230,7 +9524,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 720
+							"__worldY": 784
 						},
 						{
 							"__identifier": "Choice",
@@ -9275,7 +9569,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 80,
-							"__worldY": 720
+							"__worldY": 784
 						},
 						{
 							"__identifier": "Choice",
@@ -9317,25 +9611,19 @@
 								}] }
 							],
 							"__worldX": 64,
-							"__worldY": 704
+							"__worldY": 768
 						}
 					]
 				}
 			],
-			"__neighbours": [
-				{ "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" },
-				{ "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "n" },
-				{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" },
-				{ "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "w" },
-				{ "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "nw" }
-			]
+			"__neighbours": [ { "levelIid": "ccfe25a0-8560-11f0-bba1-758179128fb5", "dir": "ne" }, { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "s" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "w" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "nw" } ]
 		},
 		{
 			"identifier": "The_Shed_No_Cat",
 			"iid": "2145c610-8560-11f0-ac3f-675243bbda7d",
 			"uid": 80,
 			"worldX": -16,
-			"worldY": 704,
+			"worldY": 768,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9406,7 +9694,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": -16,
-							"__worldY": 704
+							"__worldY": 768
 						},
 						{
 							"__identifier": "Choice",
@@ -9451,7 +9739,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 0,
-							"__worldY": 736
+							"__worldY": 800
 						},
 						{
 							"__identifier": "Choice",
@@ -9493,25 +9781,19 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 0,
-							"__worldY": 720
+							"__worldY": 784
 						}
 					]
 				}
 			],
-			"__neighbours": [
-				{ "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" },
-				{ "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" },
-				{ "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" },
-				{ "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "n" },
-				{ "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "nw" }
-			]
+			"__neighbours": [ { "levelIid": "59799040-8560-11f0-ac3f-4bd11afa0844", "dir": "se" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "e" }, { "levelIid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2", "dir": "n" }, { "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "nw" } ]
 		},
 		{
 			"identifier": "The_Shed_Box_Possum",
 			"iid": "e08afd20-8560-11f0-ac3f-fd67f9142e7d",
 			"uid": 81,
 			"worldX": 48,
-			"worldY": 832,
+			"worldY": 896,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9620,7 +9902,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 848
+							"__worldY": 912
 						},
 						{
 							"__identifier": "Anchor",
@@ -9636,7 +9918,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 48,
-							"__worldY": 832
+							"__worldY": 896
 						},
 						{
 							"__identifier": "Choice",
@@ -9681,7 +9963,7 @@
 								}] }
 							],
 							"__worldX": 64,
-							"__worldY": 864
+							"__worldY": 928
 						},
 						{
 							"__identifier": "Choice",
@@ -9723,7 +10005,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 80,
-							"__worldY": 848
+							"__worldY": 912
 						}
 					]
 				}
@@ -9735,7 +10017,7 @@
 			"iid": "aa234710-8560-11f0-ac3f-1994385e61c1",
 			"uid": 82,
 			"worldX": 48,
-			"worldY": 896,
+			"worldY": 960,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9809,7 +10091,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": 48,
-							"__worldY": 896
+							"__worldY": 960
 						},
 						{
 							"__identifier": "Choice",
@@ -9852,7 +10134,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 64,
-							"__worldY": 912
+							"__worldY": 976
 						}
 					]
 				}
@@ -9864,7 +10146,7 @@
 			"iid": "9ea9dfd0-8560-11f0-ac3f-0df71b022eb2",
 			"uid": 83,
 			"worldX": -16,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -9938,7 +10220,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": -16,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -9983,19 +10265,19 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": 0,
-							"__worldY": 656
+							"__worldY": 720
 						}
 					]
 				}
 			],
-			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "e" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "se" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "s" }, { "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "w" } ]
+			"__neighbours": [ { "levelIid": "e0a874b0-8560-11f0-ac3f-f5d3d0fce140", "dir": "ne" }, { "levelIid": "0f380040-8560-11f0-ac3f-97257948b402", "dir": "se" }, { "levelIid": "2145c610-8560-11f0-ac3f-675243bbda7d", "dir": "s" }, { "levelIid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4", "dir": "w" } ]
 		},
 		{
 			"identifier": "Fusebox_Open",
 			"iid": "1ef4bd40-8560-11f0-ac3f-3f2f46d8b0b4",
 			"uid": 84,
 			"worldX": -80,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -10067,7 +10349,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": -80,
-							"__worldY": 640
+							"__worldY": 704
 						},
 						{
 							"__identifier": "Choice",
@@ -10115,7 +10397,7 @@
 								{ "__identifier": "force", "__type": "Bool", "__value": false, "__tile": null, "defUid": 62, "realEditorValues": [] }
 							],
 							"__worldX": -64,
-							"__worldY": 656
+							"__worldY": 720
 						},
 						{
 							"__identifier": "Choice",
@@ -10160,7 +10442,7 @@
 								}] }
 							],
 							"__worldX": -64,
-							"__worldY": 672
+							"__worldY": 736
 						}
 					]
 				}
@@ -10172,7 +10454,7 @@
 			"iid": "58a97740-8560-11f0-ac3f-2769aaa71d24",
 			"uid": 85,
 			"worldX": -144,
-			"worldY": 640,
+			"worldY": 704,
 			"worldDepth": 0,
 			"pxWid": 64,
 			"pxHei": 64,
@@ -10244,7 +10526,7 @@
 							"px": [0,0],
 							"fieldInstances": [],
 							"__worldX": -144,
-							"__worldY": 640
+							"__worldY": 704
 						}
 					]
 				}
