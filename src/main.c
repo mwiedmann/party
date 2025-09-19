@@ -134,11 +134,12 @@ unsigned char pickItemChoice() {
 void main() {
     unsigned short visualId = 1, stringOffset, temp; // Start in the foyer
     unsigned char i, personIndex, forcingChoiceId;
-    unsigned char choice, showedPerson, usedItem;
+    unsigned char choice, showedPerson, usedItem, choiceCount;
     char resultString[1024];
     char buffer[80];
     char currentImage[16]={0};
     PersonInfo currentPerson;
+    unsigned char choiceMap[CHOICE_COUNT];
 
     // Cursor shows up sometimes. Not sure how to disable.
     // cursor(0) doesn't work so just put it here.
@@ -241,7 +242,13 @@ void main() {
             cursorX=0;
         }
 
+        // Clear Choice Map
+        for (i = 0; i < CHOICE_COUNT; i++) {
+            choiceMap[i]=255;
+        }
+
         // Show choices
+        choiceCount=0;
         for (i = 0; i < CHOICE_COUNT; i++) {
             // No need to show forced choices or choices that require an item (those are selected via the inventory)
             if (currentVisual.choices[i].force || (currentVisual.choices[i].criteria[0].gameStateId >= GAME_STATE_INV_START && currentVisual.choices[i].criteria[0].value)) {
@@ -255,8 +262,10 @@ void main() {
             
             // Print the choice number if it can be selected
             if (currentVisual.choices[i].canSelect) {
-                sprintf(buffer, "%u: ", i);
+                sprintf(buffer, "%u: ", choiceCount);
                 printWordWrapped(buffer);
+                choiceMap[choiceCount]=i;
+                choiceCount++;
             }
 
             // Print the choice text
@@ -339,6 +348,7 @@ void main() {
             // If using an item, a choiceId is already set
             if (!usedItem) {
                 choice -= '0';
+                choice=choiceMap[choice];
             }
         
             // Check for invalid choice
