@@ -27,5 +27,9 @@
     {
         "id": "fuse",
         "text": "An electrical fuse"
+    },
+    {
+        "id": "frontkey",
+        "text": "Key to the front door"
     }
 ]
